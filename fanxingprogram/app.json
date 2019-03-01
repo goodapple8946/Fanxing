@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/selectCity/selectCity",
+    "pages/selectTime/selectTime"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00a0e9",
+    "navigationBarTitleText": "Test001",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icons/index_black.png",
+        "selectedIconPath": "icons/index_blue.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "icons/message_black.png",
+        "selectedIconPath": "icons/message_blue.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "icons/order_black.png",
+        "selectedIconPath": "icons/order_blue.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "icons/mine_black.png",
+        "selectedIconPath": "icons/mine_blue.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

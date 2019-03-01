@@ -1,0 +1,57 @@
+<view class='top'>
+  <!-- 顶部滑动图片 -->
+  <swiper indicator-dots autoplay circular indicator-color='#ffffff' indicator-active-color='#00a0e9' interval="4000" duration="1000" class="topSwiper">
+    <block wx:for="{{topPictures}}">
+      <swiper-item>
+        <image src="{{item}}" class="topPicture"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 搜索按钮表格 -->
+  <view class="searchTableOutside">
+    <view class="searchTableInside">
+      <!-- 选择城市按钮 -->
+      <button bindtap='selectCity' class='btnSelect'>
+        <text class='btnLeftText'>城市</text>
+        <text class='btnRightText'>{{searchCity}}</text>
+      </button>
+      <!-- 选择时间按钮 -->
+      <button bindtap='selectTime' class='btnSelect'>
+        <text class='btnLeftText'>入住/离开时间</text>
+        <text class='btnRightText'>{{searchTime}}</text>
+      </button>
+      <!-- 选择人数按钮 -->
+      <button bindtap='selectPeopleNum' class='btnSelect'>
+        <text class='btnLeftText'>入住人数</text>
+        <text class='btnRightText'>{{searchPeopleNum}}</text>
+      </button>
+      <!-- 搜索按钮 -->
+      <button bindtap='search' class='btnSearch'>搜索</button>
+    </view>
+  </view>
+</view>
+<!-- 小标题：推荐城市 -->
+<view class='subtitle'>
+  <image class='subtitleIcon' src='/icons/rcmd_city.png'></image>
+  <text class='subtitleText' >推荐城市</text>
+</view>
+<!-- 推荐城市一览 -->
+<view class='recommandCity'>
+  <scroll-view scroll-x class='recommandCityScroll'>
+    <image src='/images/beijing.jpg' class='recommandCityPicture'></image>
+    <image src='/images/chongqing.jpg' class='recommandCityPicture'></image>
+    <image src='/images/sanya.jpg' class='recommandCityPicture'></image>
+    <image src='/images/hangzhou.jpg' class='recommandCityPicture'></image>
+  </scroll-view>
+</view>
+<!-- 分割线 -->
+<view class='divLine'></view>
+<!-- 小标题：推荐房源 -->
+<view class='subtitle'>
+  <image class='subtitleIcon' src='/icons/rcmd_house.png'></image>
+  <text class='subtitleText' >推荐房源</text>
+</view>
+<!-- 推荐房源一览 -->
+<view>
+  <hotelBanner picture='/images/dyc.jpg' price='1000' name='大运村公寓' description='1室0厅/宜住4人/公寓 · 知春路' favorate='true'></hotelBanner>
+</view>

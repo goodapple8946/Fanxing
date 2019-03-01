@@ -1,0 +1,54 @@
+.border {
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  width: 650rpx;
+  height: 600rpx;
+}
+.pictureBorder {
+  position: relative;
+}
+.picture {
+  width: 650rpx;
+  height: 488rpx;
+}
+.info {
+  margin-top: 20rpx;
+}
+.name {
+  font-size: 1rem;
+}
+.description {
+  font-size: 0.8rem;
+  color: #555;
+}
+.price {
+  position: absolute;
+  top: 350rpx;
+  left: 0;
+  background: black;
+  color: white;
+  text-align: center;
+  opacity: 0.75;
+  height: 2.25rem;
+  font-size: 1rem;
+}
+.priceBig {
+  font-size: 1.5rem;
+}
+.favoriteBorder {
+  position: absolute;
+  top: 25rpx;
+  right: 25rpx;
+  background: black;
+  opacity: 0.9;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius:50%;
+}
+.favorite {
+  position: absolute;
+  top: 12rpx;
+  left: 10rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
