@@ -1,6 +1,0 @@
-<view class='border'>
-  <button wx:for='{{cities}}' class='btn' data-index='{{index}}' bindtap='selectCity'>
-    <image class='btnIcon' src='/icons/city.png'></image>
-    <text>\n{{item.cnName}}</text>
-  </button>
-</view>

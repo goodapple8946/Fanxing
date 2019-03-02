@@ -1,14 +1,5 @@
 .top {
-  height: 750rpx;
-}
-.topSwiper {
-  position: relative;
-  width: 750rpx;
-  height: 500rpx;
-}
-.topPicture {
-  width: 750rpx;
-  height: 500rpx;
+  height: 800rpx;
 }
 .searchTableOutside {
   position: absolute;
@@ -26,59 +17,37 @@
   margin-bottom: 25rpx;
   background-color: white;
 }
-.btnLeftText {
-  float: left;
+.leftText {
+  width: 200rpx;
+  display: inline-block;
 }
-.btnRightText {
-  float: right;
+.rightText {
+  width: 400rpx;
+  display: inline-block;
+  text-align: right;
 }
-.btnSelect {
+.searchRow {
   background-color: white;
   font-size: 0.75rem;
+  width: 600rpx;
+  height: 1.5rem;
+  display: inline-block;
 }
 .btnSearch {
   background-color: #00a0e9;
   color: white;
   font-size: 0.75rem;
 }
-.subtitle {
-  display: flex;
-  align-items: center;
-  margin-left: 25rpx;
-}
-.subtitleText {
-  font-size: 1.1rem;
-}
-.subtitleIcon {
-  width: 80rpx;
-  height: 80rpx;
-}
-.recommandCity {
-  margin-top: 25rpx;
-  margin-bottom: 25rpx;
-  margin-left: 50rpx;
-  margin-right: 50rpx;
-}
-.recommandCityScroll {
-  white-space: nowrap;
-  display: flex;
-}
-.recommandCityPicture {
-  width: 300rpx;
-  height: 225rpx;
-  margin-right: 10rpx;
+.datePicker {
+  position: absolute;
+  top: 350rpx;
+  left: 50rpx;
 }
 .divLine {
-  margin-left: 50rpx;
-  margin-top: 25rpx;
-  margin-bottom: 25rpx;
-  width: 650rpx;
+  margin-left: 10rpx;
+  margin-top: 2rpx;
+  margin-bottom: 2rpx;
+  width: 580rpx;
   height: 1px;
   background: lightgray;
-}
-::-webkit-scrollbar
-{
-width: 0;
-height: 0;
-color: transparent;
 }

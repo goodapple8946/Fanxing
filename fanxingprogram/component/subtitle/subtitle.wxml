@@ -1,0 +1,4 @@
+<view class='subtitle'>
+  <image class='subtitleIcon' src='{{icon}}'></image>
+  <text class='subtitleText' >{{content}}</text>
+</view>

@@ -2,7 +2,7 @@
   margin-left: 50rpx;
   margin-top: 25rpx;
   width: 650rpx;
-  height: 600rpx;
+  height: 650rpx;
 }
 .pictureBorder {
   position: relative;

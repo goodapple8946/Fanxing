@@ -1,0 +1,16 @@
+<view class='border'>
+  <view class='pictureBorder'>
+    <image class='picture' src='{{hotel.picture}}' />
+    <view class='price'>
+      <text decode='true'>&nbsp;&nbsp;¥ <text class='priceBig'>{{hotel.price}}</text> /晚&nbsp;&nbsp;</text>
+    </view>
+    <view class='favoriteBorder' bindtap='addFavorite'>
+      <image wx:if='{{favorite==true}}' src='/icons/favorite_red.png' class='favorite' />
+      <image wx:elif='{{favorite==false}}' src='/icons/favorite_white.png' class='favorite' />
+    </view>
+  </view>
+  <view class='info'>
+    <text class='name'>{{hotel.name}}\n</text>
+    <text class='description'>{{hotel.description}}\n</text>
+  </view>
+</view>

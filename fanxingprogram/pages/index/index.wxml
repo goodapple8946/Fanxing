@@ -1,57 +1,45 @@
 <view class='top'>
   <!-- 顶部滑动图片 -->
-  <swiper indicator-dots autoplay circular indicator-color='#ffffff' indicator-active-color='#00a0e9' interval="4000" duration="1000" class="topSwiper">
-    <block wx:for="{{topPictures}}">
-      <swiper-item>
-        <image src="{{item}}" class="topPicture"></image>
-      </swiper-item>
-    </block>
-  </swiper>
-  <!-- 搜索按钮表格 -->
+  <imageSwiper images = '{{topImages}}' />
+  <!-- 搜索表格 -->
   <view class="searchTableOutside">
     <view class="searchTableInside">
-      <!-- 选择城市按钮 -->
-      <button bindtap='selectCity' class='btnSelect'>
-        <text class='btnLeftText'>城市</text>
-        <text class='btnRightText'>{{searchCity}}</text>
-      </button>
-      <!-- 选择时间按钮 -->
-      <button bindtap='selectTime' class='btnSelect'>
-        <text class='btnLeftText'>入住/离开时间</text>
-        <text class='btnRightText'>{{searchTime}}</text>
-      </button>
-      <!-- 选择人数按钮 -->
-      <button bindtap='selectPeopleNum' class='btnSelect'>
-        <text class='btnLeftText'>入住人数</text>
-        <text class='btnRightText'>{{searchPeopleNum}}</text>
-      </button>
+      <!-- 选择城市 -->
+      <view class='searchRow'>
+        <text class='leftText'>城市</text>
+        <picker value='{{cityID}}' class='rightText' range='{{cities}}' bindchange='selectCity'>{{cities[cityID]}}</picker>
+      </view>
+      <!-- 分割线 -->
+      <view class='divLine' />
+      <!-- 选择入住日期 -->
+      <view class='searchRow'>
+        <text class='leftText'>入住日期</text>
+        <picker value='{{checkinDate}}' class='rightText' mode='date' start='{{today}}' end='2099-12-31' bindchange='selectCheckinDate'>{{checkinDate}}</picker>
+      </view>
+      <!-- 分割线 -->
+      <view class='divLine' />
+      <!-- 选择离开日期 -->
+      <view class='searchRow'>
+        <text class='leftText'>离开日期</text>
+        <picker value='{{checkoutDate}}' class='rightText' mode='date' start='{{today}}' end='2099-12-31' bindchange='selectCheckoutDate'>{{checkoutDate}}</picker>
+      </view>
+      <!-- 分割线 -->
+      <view class='divLine' />
+      <!-- 选择人数 -->
+      <view class='searchRow'>
+        <text class='leftText'>入住人数</text>
+        <picker value='{{peopleNumIndex}}' class='rightText' range='{{peopleNums}}' bindchange='selectPeopleNum'>{{peopleNums[peopleNumIndex]}}</picker>
+      </view>
       <!-- 搜索按钮 -->
       <button bindtap='search' class='btnSearch'>搜索</button>
     </view>
   </view>
+  <!-- 时间选择器 -->
+  <datePicker class='datePicker' isShow='{{isShowDatePicker}}' />
 </view>
-<!-- 小标题：推荐城市 -->
-<view class='subtitle'>
-  <image class='subtitleIcon' src='/icons/rcmd_city.png'></image>
-  <text class='subtitleText' >推荐城市</text>
-</view>
-<!-- 推荐城市一览 -->
-<view class='recommandCity'>
-  <scroll-view scroll-x class='recommandCityScroll'>
-    <image src='/images/beijing.jpg' class='recommandCityPicture'></image>
-    <image src='/images/chongqing.jpg' class='recommandCityPicture'></image>
-    <image src='/images/sanya.jpg' class='recommandCityPicture'></image>
-    <image src='/images/hangzhou.jpg' class='recommandCityPicture'></image>
-  </scroll-view>
-</view>
-<!-- 分割线 -->
-<view class='divLine'></view>
 <!-- 小标题：推荐房源 -->
-<view class='subtitle'>
-  <image class='subtitleIcon' src='/icons/rcmd_house.png'></image>
-  <text class='subtitleText' >推荐房源</text>
-</view>
+<subtitle icon='/icons/rcmd_house.png' content='推荐房源' />
 <!-- 推荐房源一览 -->
 <view>
-  <hotelBanner picture='/images/dyc.jpg' price='1000' name='大运村公寓' description='1室0厅/宜住4人/公寓 · 知春路' favorate='true'></hotelBanner>
+  <hotelBanner wx:for='{{rcmdHotels}}' hotel='{{rcmdHotels[index]}}' favorite="{{user.favorites.indexOf(rcmdHotels[index].id) == -1}}" wx:key='{{index}}' />
 </view>

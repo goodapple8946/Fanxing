@@ -1,0 +1,9 @@
+.swiper {
+  position: relative;
+  width: 750rpx;
+  height: 500rpx;
+}
+.images {
+  width: 750rpx;
+  height: 500rpx;
+}

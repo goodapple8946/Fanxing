@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "hotelBanner": "/plugins/hotelBanner/hotelBanner"
+    "imageSwiper": "/component/imageSwiper/imageSwiper",
+    "subtitle": "/component/subtitle/subtitle",
+    "hotelBanner": "/component/hotelBanner/hotelBanner"
   }
 }

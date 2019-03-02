@@ -3,9 +3,7 @@
     "pages/index/index",
     "pages/message/message",
     "pages/order/order",
-    "pages/mine/mine",
-    "pages/selectCity/selectCity",
-    "pages/selectTime/selectTime"
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",
