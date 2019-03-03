@@ -41,5 +41,5 @@
 <subtitle icon='/icons/rcmd_house.png' content='推荐房源' />
 <!-- 推荐房源一览 -->
 <view>
-  <hotelBanner wx:for='{{rcmdHotels}}' hotel='{{rcmdHotels[index]}}' favorite="{{user.favorites.indexOf(rcmdHotels[index].id) == -1}}" wx:key='{{index}}' />
+  <hotelBanner wx:for='{{hotels}}' hotel='{{hotels[index]}}' favorite="{{favorites[index]}}" wx:key='{{index}}' id='hb' />
 </view>

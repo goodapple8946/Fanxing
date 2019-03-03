@@ -1,26 +1,26 @@
+const app = getApp();
+
 Component({
   properties: {
     hotel: {
       type: Object,
       value: null
-    },
-    favorite: {
-      type: Boolean,
-      value: false
     }
   },
   methods:{
     //添加房源为收藏
     addFavorite() {
-      var index = getApp().globalData.user.favorites.indexOf(this.properties.hotel.id);
+      var index = app.globalData.user.favorites.indexOf(this.properties.hotel._id);
       if(index == -1) {
         wx.showToast({
           title: '已添加收藏',
           icon: 'success'
         });
-        getApp().globalData.user.favorites.push(this.properties.hotel.id);
+        var hotel = this.properties.hotel;
+        app.globalData.user.favorites.push(hotel._id);
+        hotel.favorite = true;
         this.setData({
-          favorite: true
+          hotel
         });
       }
       else {
@@ -28,11 +28,19 @@ Component({
           title: '已取消收藏',
           icon: 'none'
         });
-        getApp().globalData.user.favorites.splice(index, 1);
+        var hotel = this.properties.hotel;
+        app.globalData.user.favorites.splice(index, 1);
+        hotel.favorite = false;
         this.setData({
-          favorite: false
+          hotel
         });
       }
+      app.updateUserFavorites();
+    },
+    getFavorite(isFavorite) {
+      this.setData({
+        favorite: isFavorite
+      });
     }
-  },
+  }
 })
