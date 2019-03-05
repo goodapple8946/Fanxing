@@ -1,5 +1,4 @@
 wx.cloud.init();
-
 const db = wx.cloud.database();
 
 App({
@@ -12,8 +11,7 @@ App({
       checkoutDate: new Date(2099, 12, 31),
       peopleNum: 0,
     },
-    user: null,
-    hotels: null
+    user: null
   },
   onLaunch() {
     //获取用户openid
@@ -24,7 +22,6 @@ App({
       }
     });
     this.queryUser();
-    this.queryHotels();
   },
   //获取用户数据
   queryUser() {
@@ -32,28 +29,15 @@ App({
       _openid: this.globalData.openid
     }).get({
       success: res => {
-        if (res.data[0]) {
+        //如果数据库已有用户数据，则取用，否则插入新用户
+        if (res.data[0]) 
           this.globalData.user = res.data[0];
-        }
-        else {
+        else
           this.insertUser();
-        }
         //防止onLaunch在onLoad之后返回
-        if (this.queryUserCallback) {
-          this.queryUserCallback(res.data[0]);
-        }
-      }
-    })
-  },
-  //获取房源数据
-  queryHotels() {
-    db.collection('Hotel').get({
-      success: res => {
-        this.globalData.hotels = res.data;
-        //防止onLaunch在onLoad之后返回
-        if (this.queryHotelsCallback) {
-          this.queryHotelsCallback(res.data);
-        }
+        this.queryUserIndex && this.queryUserIndex(res.data[0]);
+        this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
+        this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
       }
     })
   },

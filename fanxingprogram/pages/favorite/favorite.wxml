@@ -1,0 +1,8 @@
+<view class='container'>
+  <!-- 小标题：我的收藏 -->
+  <subtitle icon='/icons/favorite.png' content='我的收藏' />
+  <!-- 我的收藏一览 -->
+  <view>
+    <hotelBanner wx:for='{{hotels}}' hotel='{{hotels[index]}}' wx:key='{{index}}' />
+  </view>
+</view>

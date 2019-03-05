@@ -6,27 +6,27 @@
   <open-data type='userNickName' class='name'></open-data> 
 </view>
 <view class='center'>
-  <button class='mineBtn'>
+  <button class='mineBtn' bindtap='favorite'>
     <image class='mineIcon' src='/icons/favorite.png'></image>
     <text class='mineText'>收藏</text>
   </button>
-  <button class='mineBtn'>
+  <button class='mineBtn' bindtap='checkinPeople'>
     <image class='mineIcon' src='/icons/person.png'></image>
     <text class='mineText'>入住人</text>
   </button>
-  <button class='mineBtn'>
+  <button class='mineBtn' bindtap='about'>
     <image class='mineIcon' src='/icons/about.png'></image>
     <text class='mineText'>关于</text>
   </button>
-  <button class='mineBtn'>
+  <button class='mineBtn' bindtap='service'>
     <image class='mineIcon' src='/icons/service.png'></image>
     <text class='mineText'>客服</text>
   </button>
-  <button class='mineBtn'>
+  <button class='mineBtn' bindtap='coupon'>
     <image class='mineIcon' src='/icons/coupon.png'></image>
     <text class='mineText'>优惠券</text>
   </button>
-  <button class='mineBtn'>
+  <button class='mineBtn' bindtap='manager'>
     <image class='mineIcon' src='/icons/manager.png'></image>
     <text class='mineText'>成为管家</text>
   </button>

@@ -1,0 +1,8 @@
+<view class='container'>
+  <!-- 小标题：入住人 -->
+  <subtitle icon='/icons/person.png' content='入住人' />
+  <!-- 入住人一览 -->
+  <view>
+    <checkinPeopleBanner wx:for='{{user.checkinPeople}}' checkinPeople='{{user.checkinPeople[index]}}' wx:key='{{index}}' wx:key='{{index}}' />
+  </view>
+</view>

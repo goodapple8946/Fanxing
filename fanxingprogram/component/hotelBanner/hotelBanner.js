@@ -8,7 +8,7 @@ Component({
     }
   },
   methods:{
-    //添加房源为收藏
+    //添加或删除收藏
     addFavorite() {
       var index = app.globalData.user.favorites.indexOf(this.properties.hotel._id);
       if(index == -1) {
@@ -36,11 +36,7 @@ Component({
         });
       }
       app.updateUserFavorites();
-    },
-    getFavorite(isFavorite) {
-      this.setData({
-        favorite: isFavorite
-      });
+      app.favoriteIconIndex();
     }
   }
 })

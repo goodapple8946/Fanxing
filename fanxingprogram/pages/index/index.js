@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 const app = getApp();
 
 Page({
@@ -25,7 +26,8 @@ Page({
       this.favoriteIcon();
     }
     else {
-      app.queryUserCallback = x => {
+      //防止onLaunch在onLoad之后返回
+      app.queryUserIndex = x => {
         this.setData({
           user: x
         });
@@ -33,22 +35,22 @@ Page({
       }
     }
     //房源数据
-    if (app.globalData.hotels) {
-      this.setData({
-        hotels: app.globalData.hotels
-      });
-      this.favoriteIcon();
-    }
-    else {
-      app.queryHotelsCallback = x => {
+    db.collection('Hotel').where({
+      recommand: true
+    }).get({
+      success: res => {
         this.setData({
-          hotels: x
-        });
+          hotels: res.data
+        })
         this.favoriteIcon();
       }
+    })
+    //收藏图标app调用
+    app.favoriteIconIndex = () => {
+      this.favoriteIcon();
     }
   },
-  //初始化收藏图标
+  //收藏图标
   favoriteIcon() {
     if (this.data.user && this.data.hotels) {
       var hotels = this.data.hotels;
@@ -70,14 +72,14 @@ Page({
   //选择入住时间
   selectCheckinDate(e) {
     this.setCheckinDate(e.detail.value);
-    if (app.globalData.search.checkinDate > app.globalData.search.checkoutDate)
-      this.setCheckoutDate(e.detail.value);
+    //离开时间修正
+    app.globalData.search.checkinDate > app.globalData.search.checkoutDate && this.setCheckoutDate(e.detail.value);
   },
   //选择离开时间
   selectCheckoutDate(e) {
     this.setCheckoutDate(e.detail.value);
-    if (app.globalData.search.checkinDate > app.globalData.search.checkoutDate)
-      this.setCheckinDate(e.detail.value);
+    //入住时间修正
+    app.globalData.search.checkinDate > app.globalData.search.checkoutDate && this.setCheckinDate(e.detail.value);
   },
   //选择人数
   selectPeopleNum(e) {
@@ -88,7 +90,7 @@ Page({
   },
   //搜索
   search() {
-    
+    //TODO...
   },
   //设置入住时间
   setCheckinDate(date) {
@@ -106,6 +108,7 @@ Page({
   }
 })
 
+//日期转字符串
 function dateToString(x) {
   var y = x.getFullYear();
   var m = x.getMonth() + 1;
@@ -115,6 +118,7 @@ function dateToString(x) {
   return y + '-' + m + '-' + d;
 };
 
+//字符串转日期
 function stringToDate(x) {
   var y = x.split('-');
   return new Date(y[0], y[1], y[2]);

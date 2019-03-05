@@ -3,7 +3,6 @@
 }
 .searchTableOutside {
   position: absolute;
-  border: 1px solid white;
   box-shadow: 1px 1px 1px 1px grey;
   top: 350rpx;
   left: 50rpx;

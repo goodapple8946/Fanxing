@@ -1,4 +1,4 @@
 <view class='subtitle'>
   <image class='subtitleIcon' src='{{icon}}'></image>
-  <text class='subtitleText' >{{content}}</text>
+  <text class='subtitleText' decode='true' >&nbsp;{{content}}</text>
 </view>

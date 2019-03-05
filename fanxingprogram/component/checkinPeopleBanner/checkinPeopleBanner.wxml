@@ -1,0 +1,10 @@
+<view class='border'>
+  <button bindtap='edit' class='edit'>
+    <image src='/icons/edit.png' class='icon'></image>
+  </button>
+  <button bindtap='remove' class='remove'>
+    <image src='/icons/remove.png' class='icon'></image>
+  </button>
+  <view class='name'>{{checkinPeople.name}}</view>
+  <view class='idCardNo'>身份证：{{checkinPeople.idCardNo}}</view>
+</view>

@@ -1,0 +1,42 @@
+.border {
+  display: inline-block;
+  position: relative;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  width: 650rpx;
+  height: 150rpx;
+  box-shadow: 1px 1px 1px 1px grey;
+  background: white;
+}
+.name {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+}
+.idCardNo {
+  margin-left: 25rpx;
+  font-size: 0.75rem;
+  color: grey;
+}
+.edit {
+  height: 75rpx;
+  width: 75rpx;
+  background-color: white;
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+}
+.remove {
+  height: 75rpx;
+  width: 75rpx;
+  background-color: white;
+  position: absolute;
+  right: 0rpx;
+  top: 75rpx;
+}
+.icon {
+  height: 55rpx;
+  width: 55rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+}
