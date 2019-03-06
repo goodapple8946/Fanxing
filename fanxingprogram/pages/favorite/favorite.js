@@ -23,7 +23,6 @@ Page({
         this.favoriteHotels();
       }
     }
-    
   },
   //用户收藏的房源数据
   favoriteHotels() {

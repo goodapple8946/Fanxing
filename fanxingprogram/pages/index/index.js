@@ -36,7 +36,7 @@ Page({
     }
     //房源数据
     db.collection('Hotel').where({
-      recommand: true
+      recommend: true
     }).get({
       success: res => {
         this.setData({

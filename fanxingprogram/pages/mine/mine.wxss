@@ -66,3 +66,17 @@
   width: 650rpx;
   height: 30rpx;
 }
+.secretBtn {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  background-color: white;
+}
+.secretIcon {
+  width: 55rpx;
+  height: 55rpx;
+}
+.secretText {
+  margin-left: 25rpx;
+  font-size: 0.8rem;
+}

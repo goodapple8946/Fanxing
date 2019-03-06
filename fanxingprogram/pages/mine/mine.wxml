@@ -14,6 +14,10 @@
     <image class='mineIcon' src='/icons/person.png'></image>
     <text class='mineText'>入住人</text>
   </button>
+  <button class='mineBtn' bindtap='manager'>
+    <image class='mineIcon' src='/icons/manager.png'></image>
+    <text class='mineText'>成为管家</text>
+  </button>
   <button class='mineBtn' bindtap='about'>
     <image class='mineIcon' src='/icons/about.png'></image>
     <text class='mineText'>关于</text>
@@ -22,12 +26,12 @@
     <image class='mineIcon' src='/icons/service.png'></image>
     <text class='mineText'>客服</text>
   </button>
-  <button class='mineBtn' bindtap='coupon'>
-    <image class='mineIcon' src='/icons/coupon.png'></image>
-    <text class='mineText'>优惠券</text>
+  <button class='mineBtn' bindtap='feedback'>
+    <image class='mineIcon' src='/icons/feedback.png'></image>
+    <text class='mineText'>意见反馈</text>
   </button>
-  <button class='mineBtn' bindtap='manager'>
-    <image class='mineIcon' src='/icons/manager.png'></image>
-    <text class='mineText'>成为管家</text>
+  <button wx:if="{{secret}}" class='secretBtn' bindtap='secret'>
+      <image src='/icons/secret.png' class='secretIcon' />
+      <text class='secretText'>后台管理</text>
   </button>
 </view>

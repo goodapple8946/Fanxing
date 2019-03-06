@@ -1,0 +1,8 @@
+.container {
+  margin-top: 25rpx;
+}
+.body {
+  margin-top: 25rpx;
+  margin-left: 50rpx;
+  font-size: 0.8rem;
+}

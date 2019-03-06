@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/message/message",
     "pages/order/order",
     "pages/mine/mine",
     "pages/favorite/favorite",
-    "pages/checkinPeople/checkinPeople"
+    "pages/checkinPeople/checkinPeople",
+    "pages/about/about",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,12 +21,6 @@
         "iconPath": "icons/index_black.png",
         "selectedIconPath": "icons/index_blue.png",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/message/message",
-        "iconPath": "icons/message_black.png",
-        "selectedIconPath": "icons/message_blue.png",
-        "text": "消息"
       },
       {
         "pagePath": "pages/order/order",

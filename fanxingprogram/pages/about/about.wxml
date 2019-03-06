@@ -1,0 +1,8 @@
+<view class='container'>
+  <!-- 小标题：关于繁星民宿 -->
+  <subtitle icon='/icons/about.png' content='关于繁星民宿' />
+  <!-- 内容 -->
+  <view class='body'>
+    <text>{{about}}</text>
+  </view>
+</view>

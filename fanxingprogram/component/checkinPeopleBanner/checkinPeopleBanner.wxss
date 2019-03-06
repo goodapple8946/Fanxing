@@ -30,8 +30,8 @@
   width: 75rpx;
   background-color: white;
   position: absolute;
-  right: 0rpx;
-  top: 75rpx;
+  right: 25rpx;
+  top: 37.5rpx;
 }
 .icon {
   height: 55rpx;

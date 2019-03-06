@@ -39,22 +39,22 @@ App({
         this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
         this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
       }
-    })
+    });
   },
-  //更新用户收藏
-  updateUserFavorites() {
-    db.collection("User").doc('userData').update({
+  //更新数据库用户数据
+  updateUser() {
+    db.collection("User").doc(this.globalData.user._id).update({
       data: {
-        favorites: this.globalData.user.favorites
+        favorites: this.globalData.user.favorites,
+        checkinPeople: this.globalData.user.checkinPeople
       }
-    })
-    console.log('update User');
+    });
+    console.log('update User Data');
   },
   //新增用户数据
   insertUser() {
     db.collection('User').add({
       data: {
-        _id: 'userData',
         favorites: [],
         orders: [],
         checkinPeople: [],
@@ -62,7 +62,8 @@ App({
       },
       success: res => {
       }
-    })
+    });
     console.log('insert User');
+    this.queryUser();
   }
 })

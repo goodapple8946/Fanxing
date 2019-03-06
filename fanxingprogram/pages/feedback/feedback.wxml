@@ -1,0 +1,13 @@
+<view class='container'>
+  <!-- 小标题：意见反馈 -->
+  <subtitle icon='/icons/feedback.png' content='意见反馈' />
+  <!-- 意见反馈填写栏 -->
+  <view class='feedbackOutside'>
+    <view class='feedbackInside'>
+      <form bindsubmit="submit">
+        <textarea placeholder="在此填写意见反馈" name="textarea" maxlength='240' class='textarea' show-confirm-bar='false' />
+        <button form-type="submit" class='btn'>提交</button>
+      </form>
+    </view>
+  </view>
+</view>

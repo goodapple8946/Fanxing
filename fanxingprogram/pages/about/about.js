@@ -1,11 +1,6 @@
-// pages/deployFunctions/deployFunctions.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    about:'    文字内容'
   },
 
   /**

@@ -1,7 +1,9 @@
 <view class='border'>
+  <!-- 
   <button bindtap='edit' class='edit'>
     <image src='/icons/edit.png' class='icon'></image>
   </button>
+   -->
   <button bindtap='remove' class='remove'>
     <image src='/icons/remove.png' class='icon'></image>
   </button>
