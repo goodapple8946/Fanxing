@@ -6,12 +6,15 @@ App({
     openid: '',
     userInfo: null,
     search: {
-      cityID: 0,
-      checkinDate: new Date(2019, 1, 1),
-      checkoutDate: new Date(2099, 12, 31),
+      city: '请选择城市',
+      checkinDate: null,
+      checkoutDate: null,
       peopleNum: 0,
+      bedroomNum: 0,
+      livingroomNum: 0
     },
-    user: null
+    user: null,
+    cities: null
   },
   onLaunch() {
     //获取用户openid
@@ -22,6 +25,7 @@ App({
       }
     });
     this.queryUser();
+    this.queryCity();
   },
   //获取用户数据
   queryUser() {
@@ -38,6 +42,20 @@ App({
         this.queryUserIndex && this.queryUserIndex(res.data[0]);
         this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
         this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
+        this.queryUserSearch && this.queryUserSearch(res.data[0]);
+      }
+    });
+  },
+  //获取城市数据
+  queryCity() {
+    db.collection('City').get({
+      success: res => {
+        this.globalData.cities = [];
+        for (var i = 0; i < res.data.length; i++)
+          this.globalData.cities.push(res.data[i].name);
+        //防止onLaunch在onLoad之后返回
+        this.queryCityIndex && this.queryCityIndex(this.globalData.cities);
+        this.queryCitySearch && this.queryCitySearch(this.globalData.cities);
       }
     });
   },

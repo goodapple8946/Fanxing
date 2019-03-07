@@ -1,7 +1,9 @@
 <view class='container'>
-  <!-- 小标题：我的收藏 -->
-  <subtitle icon='/icons/favorite.png' content='我的收藏' />
-  <!-- 我的收藏一览 -->
+  <!-- 小标题：房源查询 -->
+  <view>
+    <subtitle icon='/icons/house.png' content='房源查询' />
+  </view>
+  <!-- 房源查询一览 -->
   <view>
     <hotelBanner wx:for='{{hotels}}' hotel='{{hotels[index]}}' wx:key='{{index}}' />
     <nothing wx:if='{{hotels.length == 0}}' />

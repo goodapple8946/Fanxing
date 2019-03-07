@@ -1,10 +1,12 @@
+const db = wx.cloud.database();
 const app = getApp();
 
 Page({
   data: {
     user: null,
     secret: false,
-    phoneNumber: '400-000-0000'
+    phoneNumber: '400-000-0000',
+    admins: null
   },
   onLoad() {
     //用户数据
@@ -12,6 +14,7 @@ Page({
       this.setData({
         user: app.globalData.user
       });
+      this.showSecret();
     }
     else {
       //防止onLaunch在onLoad之后返回
@@ -19,29 +22,38 @@ Page({
         this.setData({
           user: x
         });
+        this.showSecret();
       }
     }
-    //显示后台按钮
-    if (this.data.user._openid == 'o-Fo75ExkiEQEudSEd0m4bN0_8R0')
-      this.setData({
-        secret: true
-      });
+    //获取管理员列表
+    db.collection('Administrator').get({
+      success: res => {
+        this.data.admins = [];
+        for (var i = 0; i < res.data.length; i++)
+          this.data.admins.push(res.data[i].admin);
+        this.showSecret();
+      }
+    });
   },
+  //收藏
   favorite() {
     wx.navigateTo({
       url: '/pages/favorite/favorite'
     });
   },
+  //入住人
   checkinPeople() {
     wx.navigateTo({
       url: '/pages/checkinPeople/checkinPeople'
     });
   },
+  //关于
   about() {
     wx.navigateTo({
       url: '/pages/about/about'
     });
   },
+  //客服
   service() {
     wx.showModal({
       title: '客服热线',
@@ -56,15 +68,27 @@ Page({
       }
     });
   },
+  //意见反馈
   feedback() {
     wx.navigateTo({
       url: '/pages/feedback/feedback'
     });
   },
-  manager() {
-    
+  //成为管家
+  manager(e) {
+    wx.navigateTo({
+      url: '/pages/manager/manager'
+    });
   },
+  //后台管理
   secret() {
     
+  },
+  //显示后台按钮
+  showSecret() {
+    if (this.data.user && this.data.admins && this.data.admins.indexOf(this.data.user._openid) != -1)
+      this.setData({
+        secret: true
+      });
   }
 })
