@@ -120,7 +120,7 @@ Page({
     app.globalData.search.city = '请选择城市';
     app.globalData.search.checkinDate = null;
     app.globalData.search.checkoutDate = null;
-    app.globalData.search.peopleNumIndex = 0;
+    app.globalData.search.peopleNum = 0;
     wx.navigateTo({
       url: '/pages/search/search',
     });

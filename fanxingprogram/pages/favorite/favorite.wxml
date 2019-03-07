@@ -4,6 +4,6 @@
   <!-- 我的收藏一览 -->
   <view>
     <hotelBanner wx:for='{{hotels}}' hotel='{{hotels[index]}}' wx:key='{{index}}' />
-    <nothing wx:if='{{hotels.length == 0}}' />
+    <nothing wx:if='{{hotels.length == 0}}' content='无收藏' />
   </view>
 </view>
