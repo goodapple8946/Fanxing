@@ -11,6 +11,6 @@
   </view>
   <view class='info'>
     <text class='name'>{{hotel.name}}\n</text>
-    <text class='description'>{{hotel.description}}\n</text>
+    <text class='description'>{{hotel.bedroomNum + '室' + hotel.livingroomNum + '厅/宜住' + hotel.peopleNum + '人/' + hotel.type + ' · ' + hotel.location}}\n</text>
   </view>
 </view>

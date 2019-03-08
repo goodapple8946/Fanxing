@@ -5,7 +5,7 @@
   </view>
   <!-- 房源查询一览 -->
   <view>
-    <hotelBanner wx:for='{{hotels}}' hotel='{{hotels[index]}}' wx:key='{{index}}' />
+    <hotelBanner wx:for='{{showHotels}}' hotel='{{showHotels[index]}}' wx:key='{{index}}' />
     <nothing wx:if='{{hotels.length == 0}}' content='无结果' />
   </view>
 </view>

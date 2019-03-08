@@ -4,9 +4,15 @@ const app = getApp();
 Page({
   data: {
     user: null,
-    hotels: null
+    hotels: null,
+    showHotels: null,
+    showNum: 0
   },
   onLoad() {
+    //清空
+    this.setData({
+      showNum: 0
+    });
     //用户数据
     if (app.globalData.user) {
       this.setData({
@@ -41,9 +47,7 @@ Page({
   },
   doSearch() {
     //房源数据
-    db.collection('Hotel').where({
-      recommend: true
-    }).get({
+    db.collection('Hotel').get({
       success: res => {
         var results = res.data;
         var hotels = this.data.hotels;
@@ -62,28 +66,53 @@ Page({
               app.globalData.search.bedroomNum == results[i].bedroomNum)
           ) {
             hotels.push(results[i]);
-            this.setData({
-              hotels
-            })
           }
         }
         this.setData({
           hotels
         });
+        this.showMoreHotels();
         this.favoriteIcon();
       }
     });
   },
   //收藏图标
   favoriteIcon() {
-    if (this.data.user && this.data.hotels) {
-      var hotels = this.data.hotels;
-      for (var i = 0; i < hotels.length; i++) {
-        hotels[i].favorite = this.data.user.favorites.indexOf(hotels[i]._id) != -1;
+    if (this.data.user && this.data.showHotels) {
+      var showHotels = this.data.showHotels;
+      for (var i = 0; i < showHotels.length; i++) {
+        showHotels[i].favorite = this.data.user.favorites.indexOf(showHotels[i]._id) != -1;
       }
       this.setData({
-        hotels
+        showHotels
       });
     }
   },
+  //拉至底部刷新
+  onReachBottom() {
+    wx.showToast({
+      title: '正在加载',
+      icon: 'loading',
+      duration: 10000,
+      mask: true
+    })
+    this.showMoreHotels();
+  },
+  //显示更多房源
+  showMoreHotels() {
+    this.data.showNum = Math.min(this.data.showNum + 2, this.data.hotels.length);
+    this.freshHotels();
+    this.favoriteIcon();
+  },
+  //刷新显示房源
+  freshHotels() {
+    var showHotels = this.data.showHotels;
+    showHotels = [];
+    for (var i = 0; i < this.data.showNum; i++)
+      showHotels.push(this.data.hotels[i]);
+    this.setData({
+      showHotels
+    });
+    wx.hideToast();
+  }
 })
