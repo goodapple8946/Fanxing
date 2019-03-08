@@ -1,5 +1,4 @@
 <view class='top'>
-
   <open-data type='userAvatarUrl' class='avatar'></open-data>
   <view class='avatarBorderOutside'></view>
   <view class='avatarBorderInside'></view>

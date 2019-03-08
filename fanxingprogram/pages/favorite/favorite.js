@@ -4,7 +4,7 @@ const app = getApp();
 Page({
   data: {
     user: null,
-    hotels: []
+    hotels: null
   },
   onLoad() {
     //用户数据
@@ -28,6 +28,7 @@ Page({
   favoriteHotels() {
     var user = this.data.user;
     var hotels = this.data.hotels;
+    hotels = [];
     if (user) {
       for (var i = 0; i < user.favorites.length; i++) {
         db.collection('Hotel').where({
@@ -42,6 +43,9 @@ Page({
           }
         })
       }
+      this.setData({
+        hotels
+      })
     }
   }
 })

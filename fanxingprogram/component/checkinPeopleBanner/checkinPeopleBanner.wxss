@@ -7,6 +7,7 @@
   height: 150rpx;
   box-shadow: 1px 1px 1px 1px grey;
   background: white;
+  border-radius: 15rpx;
 }
 .name {
   margin-left: 25rpx;

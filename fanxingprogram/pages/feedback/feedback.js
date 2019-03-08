@@ -3,34 +3,22 @@ const app = getApp();
 
 Page({
   data: {
-    user: null
+    minlength: 10
   },
   onLoad() {
-    //用户数据
-    if (app.globalData.user) {
-      this.setData({
-        user: app.globalData.user
-      });
-    }
-    else {
-      //防止onLaunch在onLoad之后返回
-      app.queryUserFavorite = x => {
-        this.setData({
-          user: x
-        });
-      }
-    }
+    
   },
   submit(e) {
     var inputContent = e.detail.value.textarea;
-    if (inputContent.length == 0) {
+    if (inputContent.length < this.data.minlength) {
       wx.showToast({
-        title: '请输入意见反馈',
+        title: '请输入不少于' + this.data.minlength + '个字的意见反馈',
         icon: 'none',
       })
     } else {
       db.collection('Feedback').add({
         data: {
+          time: dateTimeToString(new Date()),
           content: inputContent
         },
         success: res => {
@@ -47,3 +35,16 @@ Page({
     }
   }
 })
+
+//日期时间转字符串
+function dateTimeToString(x) {
+  var year = x.getFullYear();
+  var month = x.getMonth() + 1;
+  var date = x.getDate();
+  var hour = x.getHours();
+  var minute = x.getMinutes();
+  var second = x.getSeconds();
+  month = month < 10 ? '0' + month : month;
+  date = date < 10 ? ('0' + date) : date;
+  return year + '-' + month + '-' + date + ' ' + hour + ':' + minute + ':' + second;
+};

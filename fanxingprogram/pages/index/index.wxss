@@ -8,6 +8,7 @@
   left: 50rpx;
   width: 650rpx;
   background-color: white;
+  border-radius: 15rpx;
 }
 .searchTableInside {
   margin-top: 25rpx;
@@ -49,4 +50,15 @@
   width: 580rpx;
   height: 1px;
   background: lightgray;
+}
+.moreHotel {
+  position: relative;
+}
+.moreHotelBtn {
+  position: absolute;
+  top: 0;
+  right: 50rpx;
+  background-color: white;
+  color: grey;
+  font-size: 0.8rem;
 }

@@ -1,0 +1,11 @@
+<view class='container'>
+  <!-- 小标题：房源查询 -->
+  <view>
+    <subtitle icon='/icons/house.png' content='房源查询' />
+  </view>
+  <!-- 房源查询一览 -->
+  <view>
+    <hotelBanner wx:for='{{showHotels}}' hotel='{{showHotels[index]}}' wx:key='{{index}}' />
+    <nothing wx:if='{{hotels.length == 0}}' content='无结果' />
+  </view>
+</view>
