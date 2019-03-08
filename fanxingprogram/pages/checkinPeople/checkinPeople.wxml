@@ -9,8 +9,8 @@
       <text class='addText'>添加新的入住人</text>
     </button>
     <view class='{{input}}'>
-      <input class='name' type='text' placeholder='请输入姓名' maxlength='10' bindinput='inputName' value='{{name}}'/>
-      <input class='idCardNo' type='idCard' placeholder='请输入身份证' maxlength='18' bindinput='inputIdCardNo' value='{{idCardNo}}'/>
+      <input class='name' type='text' placeholder='请输入姓名' maxlength='10' bindinput='inputName' value='{{name}}' />
+      <input class='idCardNo' type='idCard' placeholder='请输入身份证' maxlength='18' bindinput='inputIdCardNo' value='{{idCardNo}}' />
       <button bindtap='newCheckinPeopleYes' class='yes'>
         <image src='/icons/yes.png' class='icon'></image>
       </button>

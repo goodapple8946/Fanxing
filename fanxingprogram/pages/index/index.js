@@ -9,6 +9,7 @@ Page({
       'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_1.jpg',
       'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_2.jpg'
       ],
+    //筛选相关
     cityID: 0,
     cities: null,
     checkinDate: '请选择入住时间',
@@ -81,6 +82,7 @@ Page({
     this.setData({
       cityID: e.detail.value
     });
+    app.globalData.search.cityID = this.data.cityID;
     app.globalData.search.city = this.data.cities[e.detail.value];
   },
   //选择入住时间
@@ -95,7 +97,7 @@ Page({
     //入住时间修正
     app.globalData.search.checkinDate > app.globalData.search.checkoutDate && this.setCheckinDate(e.detail.value);
   },
-  //选择人数
+  //选择入住人数
   selectPeopleNum(e) {
     this.setData({
       peopleNumIndex: e.detail.value

@@ -6,12 +6,12 @@ App({
     openid: '',
     userInfo: null,
     search: {
+      cityID: 0,
       city: '请选择城市',
       checkinDate: null,
       checkoutDate: null,
       peopleNum: 0,
-      bedroomNum: 0,
-      livingroomNum: 0
+      type: 0
     },
     user: null,
     cities: null

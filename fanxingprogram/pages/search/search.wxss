@@ -1,3 +1,51 @@
 .container {
   margin-top: 25rpx;
 }
+.conditionBorder {
+  display: inline-block;
+  background-color: white;
+}
+.condition {
+  display: inline-block;
+  width: 250rpx;
+  height: 100rpx;
+  text-align: center;
+}
+.conditionTitle {
+  font-size: 0.8rem;
+}
+.conditionContent {
+  font-size: 0.75rem;
+  color: grey;
+}
+.searchBorder {
+  display: inline-block;
+  margin-left: 50rpx;
+  widows: 650rpx;
+}
+.searchIcon {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}
+.searchInput {
+  display: inline-block;
+  margin-left: 25rpx;
+  font-size: 0.8rem;
+  width: 420rpx;
+}
+.searchBtn {
+  display: inline-block;
+  margin-left: 25rpx;
+  font-size: 0.75rem;
+  width: 120rpx;
+  background-color: #00a0e9;
+  color: white;
+}
+.divLine {
+  margin-left: 60rpx;
+  margin-bottom: 25rpx;
+  width: 630rpx;
+  height: 1px;
+  background: lightgray;
+}

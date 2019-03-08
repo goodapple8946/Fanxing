@@ -34,9 +34,8 @@
       <button bindtap='search' class='btnSearch'>搜索</button>
     </view>
   </view>
-  <!-- 时间选择器 -->
-  <datePicker class='datePicker' isShow='{{isShowDatePicker}}' />
 </view>
+<!--  -->
 <!-- 小标题：推荐房源 -->
 <view class='moreHotel'>
   <subtitle icon='/icons/rcmd_house.png' content='推荐房源' />
