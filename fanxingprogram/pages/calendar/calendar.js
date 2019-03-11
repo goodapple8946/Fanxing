@@ -6,20 +6,24 @@ Page({
      * 页面的初始数据
      */
     data: {
-        currentDate: String
+        currentDate: String,
+        selectedDate1: String,
+        selectedDate2: String
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // 调用函数时，传入new Date()参数，返回值是日期和时间  
+        console.log(this.selectComponent("#test"));
+        // 获取日期存入缓存
         var currentDate = util.formatTime(new Date());
-        //var time = util.dateUtil.getDetail(currentTime);
-        // 再通过setData更改Page()里面的data，动态更新页面的数据  
+        wx.setStorageSync("date", currentDate);
         this.setData({
-            currentDate: currentDate
-        });  
+            currentDate: wx.getStorageSync("date"),
+            selectedDate1: "选择日期",
+            selectedDate2: "选择日期"
+        })
     },
 
     /**
@@ -71,7 +75,7 @@ Page({
 
     },
 
-    okEvent: function(e){
-        console.log(e)
+    onMyEvent: function(){
+        console.log("2333")
     }
 })

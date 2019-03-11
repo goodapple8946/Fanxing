@@ -7,7 +7,7 @@
 <view class="container">
     <view class="monthchoser">
         <image src='/icons/index_black.png' style='float:left; width:80rpx; height:80rpx' bindtap='lastMonth'></image>
-        <text>{{currentDate}}</text>
+        {{calendarDate[0]}}年{{calendarDate[1]}}月
         <image src='/icons/index_blue.png' style='float:right; width:80rpx; height:80rpx' bindtap='nextMonth'></image>
     </view> 
     <view class="datebar">
@@ -18,8 +18,8 @@
         </block>
     </view> 
     <view class="datearea">
-        <block wx:for="{{monthDayArr}}" wx:for-index="idx" wx:for-item="itemName" bindtap='onDayTap' class="dateblock">
-            <view class="dateblock">
+        <block wx:for="{{monthDayArr}}" wx:for-index="idx" wx:for-item="itemName" class="dateblock">
+            <view class="dateblock"  bindtap='onTap'>
                 <text>{{itemName}}</text>
             </view>
         </block>

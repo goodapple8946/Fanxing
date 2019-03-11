@@ -3,10 +3,6 @@ const formatTime = date => {
   const month = date.getMonth() + 1
   const day = date.getDate()
   const dayarr = date.getDay()
-//   const hour = date.getHours()
-//   const minute = date.getMinutes()
-//   const second = date.getSeconds()
-
   return [year, month, day, dayarr]
   //.map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
@@ -70,17 +66,13 @@ let dateUtil = {
   },
 
   //获取前一个月
-  preMonth: function(d) {
-    if(typeof d === 'string') d = new Date(d);
-    else d = new Date();
-    let date = new Date(d.getFullYear(), d.getMonth() - 1)
+    preMonth: function (y, m) {
+    let date = new Date(y, m - 1)
     return date;
   },
 
-  nextMonth: function (d) {
-    if(typeof d === 'string') d = new Date(d);
-    else d = new Date();
-    let date = new Date(d.getFullYear(), d.getMonth() + 1)
+  nextMonth: function (y, m) {
+    let date = new Date(y, m + 1)
     return date;
   },
 

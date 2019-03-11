@@ -4,13 +4,13 @@
   <view class='conditionBorder'>
     <view class='condition1'>
       <view class='conditionContent'>入住时间</view>
-      <view class='conditionTitle'>{{currentDate}}</view>
+      <view class='conditionTitle'>{{selectedDate1}}</view>
     </view>
     <view class='condition2'>
       <view class='conditionContent'>离开时间</view>
-      <view class='conditionTitle'>选择日期</view>
+      <view class='conditionTitle'>{{selectedDate2}}</view>
     </view>
   </view>
 </view>
-<calendar currentDate="{{currentDate}}">
+<calendar id="test" bindmyevent="onMyEvent">
 </calendar>
