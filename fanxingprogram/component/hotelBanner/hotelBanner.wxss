@@ -17,6 +17,15 @@
 .name {
   font-size: 1rem;
 }
+.avatar {
+  position: absolute;
+  top: 446rpx;
+  right: 25rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+  border: 2rpx solid white;
+}
 .description {
   font-size: 0.8rem;
   color: #555;

@@ -16,10 +16,21 @@ App({
     hotelDetail: {
       hotel: null
     },
+    managerDetail: {
+      manager: null
+    },
     user: null,
     cities: null
   },
   onLaunch() {
+    //获取UserInfo
+    wx.getUserInfo({
+      success: res => {
+        this.globalData.userInfo = res.userInfo;
+        //防止onLaunch在onLoad之后返回
+        this.queryUserInfoMine && this.queryUserInfoMine(res.userInfo);
+      }
+    });
     //获取用户openid
     wx.cloud.callFunction({
       name: 'login',
@@ -43,6 +54,7 @@ App({
           this.insertUser();
         //防止onLaunch在onLoad之后返回
         this.queryUserIndex && this.queryUserIndex(res.data[0]);
+        this.queryUserMine && this.queryUserMine(res.data[0]);
         this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
         this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
         this.queryUserSearch && this.queryUserSearch(res.data[0]);
@@ -76,10 +88,12 @@ App({
   insertUser() {
     db.collection('User').add({
       data: {
+        hotels: [],
         favorites: [],
         orders: [],
         checkinPeople: [],
-        coupons: []
+        coupons: [],
+        role: 'user'
       },
       success: res => {
       }
