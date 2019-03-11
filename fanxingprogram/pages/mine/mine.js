@@ -4,11 +4,26 @@ const app = getApp();
 Page({
   data: {
     user: null,
+    userInfo: null,
     secret: false,
     phoneNumber: '400-000-0000',
     admins: null
   },
   onLoad() {
+    //User Info
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
+    }
+    else {
+      //防止onLaunch在onLoad之后返回
+      app.queryUserInfoMine = x => {
+        this.setData({
+          userInfo: x
+        });
+      }
+    }
     //用户数据
     if (app.globalData.user) {
       this.setData({
@@ -18,22 +33,13 @@ Page({
     }
     else {
       //防止onLaunch在onLoad之后返回
-      app.queryUserIndex = x => {
+      app.queryUserMine = x => {
         this.setData({
           user: x
         });
         this.showSecret();
       }
     }
-    //获取管理员列表
-    db.collection('Administrator').get({
-      success: res => {
-        this.data.admins = [];
-        for (var i = 0; i < res.data.length; i++)
-          this.data.admins.push(res.data[i].admin);
-        this.showSecret();
-      }
-    });
   },
   //收藏
   favorite() {
@@ -86,7 +92,7 @@ Page({
   },
   //显示后台按钮
   showSecret() {
-    if (this.data.user && this.data.admins && this.data.admins.indexOf(this.data.user._openid) != -1)
+    if (this.data.user.role == 'administrator')
       this.setData({
         secret: true
       });

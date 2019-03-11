@@ -124,6 +124,7 @@ Page({
       checkoutDate: '请选择离开时间',
       peopleNumIndex: 0
     });
+    app.globalData.search.cityID = 0;
     app.globalData.search.city = '请选择城市';
     app.globalData.search.checkinDate = null;
     app.globalData.search.checkoutDate = null;

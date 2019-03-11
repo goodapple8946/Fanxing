@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 const app = getApp();
 
 Component({
@@ -51,6 +52,19 @@ Component({
       app.globalData.hotelDetail.hotel = this.properties.hotel;
       wx.navigateTo({
         url: '/pages/hotelDetail/hotelDetail'
+      });
+    },
+    //管家详情
+    managerDetail() {
+      db.collection('User').where({
+        _openid: this.properties.hotel._openid
+      }).get({
+        success: res => {
+          app.globalData.managerDetail.manager = res.data[0];
+          wx.navigateTo({
+            url: '/pages/managerDetail/managerDetail'
+          })
+        }
       });
     }
   }
