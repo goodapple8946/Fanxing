@@ -1,0 +1,50 @@
+/* component/calendar/calendar.wxss */
+.container {
+    border-style: solid;
+    width: 750rpx;
+    height:770rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+}
+.monthchoser{
+    width: 700rpx;
+    height: 100rpx;
+    border-style: solid;
+    border-color: blue;
+}
+.datebar{
+    width: 700rpx;
+    height: 50rpx;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.datearea{
+    /* margin-top: 20rpx; */
+    width: 700rpx;
+    height:600rpx;
+    background-color:aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.dateblock{
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.datebarblock{
+    width: 100rpx;
+    height: 50rpx;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}

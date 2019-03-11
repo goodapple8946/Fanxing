@@ -1,0 +1,16 @@
+<!--fanxingprogram/pages/calendar/calendar.wxml-->
+<view class='container'>
+  <!-- 筛选条件 -->
+  <view class='conditionBorder'>
+    <view class='condition1'>
+      <view class='conditionContent'>入住时间</view>
+      <view class='conditionTitle'>{{currentDate}}</view>
+    </view>
+    <view class='condition2'>
+      <view class='conditionContent'>离开时间</view>
+      <view class='conditionTitle'>选择日期</view>
+    </view>
+  </view>
+</view>
+<calendar currentDate="{{currentDate}}">
+</calendar>

@@ -16,6 +16,7 @@ Page({
     checkoutDate: '请选择离开时间',
     peopleNumIndex: 0,
     peopleNums: ['请选择入住人数', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'],
+
     today: dateToString(new Date())
   },
   onLoad() {
@@ -141,6 +142,11 @@ Page({
       checkoutDate: date
     });
     app.globalData.search.checkoutDate = stringToDate(date);
+  },
+  jumpToCalendar(){
+      wx.navigateTo({
+          url: '/pages/calendar/calendar',
+      });
   }
 })
 
