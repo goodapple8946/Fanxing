@@ -2,6 +2,8 @@
   <!-- 图片 -->
   <view class='pictureBorder'>
     <image class='picture' src='{{hotel.picture}}' />
+    <priceLabel class='price' price='{{hotel.price}}' />
+    <favoriteLabel class='favorite' favorite='{{hotel.favorite}}' bindtap='addFavorite' />
   </view>
   <!-- 名称 -->
   <view class='name'>
@@ -38,6 +40,19 @@
   </view>
   <!-- 分割线 -->
   <view class='divLine' />
+  <!-- 小标题：配套设施 -->
+  <view class='subtitle'>
+    <text>配套设施</text>
+  </view>
+  <!-- 配套设施 -->
+  <view class='facilityBorder'>
+    <view wx:for='{{hotel.facilities}}' wx:key='{{index}}' class='facility'>
+      <image src='/icons/facility/{{hotel.facilities[index]}}.png' class='facilityIcon' />
+      <view class='facilityText'>{{hotel.facilities[index]}}</view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
   <!-- 小标题：房源位置 -->
   <view class='subtitle'>
     <text>房源位置</text>
@@ -46,15 +61,55 @@
   <map class='map' longitude='{{hotel.geopoint.longitude}}' latitude='{{hotel.geopoint.latitude}}' markers='{{markers}}' />
   <!-- 分割线 -->
   <view class='divLine' />
-  <!-- 小标题：房源位置 -->
+  <!-- 小标题：房客评价 -->
   <view class='subtitle'>
     <text>房客评价</text>
   </view>
-  <!-- 小标题：房客评价 -->
+  <!-- 房客评价 -->
   <view class='description'>
     <text wx:if='{{hotel.ratedNum > 0}}'>评分：{{hotel.rated}}/5，评价次数：{{hotel.ratedNum}}</text>
     <text wx:else>暂无</text>
   </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：可租日期 -->
+  <view class='subtitle'>
+    <text>可租日期</text>
+  </view>
+  <!-- 可租日期 -->
+  
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：入住须知 -->
+  <view class='subtitle'>
+    <text>入住须知</text>
+  </view>
+  <!-- 入住须知 -->
+  <view class='description'>
+    <view>入住时间：{{hotel.checkinTime}}</view>
+    <view>退房时间：{{hotel.checkoutTime}}</view>
+    <view>接待时间：{{hotel.receiveTime}}</view>
+    <view>入住押金：{{hotel.deposit}}</view>
+    <view>房屋守则：
+      <text wx:for='{{hotel.rules}}' wx:key='{{index}}'>{{hotel.rules[index]}}<text wx:if='{{hotel.rules.length - 1 != index}}'>、</text></text>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：退订规则 -->
+  <view class='subtitle'>
+    <text>退订规则</text>
+  </view>
+  <!-- 退订规则 -->
+  
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：额外费用 -->
+  <view class='subtitle'>
+    <text>额外费用</text>
+  </view>
+  <!-- 额外费用 -->
+  
   <!-- 分割线 -->
   <view class='divLine' />
 </view>

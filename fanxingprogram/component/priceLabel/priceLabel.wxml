@@ -1,0 +1,3 @@
+<view class='price'>
+      <text decode='true'>&nbsp;&nbsp;¥ <text class='priceBig'>{{price}}</text> /晚&nbsp;&nbsp;</text>
+    </view>

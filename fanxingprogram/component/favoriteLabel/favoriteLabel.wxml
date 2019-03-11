@@ -1,0 +1,4 @@
+<view class='favoriteBorder'>
+  <image wx:if='{{favorite==true}}' src='/icons/favorite_yes.png' class='favorite' />
+  <image wx:else src='/icons/favorite_no.png' class='favorite' />
+</view>
