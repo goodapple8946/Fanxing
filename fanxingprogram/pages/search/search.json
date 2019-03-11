@@ -4,6 +4,5 @@
     "subtitle": "/component/subtitle/subtitle",
     "hotelBanner": "/component/hotelBanner/hotelBanner",
     "nothing": "/component/nothing/nothing"
-  },
-  "enablePullDownRefresh": true
+  }
 }

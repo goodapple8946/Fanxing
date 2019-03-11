@@ -13,6 +13,9 @@ App({
       peopleNum: 0,
       type: 0
     },
+    hotelDetail: {
+      hotel: null
+    },
     user: null,
     cities: null
   },

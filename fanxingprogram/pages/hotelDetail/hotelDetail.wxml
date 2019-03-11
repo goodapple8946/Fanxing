@@ -1,0 +1,60 @@
+<view class='container'>
+  <!-- 图片 -->
+  <view class='pictureBorder'>
+    <image class='picture' src='{{hotel.picture}}' />
+  </view>
+  <!-- 名称 -->
+  <view class='name'>
+    <text>{{hotel.name}}</text>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <view class='detailBorder'>
+    <!-- 户型 -->
+    <view class='detail'>
+      <image class='detailIcon' src='/icons/type.png' />
+      <view class='detailText'>{{hotel.bedroomNum}}室{{hotel.livingroomNum}}厅{{hotel.kitchenNum}}厨{{hotel.toiletNum}}卫</view>
+    </view>
+    <!-- 入住人数 -->
+    <view class='detail'>
+      <image class='detailIcon' src='/icons/people_num.png' />
+      <view class='detailText'>宜住{{hotel.peopleNum}}人</view>
+    </view>
+    <!-- 床数 -->
+    <view class='detail'>
+      <image class='detailIcon' src='/icons/bed.png' />
+      <view class='detailText'>共{{hotel.bedNum}}床</view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：详情描述 -->
+  <view class='subtitle'>
+    <text>详情描述</text>
+  </view>
+  <!-- 详情描述 -->
+  <view class='description'>
+    <text>{{hotel.description}}</text>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：房源位置 -->
+  <view class='subtitle'>
+    <text>房源位置</text>
+  </view>
+  <!-- 地图 -->
+  <map class='map' longitude='{{hotel.geopoint.longitude}}' latitude='{{hotel.geopoint.latitude}}' markers='{{markers}}' />
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 小标题：房源位置 -->
+  <view class='subtitle'>
+    <text>房客评价</text>
+  </view>
+  <!-- 小标题：房客评价 -->
+  <view class='description'>
+    <text wx:if='{{hotel.ratedNum > 0}}'>评分：{{hotel.rated}}/5，评价次数：{{hotel.ratedNum}}</text>
+    <text wx:else>暂无</text>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+</view>

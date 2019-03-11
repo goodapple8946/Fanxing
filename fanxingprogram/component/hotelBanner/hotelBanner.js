@@ -45,6 +45,13 @@ Component({
       app.updateUser();
       //主页收藏图标更新
       app.favoriteIconIndex();
+    },
+    //房源详情
+    hotelDetail() {
+      app.globalData.hotelDetail.hotel = this.properties.hotel;
+      wx.navigateTo({
+        url: '/pages/hotelDetail/hotelDetail'
+      });
     }
   }
 })

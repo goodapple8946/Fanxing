@@ -9,7 +9,8 @@
         "pages/feedback/feedback",
         "pages/manager/manager",
         "pages/search/search",
-        "pages/calendar/calendar"
+        "pages/calendar/calendar",
+    	"pages/hotelDetail/hotelDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",

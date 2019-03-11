@@ -1,6 +1,6 @@
 <view class='border'>
   <view class='pictureBorder'>
-    <image class='picture' src='{{hotel.picture}}' />
+    <image class='picture' src='{{hotel.picture}}' bindtap='hotelDetail'/>
     <view class='price'>
       <text decode='true'>&nbsp;&nbsp;¥ <text class='priceBig'>{{hotel.price}}</text> /晚&nbsp;&nbsp;</text>
     </view>
