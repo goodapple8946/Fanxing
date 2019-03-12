@@ -84,10 +84,8 @@ let dateUtil = {
     return date;
   },
 
-  nextDay: function (d) {
-    if(typeof d === 'string') d = new Date(d);
-    else d = new Date();
-    let date = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1)
+  nextDay: function (y, m, d) {
+    let date = new Date(y, m, d + 1)
     return date;
   },
 
@@ -189,7 +187,7 @@ let dateUtil = {
   // @return {boolean} 返回值
   isLeapYear: function(year) {
     //传入为时间格式需要处理
-    if (_.dateUtil.isDate(year)) year = year.getFullYear()
+    if (dateUtil.isDate(year)) year = year.getFullYear()
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) return true;
     return false;
   },
@@ -201,11 +199,11 @@ let dateUtil = {
   getDaysOfMonth: function(year, month) {
     //自动减一以便操作
     month--;
-    if (_.dateUtil.isDate(year)) {
+    if (dateUtil.isDate(year)) {
       month = year.getMonth(); //注意此处月份要加1，所以我们要减一
       year = year.getFullYear();
     }
-    return [31, _.dateUtil.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+    return [31, dateUtil.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
   },
 
   // @description 获取一个月份1号是星期几，注意此时的月份传入时需要自主减一

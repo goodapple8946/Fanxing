@@ -8,7 +8,9 @@ Page({
     data: {
         currentDate: String,
         selectedDate1: String,
-        selectedDate2: String
+        selectedDate2: String,
+        selected: Boolean,
+        tempDate: []
     },
 
     /**
@@ -22,7 +24,9 @@ Page({
         this.setData({
             currentDate: wx.getStorageSync("date"),
             selectedDate1: "选择日期",
-            selectedDate2: "选择日期"
+            selectedDate2: "选择日期",
+            selected1: false,
+            selected2: false
         })
     },
 
@@ -75,7 +79,55 @@ Page({
 
     },
 
-    onMyEvent: function(){
-        console.log("2333")
+    onMyEvent: function(e){
+        console.log(e.detail)
+        if(this.data.selected1 == false){
+            this.setData({
+                selectedDate1: e.detail.date[0] + "年" + e.detail.date[1] + "月" + e.detail.date[2] + "日",
+                selected1: true,
+                tempDate: e.detail.date
+            })
+            console.log(this.data.tempDate[0])
+        }
+        else if(this.data.selected2 == false){
+            let judge = false
+            if (e.detail.date[0]<this.data.tempDate[0]){
+                judge = true
+            }
+            else if (e.detail.date[0] == this.data.tempDate[0]){
+                if (e.detail.date[1] < this.data.tempDate[1]){
+                    judge = true
+                }
+                else if (e.detail.date[1] == this.data.tempDate[1]){
+                    if (e.detail.date[2] < this.data.tempDate[2]){
+                        judge = true
+                    }
+                }
+            }
+            if (e.detail.date != this.data.tempDate){
+                if(judge == false){
+                    this.setData({
+                        selectedDate2: e.detail.date[0] + "年" + e.detail.date[1] + "月" + e.detail.date[2] + "日",
+                        selected2: true
+                    })
+                }
+                else{
+                    this.setData({
+                        selectedDate1: e.detail.date[0] + "年" + e.detail.date[1] + "月" + e.detail.date[2] + "日",
+                        selectedDate2: this.data.tempDate[0] + "年" + this.data.tempDate[1] + "月" + this.data.tempDate[2] + "日",
+                        selected2: true
+                    })
+                }
+            }
+        }
+        else{
+            this.setData({
+                selectedDate1: e.detail.date[0] + "年" + e.detail.date[1] + "月" + e.detail.date[2] + "日",
+                selectedDate2: "选择日期",
+                selected1: true,
+                selected2: false,
+                tempDate: e.detail.date
+            })
+        }
     }
 })

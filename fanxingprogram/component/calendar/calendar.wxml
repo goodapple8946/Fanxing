@@ -18,9 +18,9 @@
         </block>
     </view> 
     <view class="datearea">
-        <block wx:for="{{monthDayArr}}" wx:for-index="idx" wx:for-item="itemName" class="dateblock">
-            <view class="dateblock"  bindtap='onTap'>
-                <text>{{itemName}}</text>
+        <block wx:for="{{monthDayArr}}" wx:for-index="idx" wx:for-item="item" class="dateblock">
+            <view class="dateblock"  bindtap='onTap' id='{{idx}}'>
+                <text>{{item.date[2]}}</text>
             </view>
         </block>
     </view> 
