@@ -20,6 +20,38 @@
   margin-left: 25rpx;
   font-size: 1.25rem;
 }
+.manager {
+  display: inline-block;
+  margin-left: 50rpx;
+}
+.managerAvatar {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+  vertical-align: middle;
+}
+.managerDetail {
+  display: inline-block;
+  height: 100rpx;
+  width: 325rpx;
+  margin-left: 25rpx;
+  vertical-align: middle;
+}
+.managerName {
+  height: 55rpx;
+}
+.managerIntroduction {
+  font-size: 0.75rem;
+  height: 45rpx;
+}
+.managerBtn {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: gray;
+  background-color: white;
+  vertical-align: middle;
+}
 .subtitle {
   margin-left: 50rpx;
 }

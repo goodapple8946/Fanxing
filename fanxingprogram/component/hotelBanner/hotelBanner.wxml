@@ -3,7 +3,7 @@
     <image class='picture' src='{{hotel.picture}}' bindtap='hotelDetail'/>
     <priceLabel class='price' price='{{hotel.price}}' />
     <favoriteLabel class='favorite' favorite='{{hotel.favorite}}' bindtap='addFavorite' />
-    <image class='avatar' src='{{hotel.managerAvatarUrl}}' bindtap='managerDetail' />
+    <image class='avatar' src='{{manager.avatarUrl}}' bindtap='managerDetail' />
   </view>
   <view class='info'>
     <text class='name'>{{hotel.name}}\n</text>

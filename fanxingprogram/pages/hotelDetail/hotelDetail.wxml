@@ -11,6 +11,18 @@
   </view>
   <!-- 分割线 -->
   <view class='divLine' />
+  <!-- 管家 -->
+  <view class='manager'>
+    <image class='managerAvatar' src='{{manager.avatarUrl}}'></image>
+    <view class='managerDetail'>
+      <view class='managerName'>{{manager.name}}</view>
+      <view class='managerIntroduction'>{{manager.introduction}}</view>
+    </view>
+    <view class='managerBtn'>Ta的全部房源 ></view>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
+  <!-- 详细 -->
   <view class='detailBorder'>
     <!-- 户型 -->
     <view class='detail'>

@@ -5,8 +5,10 @@ Page({
   data: {
     hotel: null,
     markers: [],
+    manager: null
   },
   onLoad() {
+    //地图标志
     var markers = this.data.markers;
     markers = [
       {
@@ -24,6 +26,16 @@ Page({
     this.setData({
       hotel: app.globalData.hotelDetail.hotel,
       markers
+    });
+    //管家数据
+    db.collection('User').where({
+      _openid: app.globalData.hotelDetail.hotel._openid
+    }).get({
+      success: res => {
+        this.setData({
+          manager: res.data[0]
+        });
+      }
     });
   },
   //添加或删除收藏

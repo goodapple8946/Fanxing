@@ -6,9 +6,27 @@ Component({
     hotel: {
       type: Object,
       value: null
+    },
+    manager: {
+      type: Object,
+      value: null
     }
   },
-  methods:{
+  lifetimes: {
+    //管家数据
+    attached() {
+      db.collection('User').where({
+        _openid: this.properties.hotel._openid
+      }).get({
+        success: res => {
+          this.setData({
+            manager: res.data[0]
+          });
+        }
+      });
+    },
+  },
+  methods: {
     //添加或删除收藏
     addFavorite() {
       var index = app.globalData.user.favorites.indexOf(this.properties.hotel._id);
@@ -56,15 +74,9 @@ Component({
     },
     //管家详情
     managerDetail() {
-      db.collection('User').where({
-        _openid: this.properties.hotel._openid
-      }).get({
-        success: res => {
-          app.globalData.managerDetail.manager = res.data[0];
-          wx.navigateTo({
-            url: '/pages/managerDetail/managerDetail'
-          })
-        }
+      app.globalData.managerDetail.manager = this.properties.manager;
+      wx.navigateTo({
+        url: '/pages/managerDetail/managerDetail'
       });
     }
   }

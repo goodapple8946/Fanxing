@@ -4,26 +4,11 @@ const app = getApp();
 Page({
   data: {
     user: null,
-    userInfo: null,
     secret: false,
     phoneNumber: '400-000-0000',
     admins: null
   },
   onLoad() {
-    //User Info
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      });
-    }
-    else {
-      //防止onLaunch在onLoad之后返回
-      app.queryUserInfoMine = x => {
-        this.setData({
-          userInfo: x
-        });
-      }
-    }
     //用户数据
     if (app.globalData.user) {
       this.setData({

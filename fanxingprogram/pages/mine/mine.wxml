@@ -1,6 +1,6 @@
 <view class='top'>
-  <image src='{{userInfo.avatarUrl}}' class='avatar'></image>
-  <view class='name'>{{userInfo.nickName}}</view> 
+  <image src='{{user.avatarUrl}}' class='avatar'></image>
+  <view class='name'>{{user.name}}</view> 
 </view>
 <view class='center'>
   <button class='mineBtn' bindtap='favorite'>

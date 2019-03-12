@@ -20,10 +20,9 @@ Page({
     today: dateToString(new Date())
   },
   onLoad() {
-      // 获取日期存入缓存
-      var currentDate = util.formatTime(new Date());
-      wx.setStorageSync("date", currentDate)
-    
+    // 获取日期存入缓存
+    var currentDate = util.formatTime(new Date());
+    wx.setStorageSync("date", currentDate)
     //用户数据
     if (app.globalData.user) {
       this.setData({
