@@ -1,6 +1,6 @@
 const db = wx.cloud.database();
 const app = getApp();
-
+var util = require('../../util/util.js');  
 Page({
   data: {
     user: null,
@@ -9,15 +9,20 @@ Page({
       'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_1.jpg',
       'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_2.jpg'
       ],
+    //筛选相关
     cityID: 0,
     cities: null,
     checkinDate: '请选择入住时间',
     checkoutDate: '请选择离开时间',
     peopleNumIndex: 0,
     peopleNums: ['请选择入住人数', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'],
+
     today: dateToString(new Date())
   },
   onLoad() {
+    // 获取日期存入缓存
+    var currentDate = util.formatTime(new Date());
+    wx.setStorageSync("date", currentDate)
     //用户数据
     if (app.globalData.user) {
       this.setData({
@@ -81,6 +86,7 @@ Page({
     this.setData({
       cityID: e.detail.value
     });
+    app.globalData.search.cityID = this.data.cityID;
     app.globalData.search.city = this.data.cities[e.detail.value];
   },
   //选择入住时间
@@ -95,7 +101,7 @@ Page({
     //入住时间修正
     app.globalData.search.checkinDate > app.globalData.search.checkoutDate && this.setCheckinDate(e.detail.value);
   },
-  //选择人数
+  //选择入住人数
   selectPeopleNum(e) {
     this.setData({
       peopleNumIndex: e.detail.value
@@ -117,6 +123,7 @@ Page({
       checkoutDate: '请选择离开时间',
       peopleNumIndex: 0
     });
+    app.globalData.search.cityID = 0;
     app.globalData.search.city = '请选择城市';
     app.globalData.search.checkinDate = null;
     app.globalData.search.checkoutDate = null;
@@ -139,6 +146,11 @@ Page({
       checkoutDate: date
     });
     app.globalData.search.checkoutDate = stringToDate(date);
+  },
+  jumpToCalendar(){
+      wx.navigateTo({
+          url: '/pages/calendar/calendar',
+      });
   }
 })
 

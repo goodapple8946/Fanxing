@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "priceLabel": "/component/priceLabel/priceLabel",
+    "favoriteLabel": "/component/favoriteLabel/favoriteLabel"
+  }
 }

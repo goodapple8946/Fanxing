@@ -5,31 +5,14 @@
   height: 350rpx;
   text-align: center;
 }
-.avatarBorderOutside {
-  position: absolute;
-  top: 25rpx;
-  left: 250rpx;
-  width: 150rpx;
-  height: 150rpx;
-  border: 50rpx solid #00a0e9;
-  border-radius:50%;
-}
-.avatarBorderInside {
-  position: absolute;
-  top: 57rpx;
-  left: 282rpx;
-  width: 146rpx;
-  height: 146rpx;
-  border: 20rpx solid #0080c9;
-  border-radius:50%;
-}
 .avatar {
   position: absolute;
-  top: 75rpx;
-  left: 300rpx;
+  top: 55rpx;
+  left: 280rpx;
   width: 150rpx;
   height: 150rpx;
   border-radius:50%;
+  border: 20rpx solid #0080c9;
 }
 .name {
   position: relative;

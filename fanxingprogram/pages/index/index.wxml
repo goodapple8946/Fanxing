@@ -30,13 +30,19 @@
         <text class='leftText'>入住人数</text>
         <picker value='{{peopleNumIndex}}' class='rightText' range='{{peopleNums}}' bindchange='selectPeopleNum'>{{peopleNums[peopleNumIndex]}}</picker>
       </view>
+      <!-- 分割线 -->
+      <view class='divLine' />
+      <!-- 选择日期 -->
+      <view class='searchRow' bindtap='jumpToCalendar'>
+        <text class='leftText'>选择日期</text>
+        <text style="float:right">选择日期</text>
+      </view>
       <!-- 搜索按钮 -->
       <button bindtap='search' class='btnSearch'>搜索</button>
     </view>
   </view>
-  <!-- 时间选择器 -->
-  <datePicker class='datePicker' isShow='{{isShowDatePicker}}' />
 </view>
+<!--  -->
 <!-- 小标题：推荐房源 -->
 <view class='moreHotel'>
   <subtitle icon='/icons/rcmd_house.png' content='推荐房源' />

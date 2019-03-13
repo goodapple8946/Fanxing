@@ -4,14 +4,19 @@ const db = wx.cloud.database();
 App({
   globalData: {
     openid: '',
-    userInfo: null,
     search: {
+      cityID: 0,
       city: '请选择城市',
       checkinDate: null,
       checkoutDate: null,
       peopleNum: 0,
-      bedroomNum: 0,
-      livingroomNum: 0
+      type: 0
+    },
+    hotelDetail: {
+      hotel: null
+    },
+    managerDetail: {
+      manager: null
     },
     user: null,
     cities: null
@@ -29,20 +34,37 @@ App({
   },
   //获取用户数据
   queryUser() {
-    db.collection('User').where({
-      _openid: this.globalData.openid
-    }).get({
+    //获取UserInfo
+    wx.getUserInfo({
       success: res => {
-        //如果数据库已有用户数据，则取用，否则插入新用户
-        if (res.data[0]) 
-          this.globalData.user = res.data[0];
-        else
-          this.insertUser();
-        //防止onLaunch在onLoad之后返回
-        this.queryUserIndex && this.queryUserIndex(res.data[0]);
-        this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
-        this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
-        this.queryUserSearch && this.queryUserSearch(res.data[0]);
+        var userInfo = res.userInfo;
+        db.collection('User').where({
+          _openid: this.globalData.openid
+        }).get({
+          success: res => {
+            var user = res.data[0];
+            //如果数据库已有用户数据，则取用，否则插入新用户
+            if (user) {
+              //更新头像
+              if (user.avatarUrl != userInfo.avatarUrl) {
+                user.avatarUrl = userInfo.avatarUrl
+              }
+              //更新昵称
+              if (user.name != userInfo.nickName) {
+                user.name = userInfo.nickName
+              }
+              this.globalData.user = res.data[0];
+            }
+            else
+              this.insertUser(userInfo);
+            //防止onLaunch在onLoad之后返回
+            this.queryUserIndex && this.queryUserIndex(res.data[0]);
+            this.queryUserMine && this.queryUserMine(res.data[0]);
+            this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
+            this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
+            this.queryUserSearch && this.queryUserSearch(res.data[0]);
+          }
+        });
       }
     });
   },
@@ -70,18 +92,23 @@ App({
     console.log('update User Data');
   },
   //新增用户数据
-  insertUser() {
+  insertUser(userInfo) {
     db.collection('User').add({
       data: {
+        hotels: [],
         favorites: [],
         orders: [],
         checkinPeople: [],
-        coupons: []
+        coupons: [],
+        role: 'user',
+        introduction: '没有介绍。',
+        avatarUrl: userInfo.avatarUrl,
+        name: userInfo.nickName
       },
       success: res => {
+        console.log('insert User');
+        this.queryUser();
       }
     });
-    console.log('insert User');
-    this.queryUser();
   }
 })

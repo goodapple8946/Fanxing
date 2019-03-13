@@ -1,8 +1,6 @@
 <view class='top'>
-  <open-data type='userAvatarUrl' class='avatar'></open-data>
-  <view class='avatarBorderOutside'></view>
-  <view class='avatarBorderInside'></view>
-  <open-data type='userNickName' class='name'></open-data> 
+  <image src='{{user.avatarUrl}}' class='avatar'></image>
+  <view class='name'>{{user.name}}</view> 
 </view>
 <view class='center'>
   <button class='mineBtn' bindtap='favorite'>

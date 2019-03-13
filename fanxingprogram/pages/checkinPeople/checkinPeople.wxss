@@ -27,6 +27,7 @@
   width: 650rpx;
   height: 150rpx;
   box-shadow: 1px 1px 1px 1px grey;
+  border-radius: 15rpx;
   background: white;
 }
 .name {

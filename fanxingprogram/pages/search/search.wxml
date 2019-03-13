@@ -1,4 +1,38 @@
 <view class='container'>
+  <!-- 筛选条件 -->
+  <view class='conditionBorder'>
+    <view class='condition'>
+      <view class='conditionTitle'>城市</view>
+      <picker value='{{cityID}}' class='conditionContent' range='{{cities}}' bindchange='selectCity'>{{cities[cityID]}}</picker>
+    </view>
+    <view class='condition'>
+      <view class='conditionTitle'>入住日期</view>
+      <picker value='{{checkinDate}}' class='conditionContent' mode='date' start='{{today}}' end='2099-12-31' bindchange='selectCheckinDate'>{{checkinDate}}</picker>
+    </view>
+    <view class='condition'>
+      <view class='conditionTitle'>离开日期</view>
+      <picker value='{{checkoutDate}}' class='conditionContent' mode='date' start='{{today}}' end='2099-12-31' bindchange='selectCheckoutDate'>{{checkoutDate}}</picker>
+    </view>
+    <view class='condition'>
+      <view class='conditionTitle'>房源户型</view>
+      <picker value='{{typeIndex}}' class='conditionContent' range='{{types}}' bindchange='selectType'>{{types[typeIndex]}}</picker>
+    </view>
+    <view class='condition'>
+      <view class='conditionTitle'>入住人数</view>
+      <picker value='{{peopleNumIndex}}' class='conditionContent' range='{{peopleNums}}' bindchange='selectPeopleNum'>{{peopleNums[peopleNumIndex]}}</picker>
+    </view>
+    <view class='condition'>
+      <view class='conditionTitle'>排序方式</view>
+      <picker value='{{sortIndex}}' class='conditionContent' range='{{sorts}}' bindchange='selectSort'>{{sorts[sortIndex]}}</picker>
+    </view>
+  </view>
+  <view class='searchBorder'>
+    <image class='searchIcon' src='/icons/search.png'/>
+    <input class='searchInput' placeholder='请输入关键词' bindinput='searchInput' />
+    <button class='searchBtn' bindtap='doSearch' maxlength='15'>搜索</button>
+  </view>
+  <!-- 分割线 -->
+  <view class='divLine' />
   <!-- 小标题：房源查询 -->
   <view>
     <subtitle icon='/icons/house.png' content='房源查询' />

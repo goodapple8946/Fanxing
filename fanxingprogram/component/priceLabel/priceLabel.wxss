@@ -1,0 +1,11 @@
+.price {
+  background: black;
+  color: white;
+  text-align: center;
+  opacity: 0.75;
+  height: 2.25rem;
+  font-size: 1rem;
+}
+.priceBig {
+  font-size: 1.5rem;
+}

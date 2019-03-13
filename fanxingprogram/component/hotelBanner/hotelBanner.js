@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 const app = getApp();
 
 Component({
@@ -5,9 +6,27 @@ Component({
     hotel: {
       type: Object,
       value: null
+    },
+    manager: {
+      type: Object,
+      value: null
     }
   },
-  methods:{
+  lifetimes: {
+    //管家数据
+    attached() {
+      db.collection('User').where({
+        _openid: this.properties.hotel._openid
+      }).get({
+        success: res => {
+          this.setData({
+            manager: res.data[0]
+          });
+        }
+      });
+    },
+  },
+  methods: {
     //添加或删除收藏
     addFavorite() {
       var index = app.globalData.user.favorites.indexOf(this.properties.hotel._id);
@@ -45,6 +64,20 @@ Component({
       app.updateUser();
       //主页收藏图标更新
       app.favoriteIconIndex();
+    },
+    //房源详情
+    hotelDetail() {
+      app.globalData.hotelDetail.hotel = this.properties.hotel;
+      wx.navigateTo({
+        url: '/pages/hotelDetail/hotelDetail'
+      });
+    },
+    //管家详情
+    managerDetail() {
+      app.globalData.managerDetail.manager = this.properties.manager;
+      wx.navigateTo({
+        url: '/pages/managerDetail/managerDetail'
+      });
     }
   }
 })

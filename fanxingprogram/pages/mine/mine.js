@@ -18,22 +18,13 @@ Page({
     }
     else {
       //防止onLaunch在onLoad之后返回
-      app.queryUserIndex = x => {
+      app.queryUserMine = x => {
         this.setData({
           user: x
         });
         this.showSecret();
       }
     }
-    //获取管理员列表
-    db.collection('Administrator').get({
-      success: res => {
-        this.data.admins = [];
-        for (var i = 0; i < res.data.length; i++)
-          this.data.admins.push(res.data[i].admin);
-        this.showSecret();
-      }
-    });
   },
   //收藏
   favorite() {
@@ -86,7 +77,7 @@ Page({
   },
   //显示后台按钮
   showSecret() {
-    if (this.data.user && this.data.admins && this.data.admins.indexOf(this.data.user._openid) != -1)
+    if (this.data.user.role == 'administrator')
       this.setData({
         secret: true
       });

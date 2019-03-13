@@ -1,0 +1,119 @@
+.pictureBorder {
+  position: relative;
+}
+.picture {
+  width: 750rpx;
+  height: 500rpx;
+}
+.price {
+  position: absolute;
+  bottom: 10rpx;
+  left: 25rpx;
+}
+.favorite {
+  position: absolute;
+  top: 25rpx;
+  right: 25rpx;
+}
+.name {
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+  font-size: 1.25rem;
+}
+.manager {
+  display: inline-block;
+  margin-left: 50rpx;
+}
+.managerAvatar {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+  vertical-align: middle;
+}
+.managerDetail {
+  display: inline-block;
+  height: 100rpx;
+  width: 325rpx;
+  margin-left: 25rpx;
+  vertical-align: middle;
+}
+.managerName {
+  height: 55rpx;
+}
+.managerIntroduction {
+  font-size: 0.75rem;
+  height: 45rpx;
+}
+.managerBtn {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: gray;
+  background-color: white;
+  vertical-align: middle;
+}
+.subtitle {
+  margin-left: 50rpx;
+}
+.detailBorder {
+  display: inline-block;
+}
+.detail {
+  display: inline-block;
+  width: 650rpx;
+  margin-left: 50rpx;
+  margin-bottom: 25rpx;
+  flex-direction: column;
+}
+.detailIcon {
+  display: inline-block;
+  height: 55rpx;
+  width: 55rpx;
+  vertical-align: middle;
+}
+.detailText {
+  display: inline-block;
+  margin-left: 50rpx;
+  width: 545rpx;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+.description {
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 25rpx;
+  font-size: 0.75rem;
+}
+.facilityBorder {
+  display: inline-block;
+  margin-left: 75rpx;
+  margin-right: 75rpx;
+  margin-top: 25rpx;
+}
+.facility {
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+}
+.facilityIcon {
+  width: 100rpx;
+  height: 100rpx;
+}
+.facilityText {
+  font-size: 0.75rem;
+}
+.map {
+  margin-top: 25rpx;
+  margin-left: 50rpx;
+  width: 650rpx;
+  height: 500rpx;
+}
+.divLine {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 700rpx;
+  height: 1px;
+  background: lightgray;
+}

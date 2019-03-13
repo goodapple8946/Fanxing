@@ -7,6 +7,13 @@ Page({
     hotels: null
   },
   onLoad() {
+    //显示加载弹窗
+    wx.showToast({
+      title: '正在加载',
+      icon: 'loading',
+      duration: 10000,
+      mask: true
+    })
     //用户数据
     if (app.globalData.user) {
       this.setData({
@@ -45,7 +52,9 @@ Page({
       }
       this.setData({
         hotels
-      })
+      });
+      //隐藏加载弹窗
+      wx.hideToast();
     }
   }
 })
