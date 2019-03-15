@@ -1,1 +1,42 @@
-/* fanxingprogram/pages/managerDetail/managerDetail.wxss */
+.top {
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00a0e9;
+  width: 750rpx;
+  height: 350rpx;
+  text-align: center;
+}
+.avatar {
+  margin-top: 50rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:50%;
+  border: 20rpx solid #0080c9;
+}
+.name {
+  color: white;
+}
+.hotelNum {
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  font-size: 0.8rem;
+}
+.hotelNumColor {
+  color: #0080c9;
+}
+.introduction {
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 25rpx;
+  font-size: 0.8rem;
+}
+.divLine {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 700rpx;
+  height: 1px;
+  background: lightgray;
+}

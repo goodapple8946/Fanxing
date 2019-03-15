@@ -1,66 +1,53 @@
-// fanxingprogram/pages/managerDetail/managerDetail.js
+const db = wx.cloud.database();
+const app = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    manager: null,
+    hotels: null,
+    user: null
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    //用户数据
+    if (app.globalData.user) {
+      this.setData({
+        user: app.globalData.user
+      });
+      this.favoriteIcon();
+    }
+    else {
+      //防止onLaunch在onLoad之后返回
+      app.queryUserManagerDetail = x => {
+        this.setData({
+          user: x
+        });
+      }
+      this.favoriteIcon();
+    }
+    //管家房源数据
+    var hotels = this.data.hotels;
+    db.collection('Hotel').where({
+      _openid: app.globalData.managerDetail.manager._openid
+    }).get({
+      success: res => {
+        this.setData({
+          manager: app.globalData.managerDetail.manager,
+          hotels: res.data
+        });
+        this.favoriteIcon();
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //收藏图标
+  favoriteIcon() {
+    if (this.data.user && this.data.hotels) {
+      var hotels = this.data.hotels;
+      for (var i = 0; i < hotels.length; i++) {
+        hotels[i].favorite = this.data.user.favorites.indexOf(hotels[i]._id) != -1;
+      }
+      this.setData({
+        hotels
+      });
+    }
   }
 })

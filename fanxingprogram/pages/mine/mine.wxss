@@ -1,22 +1,20 @@
 .top {
-  position: relative;
+  position: flex;
+  align-items: center;
+  justify-content: center;
   background: #00a0e9;
   width: 750rpx;
   height: 350rpx;
   text-align: center;
 }
 .avatar {
-  position: absolute;
-  top: 55rpx;
-  left: 280rpx;
+  margin-top: 50rpx;
   width: 150rpx;
   height: 150rpx;
   border-radius:50%;
   border: 20rpx solid #0080c9;
 }
 .name {
-  position: relative;
-  top: 250rpx;
   color: white;
 }
 .center {
