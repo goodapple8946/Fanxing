@@ -13,12 +13,12 @@
   <view class='divLine' />
   <!-- 管家 -->
   <view class='manager'>
-    <image class='managerAvatar' src='{{manager.avatarUrl}}'></image>
+    <image class='managerAvatar' src='{{manager.avatarUrl}}' bindtap='managerDetail' ></image>
     <view class='managerDetail'>
       <view class='managerName'>{{manager.name}}</view>
       <view class='managerIntroduction'>{{manager.introduction}}</view>
     </view>
-    <view class='managerBtn'>Ta的全部房源 ></view>
+    <view class='managerBtn' bindtap='managerDetail'>Ta的全部房源 ></view>
   </view>
   <!-- 分割线 -->
   <view class='divLine' />
@@ -59,7 +59,7 @@
   <!-- 配套设施 -->
   <view class='facilityBorder'>
     <view wx:for='{{hotel.facilities}}' wx:key='{{index}}' class='facility'>
-      <image src='/icons/facility/{{hotel.facilities[index]}}.png' class='facilityIcon' />
+      <image src="{{'/icons/facility/' + facilityCnToEn[hotel.facilities[index]] + '.png'}}" class='facilityIcon' />
       <view class='facilityText'>{{hotel.facilities[index]}}</view>
     </view>
   </view>

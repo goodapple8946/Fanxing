@@ -48,7 +48,7 @@
 .managerBtn {
   display: inline-block;
   font-size: 0.75rem;
-  color: gray;
+  color: #00a0e9;
   background-color: white;
   vertical-align: middle;
 }

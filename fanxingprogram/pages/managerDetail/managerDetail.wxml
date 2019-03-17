@@ -1,2 +1,14 @@
-<!--fanxingprogram/pages/managerDetail/managerDetail.wxml-->
-<text>fanxingprogram/pages/managerDetail/managerDetail.wxml</text>
+<view class='top'>
+  <image src='{{manager.avatarUrl}}' class='avatar'></image>
+  <view class='name'>{{manager.name}}</view>
+</view>
+<!-- 个人简介 -->
+<view class='introduction'>{{manager.introduction}}</view>
+<!-- 分割线 -->
+<view class='divLine'></view>
+<!-- 房源数目 -->
+<view class='hotelNum'>他有<text class='hotelNumColor'> {{hotels.length}} </text>套房</view>
+<!-- 房源一览 -->
+<view>
+  <hotelBanner wx:for='{{hotels}}' hotel='{{hotels[index]}}' wx:key='{{index}}' showManager='false'/>
+</view>

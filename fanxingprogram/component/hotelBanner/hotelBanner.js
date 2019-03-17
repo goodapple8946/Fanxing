@@ -10,6 +10,10 @@ Component({
     manager: {
       type: Object,
       value: null
+    },
+    showManager: {
+      type: Boolean,
+      value: true
     }
   },
   lifetimes: {

@@ -5,7 +5,38 @@ Page({
   data: {
     hotel: null,
     markers: [],
-    manager: null
+    manager: null,
+    facilityCnToEn: {
+      '空气净化器': 'aircleaner',
+      '空调': 'airconditioner',
+      '浴袍': 'bathrobe',
+      '暖气': 'centralheating',
+      '密码锁': 'codedlock',
+      '电脑': 'computer',
+      '日常用品': 'dailyarticle',
+      '双人床': 'doublebed',
+      '电梯': 'elevator',
+      '灭火器': 'extinguisher',
+      '冰箱': 'fridge',
+      '吹风': 'hairdrier',
+      '衣架': 'hanger',
+      '热水浴缸': 'hottub',
+      '热水': 'hotwater',
+      '厨具': 'kitchenware',
+      '微波炉': 'microwaveoven',
+      '矿泉水': 'mineralwater',
+      '独立卫生间': 'privatebathroom',
+      '沐浴露': 'showergel',
+      '单人床': 'singlebed',
+      '拖鞋': 'slipper',
+      '沙发': 'sofa',
+      '餐具': 'tableware',
+      '电视': 'television',
+      '牙具': 'toiletthing',
+      '洗衣机': 'washer',
+      'wifi': 'wifi',
+      '工作区域': 'workarea'
+    }
   },
   onLoad() {
     //地图标志
@@ -75,5 +106,12 @@ Page({
     app.updateUser();
     //主页收藏图标更新
     app.favoriteIconIndex();
+  },
+  //管家详情
+    managerDetail() {
+    app.globalData.managerDetail.manager = this.properties.manager;
+    wx.navigateTo({
+      url: '/pages/managerDetail/managerDetail'
+    });
   }
 })
