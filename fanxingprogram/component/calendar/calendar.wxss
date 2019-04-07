@@ -1,28 +1,28 @@
 /* component/calendar/calendar.wxss */
 .container {
-    border-style: solid;
+    /* border-style: solid; */
     width: 750rpx;
     height:770rpx;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20rpx;
+    /* margin-top: 20rpx; */
 }
 .monthchoser{
     width: 700rpx;
-    height: 100rpx;
-    border-style: solid;
-    border-color: blue;
+    height: 120rpx;
+    /* border-style: solid;
+    border-color: blue; */
     text-align: center;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .datebar{
     width: 700rpx;
     height: 50rpx;
-    background-color: grey;
+    background-color: lightgray;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -32,7 +32,7 @@
     /* margin-top: 20rpx; */
     width: 700rpx;
     height:600rpx;
-    background-color:aqua;
+    /* background-color:aqua; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -42,8 +42,31 @@
     width: 100rpx;
     height: 100rpx;
     display: flex;
+    /* flex-direction: column; */
     align-items:center;
     justify-content: center;
+    font-size: 0.85rem;
+}
+.dateblock1{
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    float: left;
+    font-size: 0.85rem;
+}
+.dateblock2{
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    float: left;
+    font-size: 0.85rem;
+    color: #00a0e9;
 }
 .datebarblock{
     width: 100rpx;
@@ -51,4 +74,19 @@
     display: flex;
     align-items:center;
     justify-content: center;
+}
+.text{
+    font-size: 0.85rem
+}
+.text2{
+    font-size: 0.85rem;
+    color: #00a0e9
+}
+.text3{
+    font-size: 0.85rem;
+    color: white
+}
+.text4{
+    font-size: 0.6rem;
+    color: white
 }
