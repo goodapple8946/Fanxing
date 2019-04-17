@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/orderManage/orderManage",
+    
     "pages/order/order",
     "pages/mine/mine",
     "pages/favorite/favorite",
@@ -11,7 +13,8 @@
     "pages/search/search",
     "pages/calendar/calendar",
     "pages/hotelDetail/hotelDetail",
-    "pages/managerDetail/managerDetail"
+    "pages/managerDetail/managerDetail",
+    "pages/hotelManage/hotelManage"
   ],
   "window": {
     "backgroundTextStyle": "light",
