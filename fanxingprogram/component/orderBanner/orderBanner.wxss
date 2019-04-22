@@ -1,0 +1,20 @@
+.border {
+  display: inline-block;
+  position: relative;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  width: 650rpx;
+  box-shadow: 1px 1px 1px 1px grey;
+  background: white;
+  border-radius: 15rpx;
+}
+.orderTime {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  font-size: 0.8rem;
+}
+.state {
+  margin-left: 25rpx;
+  font-size: 0.8rem;
+  margin-bottom: 25rpx;
+}

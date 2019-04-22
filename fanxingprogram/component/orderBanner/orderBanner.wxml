@@ -1,0 +1,4 @@
+<view class='border'>
+  <view class='orderTime'>订单时间：{{order.orderTime}}</view>
+  <view class='state'>状态：{{order.state}}</view>
+</view>

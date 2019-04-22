@@ -33,16 +33,17 @@
       <!-- 分割线 -->
       <view class='divLine' />
       <!-- 选择日期 -->
+      <!-- 
       <view class='searchRow' bindtap='jumpToCalendar'>
         <text class='leftText'>选择日期</text>
         <text style="float:right">选择日期</text>
       </view>
+       -->
       <!-- 搜索按钮 -->
       <button bindtap='search' class='btnSearch'>搜索</button>
     </view>
   </view>
 </view>
-<!--  -->
 <!-- 小标题：推荐房源 -->
 <view class='moreHotel'>
   <subtitle icon='/icons/rcmd_house.png' content='推荐房源' />

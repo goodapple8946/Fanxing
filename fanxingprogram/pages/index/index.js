@@ -1,6 +1,8 @@
 const db = wx.cloud.database();
 const app = getApp();
+
 var util = require('../../util/util.js');  
+
 Page({
   data: {
     user: null,

@@ -1,0 +1,13 @@
+<view class='top'>
+  <view class="{{topIndex == 0 ? 'btn_selected' : 'btn'}}" bindtap='topBtn0'>全部</view>
+  <view class="{{topIndex == 1 ? 'btn_selected' : 'btn'}}" bindtap='topBtn1'>预订</view>
+  <view class="{{topIndex == 2 ? 'btn_selected' : 'btn'}}" bindtap='topBtn2'>待入住</view>
+  <view class="{{topIndex == 3 ? 'btn_selected' : 'btn'}}" bindtap='topBtn3'>已入住</view>
+  <view class="{{topIndex == 4 ? 'btn_selected' : 'btn'}}" bindtap='topBtn4'>已离店</view>
+  <view class="{{topIndex == 5 ? 'btn_selected' : 'btn'}}" bindtap='topBtn5'>已取消</view>
+</view>
+<view class='divLine' />
+<view>
+  <orderBanner wx:for='{{orders}}' order='{{orders[index]}}' wx:key='{{index}}' />
+  <nothing wx:if='{{orders.length == 0}}' content='无订单' />
+</view>

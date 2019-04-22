@@ -1,66 +1,129 @@
-// pages/order/order.js
+const db = wx.cloud.database();
+const app = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    topIndex: 0,
+    user: null,
+    orders: null
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    //用户数据
+    if (app.globalData.user) {
+      this.setData({
+        user: app.globalData.user
+      });
+      this.topBtn0();
+    }
+    else {
+      //防止onLaunch在onLoad之后返回
+      app.queryUserOrder = x => {
+        this.setData({
+          user: x
+        });
+      }
+      this.topBtn0();
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  topBtn0() {
+    //全部
+    db.collection('Order').where({
+      _openid: this.data._openid
+    }).get({
+      success: res => {
+        this.setData({
+          orders: res.data
+        });
+      }
+    });
+    this.setData({
+      topIndex: 0
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  topBtn1() {
+    //预订
+    db.collection('Order').where({
+      _openid: this.data._openid,
+      state: '预订'
+    }).get({
+      success: res => {
+        this.setData({
+          orders: res.data,
+          topIndex: 1
+        });
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  topBtn2() {
+    //待入住
+    db.collection('Order').where({
+      _openid: this.data._openid,
+      state: '待入住'
+    }).get({
+      success: res => {
+        this.setData({
+          orders: res.data,
+          topIndex: 2
+        });
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  topBtn3() {
+    //已入住
+    db.collection('Order').where({
+      _openid: this.data._openid,
+      state: '已入住'
+    }).get({
+      success: res => {
+        this.setData({
+          orders: res.data,
+          topIndex: 3
+        });
+      }
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  topBtn4() {
+    //已离店
+    db.collection('Order').where({
+      _openid: this.data._openid,
+      state: '已离店'
+    }).get({
+      success: res => {
+        this.setData({
+          orders: res.data,
+          topIndex: 4
+        });
+      }
+    });
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  topBtn5() {
+    //已取消
+    db.collection('Order').where({
+      _openid: this.data._openid,
+      state: '已取消'
+    }).get({
+      success: res => {
+        this.setData({
+          orders: res.data,
+          topIndex: 5
+        });
+      }
+    });
   }
 })
+
+//日期转字符串
+function dateToString(x) {
+  var y = x.getFullYear();
+  var m = x.getMonth() + 1;
+  var d = x.getDate();
+  m = m < 10 ? '0' + m : m;
+  d = d < 10 ? ('0' + d) : d;
+  return y + '-' + m + '-' + d;
+};
+
+//字符串转日期
+function stringToDate(x) {
+  var y = x.split('-');
+  return new Date(y[0], y[1], y[2]);
+}

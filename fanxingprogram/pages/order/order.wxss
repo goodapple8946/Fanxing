@@ -1,1 +1,30 @@
-/* pages/order/order.wxss */
+.top {
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+}
+.btn {
+  width: 125rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items:Center;
+  font-size: 0.8rem;
+}
+.btn_selected {
+  width: 125rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items:Center;
+  font-size: 0.8rem;
+  color: #00a0e9;
+}
+.divLine {
+  margin-left: 10rpx;
+  margin-top: 2rpx;
+  margin-bottom: 2rpx;
+  width: 730rpx;
+  height: 1px;
+  background: lightgray;
+}

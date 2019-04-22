@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "subtitle": "/component/subtitle/subtitle",
-    "checkinPeopleBanner": "/component/checkinPeopleBanner/checkinPeopleBanner"
+    "checkinPeopleBanner": "/component/checkinPeopleBanner/checkinPeopleBanner",
+    "nothing": "/component/nothing/nothing"
   }
 }
