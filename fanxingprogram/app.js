@@ -29,7 +29,7 @@ App({
         this.globalData.openid = res.result.openid;
       }
     });
-    this.queryUser();
+    //this.queryUser();
     this.queryCity();
   },
   //获取用户数据
