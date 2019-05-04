@@ -1,3 +1,3 @@
-<text>是否允许繁星民宿获取您的用户信息？</text>
-<button open-type='getUserInfo' bindgetuserinfo='confirm'>允许</button>
-<navigator open-type="exit" target="miniProgram">关闭</navigator>
+<text class='title'>是否允许繁星民宿获取您的用户信息？</text>
+<button class='confirm' open-type='getUserInfo' bindgetuserinfo='confirm'>允许</button>
+<navigator class='exit' open-type="exit" target="miniProgram">关闭</navigator>
