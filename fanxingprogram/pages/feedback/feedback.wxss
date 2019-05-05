@@ -1,6 +1,6 @@
 .container {
-  margin-top: 25rpx;
-  margin-bottom: 25rpx;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
 }
 .feedbackOutside {
   margin-top: 50rpx;
@@ -8,22 +8,22 @@
   width: 650rpx;
   height: 550rpx;
   border-radius: 15rpx;
-  box-shadow: 1px 1px 1px 1px grey;
+  box-shadow: 0rpx 0rpx 3rpx 2rpx gray;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .feedbackInside {
-  width: 16rem;
+  width: 18rem;
 }
 .btn {
-  background-color: #00a0e9;
+  background-color: #588200;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.96rem;
 }
 .textarea {
-  font-size: 0.8rem;
+  font-size: 1rem;
   height: 12rem;
   width: 16rem;
 }

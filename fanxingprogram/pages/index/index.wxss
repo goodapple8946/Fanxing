@@ -1,30 +1,35 @@
 .top {
-  height: 800rpx;
+  height: 870rpx;
 }
 .searchTableOutside {
   position: absolute;
-  box-shadow: 1px 1px 1px 1px grey;
+  box-shadow: 0rpx 0rpx 3rpx 2rpx gainsboro;
   top: 350rpx;
-  left: 50rpx;
-  width: 650rpx;
+  left: 30rpx;
+  width: 690rpx;
   background-color: white;
-  border-radius: 15rpx;
+  border-radius: 5rpx;
 }
 .searchTableInside {
-  margin-top: 25rpx;
-  margin-right: 25rpx;
-  margin-left: 25rpx;
-  margin-bottom: 25rpx;
+  margin-right: 40rpx;
+  margin-left: 40rpx;
+  margin-bottom: 20rpx;
   background-color: white;
 }
 .leftText {
+  margin-top:20rpx; 
   width: 200rpx;
   display: inline-block;
+  font-size: 1rem;
+  color: rgb(15, 15, 15);
 }
 .rightText {
+  margin-top:20rpx; 
   width: 400rpx;
   display: inline-block;
   text-align: right;
+  font-size: 0.8rem;
+  color:rgba(189, 186, 186, 0.918);
 }
 .searchRow {
   background-color: white;
@@ -34,9 +39,10 @@
   display: inline-block;
 }
 .btnSearch {
-  background-color: #00a0e9;
+  margin-top: 20rpx;
+  background-color: #588200;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 .datePicker {
   position: absolute;
@@ -44,21 +50,24 @@
   left: 50rpx;
 }
 .divLine {
-  margin-left: 10rpx;
-  margin-top: 2rpx;
-  margin-bottom: 2rpx;
-  width: 580rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  width: 610rpx;
   height: 1px;
-  background: lightgray;
+  background:rgba(189, 186, 186, 0.918);
 }
 .moreHotel {
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .moreHotelBtn {
   position: absolute;
-  top: 0;
-  right: 50rpx;
-  background-color: white;
+  top: 0rpx;
+  right: 0;
   color: grey;
   font-size: 0.8rem;
 }

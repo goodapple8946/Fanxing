@@ -1,0 +1,32 @@
+.container {
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  width:690rpx;
+}
+.leftText {
+  margin-top:20rpx; 
+  width: 200rpx;
+  display: inline-block;
+  font-size: 1rem;
+  color: rgb(15, 15, 15);
+}
+.rightText {
+  width:490rpx;
+  margin-top:20rpx; 
+  display: inline-block;
+  text-align: right;
+  font-size: 0.8rem;
+  color:rgba(189, 186, 186, 0.918);
+}
+.divLine {
+  margin-top: 20rpx;
+  width: 690rpx;
+  height: 1px;
+  background:rgba(189, 186, 186, 0.918);
+}
+.submit{
+  margin-top:40rpx;
+  color: white;
+  background-color: #588200;
+}
+

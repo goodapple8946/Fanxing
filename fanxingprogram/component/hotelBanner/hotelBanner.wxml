@@ -1,6 +1,6 @@
 <view class='border'>
   <view class='pictureBorder'>
-    <image class='picture' src='{{hotel.picture}}' bindtap='hotelDetail'/>
+    <image class='picture' src='{{hotel.picture[0]}}' bindtap='hotelDetail'/>
     <priceLabel class='price' price='{{hotel.price}}' />
     <favoriteLabel class='favorite' favorite='{{hotel.favorite}}' bindtap='addFavorite' />
     <image wx:if='{{showManager == true}}' class='avatar' src='{{manager.avatarUrl}}' bindtap='managerDetail' />

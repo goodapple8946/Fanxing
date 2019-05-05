@@ -19,30 +19,36 @@
   color: grey;
 }
 .searchBorder {
+  margin-bottom: 15rpx;
   display: inline-block;
+  vertical-align: top;
   margin-left: 50rpx;
   widows: 650rpx;
 }
 .searchIcon {
   display: inline-block;
-  width: 60rpx;
-  height: 60rpx;
+  vertical-align: top;
+  width: 50rpx;
+  height: 50rpx;
 }
 .searchInput {
   display: inline-block;
+  vertical-align: top;
   margin-left: 25rpx;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   width: 420rpx;
 }
 .searchBtn {
   display: inline-block;
+  vertical-align: top;
   margin-left: 25rpx;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   width: 120rpx;
-  background-color: #00a0e9;
+  background-color: #588200;
   color: white;
 }
 .divLine {
+  margin-top: 15rpx;
   margin-left: 60rpx;
   margin-bottom: 25rpx;
   width: 630rpx;

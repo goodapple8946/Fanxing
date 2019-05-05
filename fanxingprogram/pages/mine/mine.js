@@ -73,7 +73,9 @@ Page({
   },
   //后台管理
   secret() {
-    
+    wx.navigateTo({
+      url: '/pages/backgroundManage/backgroundManage',
+    })
   },
   //显示后台按钮
   showSecret() {

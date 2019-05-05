@@ -1,0 +1,67 @@
+.navbar {
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+}
+.btn {
+  width: 250rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items:Center;
+  font-size: 0.95rem;
+}
+.btn_selected {
+  width: 250rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items:Center;
+  font-size: 0.95rem;
+  color: #588200;
+}
+.divLine {
+  margin-left: 0rpx;
+  margin-top: 2rpx;
+  margin-bottom: 2rpx;
+  width: 750rpx;
+  height: 1px;
+  background: lightgray;
+}
+.searchBorder {
+  display: inline-block;
+  margin-left: 50rpx;
+  widows: 650rpx;
+}
+.searchIcon {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}
+.searchInput {
+  display: inline-block;
+  margin-left: 25rpx;
+  font-size: 0.8rem;
+  width: 420rpx;
+}
+.searchBtn {
+  display: inline-block;
+  margin-left: 25rpx;
+  font-size: 0.75rem;
+  width: 120rpx;
+  background-color: #588200;
+  color: white;
+}
+.orders{
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+
+}
+.hotels{
+  position: absolute;
+
+}
+.managers{
+  position: absolute;
+
+}

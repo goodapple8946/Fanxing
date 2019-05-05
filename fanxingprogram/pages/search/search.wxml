@@ -1,5 +1,10 @@
 <view class='container'>
   <!-- 筛选条件 -->
+  <view class='searchBorder'>
+    <image class='searchIcon' src='/icons/search.png'/>
+    <input class='searchInput' placeholder='搜索位置、房屋名称' bindinput='searchInput' />
+    <button class='searchBtn' bindtap='doSearch' maxlength='15'>搜索</button>
+  </view>
   <view class='conditionBorder'>
     <view class='condition'>
       <view class='conditionTitle'>城市</view>
@@ -26,17 +31,8 @@
       <picker value='{{sortIndex}}' class='conditionContent' range='{{sorts}}' bindchange='selectSort'>{{sorts[sortIndex]}}</picker>
     </view>
   </view>
-  <view class='searchBorder'>
-    <image class='searchIcon' src='/icons/search.png'/>
-    <input class='searchInput' placeholder='请输入关键词' bindinput='searchInput' />
-    <button class='searchBtn' bindtap='doSearch' maxlength='15'>搜索</button>
-  </view>
   <!-- 分割线 -->
   <view class='divLine' />
-  <!-- 小标题：房源查询 -->
-  <view>
-    <subtitle icon='/icons/house.png' content='房源查询' />
-  </view>
   <!-- 房源查询一览 -->
   <view>
     <hotelBanner wx:for='{{showHotels}}' hotel='{{showHotels[index]}}' wx:key='{{index}}' />

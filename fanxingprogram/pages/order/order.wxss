@@ -9,7 +9,7 @@
   display: flex;
   justify-content:center;
   align-items:Center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .btn_selected {
   width: 125rpx;
@@ -17,8 +17,8 @@
   display: flex;
   justify-content:center;
   align-items:Center;
-  font-size: 0.8rem;
-  color: #00a0e9;
+  font-size: 0.9rem;
+  color: #588200;
 }
 .divLine {
   margin-left: 10rpx;

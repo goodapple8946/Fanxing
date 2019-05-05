@@ -58,6 +58,7 @@ Page({
       hotel: app.globalData.hotelDetail.hotel,
       markers
     });
+    console.log(this.data.hotel);
     //管家数据
     db.collection('User').where({
       _openid: app.globalData.hotelDetail.hotel._openid

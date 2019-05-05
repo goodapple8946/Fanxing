@@ -9,7 +9,8 @@ Page({
     hotels: null,
     topImages: [
       'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_1.jpg',
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_2.jpg'
+      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_2.jpg',
+      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/index.png'
       ],
     //筛选相关
     cityID: 0,

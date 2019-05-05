@@ -3,28 +3,27 @@
   position: relative;
   margin-left: 50rpx;
   margin-top: 25rpx;
+  margin-bottom: 15rpx;
   width: 650rpx;
   height: 150rpx;
-  box-shadow: 1px 1px 1px 1px grey;
+  box-shadow: 0rpx 0rpx 3rpx 2rpx gray;
   background: white;
   border-radius: 15rpx;
+}
+.remove::after{
+  border: none;
 }
 .name {
   margin-left: 25rpx;
   margin-top: 25rpx;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 .idCardNo {
+  margin-top: 15rpx;
   margin-left: 25rpx;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: grey;
-}
-.edit {
-  height: 75rpx;
-  width: 75rpx;
-  background-color: white;
-  position: absolute;
-  right: 0rpx;
-  top: 0rpx;
 }
 .remove {
   height: 75rpx;

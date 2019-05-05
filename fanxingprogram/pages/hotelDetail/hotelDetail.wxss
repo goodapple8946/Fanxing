@@ -48,7 +48,7 @@
 .managerBtn {
   display: inline-block;
   font-size: 0.75rem;
-  color: #00a0e9;
+  color: #588200;
   background-color: white;
   vertical-align: middle;
 }
@@ -115,5 +115,5 @@
   margin-bottom: 25rpx;
   width: 700rpx;
   height: 1px;
-  background: lightgray;
+  background:rgba(235, 233, 233, 0.781);
 }

@@ -2,7 +2,7 @@
   position: flex;
   align-items: center;
   justify-content: center;
-  background: #00a0e9;
+  background: #588200;
   width: 750rpx;
   height: 350rpx;
   text-align: center;
@@ -12,7 +12,7 @@
   width: 150rpx;
   height: 150rpx;
   border-radius:50%;
-  border: 20rpx solid #0080c9;
+  border: 20rpx solid #588200;
 }
 .name {
   color: white;

@@ -1,16 +1,6 @@
-.favoriteBorder {
-  position: relative;
-  background: white;
-  opacity: 0.9;
-  height: 75rpx;
-  width: 75rpx;
-  border-radius:50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .favorite {
   display: flex;
-  height: 80rpx;
-  width: 80rpx;
+  opacity: 1;
+  height: 60rpx;
+  width: 60rpx;
 }

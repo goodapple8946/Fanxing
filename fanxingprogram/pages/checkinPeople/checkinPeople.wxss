@@ -2,67 +2,16 @@
   margin-top: 25rpx;
   margin-bottom: 25rpx;
 }
-.newCheckinPeople {
-  margin-top: 25rpx;
-  width: 650rpx;
-  height: 80rpx;
+.newBtn{
   background-color: white;
-  display: flex;
-  align-items:center;
-  justify-content: center;
+  width: 100%;
 }
-.addIcon {
-  width: 55rpx;
-  height: 55rpx;
+.newBtn::after{
+  border: none;
 }
 .addText {
+  color: #588200;
   margin-left: 25rpx;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
-.inputCheckinPeople {
-  display: inline-block;
-  position: relative;
-  margin-left: 50rpx;
-  margin-top: 25rpx;
-  width: 650rpx;
-  height: 150rpx;
-  box-shadow: 1px 1px 1px 1px grey;
-  border-radius: 15rpx;
-  background: white;
-}
-.name {
-  margin-left: 25rpx;
-  margin-top: 25rpx;
-  width: 575rpx;
-}
-.idCardNo {
-  margin-left: 25rpx;
-  font-size: 0.75rem;
-  width: 575rpx;
-}
-.hide {
-  display: none;
-}
-.yes {
-  height: 75rpx;
-  width: 75rpx;
-  background-color: white;
-  position: absolute;
-  right: 0rpx;
-  top: 0rpx;
-}
-.no {
-  height: 75rpx;
-  width: 75rpx;
-  background-color: white;
-  position: absolute;
-  right: 0rpx;
-  top: 75rpx;
-}
-.icon {
-  height: 55rpx;
-  width: 55rpx;
-  position: absolute;
-  top: 10rpx;
-  left: 10rpx;
-}
+

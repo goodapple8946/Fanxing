@@ -1,12 +1,11 @@
 .subtitle {
   display: flex;
   align-items: center;
-  margin-left: 25rpx;
 }
 .subtitleText {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .subtitleIcon {
-  width: 80rpx;
-  height: 80rpx;
+  width: 60rpx;
+  height: 60rpx;
 }

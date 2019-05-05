@@ -1,0 +1,15 @@
+<view class='container'>
+  <view>
+    <text class='leftText'>姓名</text>
+    <input class='rightText' type='text' placeholder='请输入姓名' maxlength='10' bindinput='inputName' value='{{name}}' />
+  </view>
+
+  <view class='divLine' />
+
+  <view>
+    <text class='leftText'>身份证号</text>
+    <input class='rightText' type='idCard' placeholder='请输入身份证' maxlength='18' bindinput='inputIdCardNo' value='{{idCardNo}}' />
+  </view>
+ 
+  <button bindtap='submitInfo' class='submit'>确定</button>
+</view>

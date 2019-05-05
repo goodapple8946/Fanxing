@@ -1,6 +1,4 @@
 <view class='container'>
-  <!-- 小标题：成为管家 -->
-  <subtitle icon='/icons/manager.png' content='成为管家' />
   <!-- 成为管家填写栏 -->
   <view class='border'>
     <input class='phoneNo' placeholder='请输入手机号' type='number' bindinput='inputPhoneNo' value='{{phoneNo}}' maxlength='11'/>
