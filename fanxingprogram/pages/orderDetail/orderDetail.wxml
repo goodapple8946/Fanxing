@@ -1,0 +1,33 @@
+<view class='top'>
+  <image src='{{hotel.picture[0]}}' class='topPicture'></image>
+  <view class='topText'>
+    <text class='name'>{{hotel.name}}\n</text>
+    <text class='description'>{{hotel.bedroomNum + '室' + hotel.livingroomNum + '厅/宜住' + hotel.peopleNum + '人/' + hotel.type + ' · ' + hotel.location}}\n</text>
+  </view>
+</view>
+<view class='divLine' />
+<!-- 入住时间 -->
+
+<view class='divLine' />
+<!-- 入住人数 -->
+<view class='line'>
+  <text class='lineTitle'>入住人数</text>
+  <input class='numInput' type='number' maxlength='2' placeholder='请输入人数'></input>
+</view>
+
+<view class='divLine' />
+<!-- 入住人 -->
+<view class='line'>
+  <text class='lineTitle'>入住人</text>
+  <view class='selectCheckinPeople' bindtap='selectCheckinPeople'>选择入住人</view>
+</view>
+
+<view class='divLine' />
+<!-- 预订电话 -->
+<view class='line'>
+  <text class='lineTitle'>预订电话</text>
+  <input class='numInput' type='number' maxlength='11' placeholder='请输入号码'></input>
+</view>
+
+<view class='divLine' />
+<button class='payNow'>立即支付</button>

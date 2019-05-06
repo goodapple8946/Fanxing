@@ -1,0 +1,60 @@
+.top {
+  display: flex;
+  align-items:center;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  width: 700rpx;
+  height: 150rpx;
+}
+.topPicture {
+  width: 200rpx;
+  height: 150rpx;
+}
+.topText {
+  margin-left: 25rpx;
+  width: 475rpx;
+  height: 150rpx;
+}
+.name {
+  font-size: 0.8rem;
+}
+.description {
+  font-size: 0.6rem;
+  color:rgb(15, 15, 15);
+}
+.payNow {
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  color: white;
+  background-color: #588200;
+  font-size: 0.8rem;
+}
+.line {
+  margin-left: 25rpx;
+  display: flex;
+  font-size: 0.8rem;
+}
+.lineTitle {
+  width: 150rpx;
+}
+.numInput {
+  margin-left: 350rpx;
+  text-align: right;
+  width: 200rpx;
+  color: black;
+}
+.selectCheckinPeople {
+  margin-left: 350rpx;
+  text-align: right;
+  width: 200rpx;
+  color: grey;
+}
+.divLine {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 700rpx;
+  height: 1px;
+  background: lightgray;
+}

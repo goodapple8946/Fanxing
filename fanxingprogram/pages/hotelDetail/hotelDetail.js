@@ -109,9 +109,16 @@ Page({
   },
   //管家详情
     managerDetail() {
-    app.globalData.managerDetail.manager = this.properties.manager;
+    app.globalData.managerDetail.manager = this.data.manager;
     wx.navigateTo({
       url: '/pages/managerDetail/managerDetail'
+    });
+  },
+  //立即预订
+  orderNow() {
+    app.globalData.orderDetail.hotel = this.data.hotel;
+    wx.navigateTo({
+      url: '/pages/orderDetail/orderDetail'
     });
   }
 })

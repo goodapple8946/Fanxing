@@ -15,6 +15,9 @@ App({
     hotelDetail: {
       hotel: null
     },
+    orderDetail: {
+      hotel: null
+    },
     managerDetail: {
       manager: null
     },
