@@ -109,6 +109,14 @@
   width: 650rpx;
   height: 500rpx;
 }
+.orderNow {
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  color: white;
+  background-color: #588200;
+  font-size: 0.8rem;
+}
 .divLine {
   margin-left: 25rpx;
   margin-top: 25rpx;
