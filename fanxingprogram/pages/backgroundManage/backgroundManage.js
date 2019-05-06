@@ -8,6 +8,9 @@ Page({
    */
   data: {
     tabs: ["订单管理", "房源管理", "管家管理"],
+    orderInputValue:'',
+    hotelInputValue: '',
+    managerInputValue: '',
     activeIndex:0,
     orders:null,
     hotels:null,
@@ -18,40 +21,80 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    db.collection('Order').where({
-      _openid: this.data._openid
-    }).get({
+    //获取订单信息，降序排列
+    db.collection('Order')
+    .limit(10)
+    .orderBy('orderTime','desc')
+    .get({
       success: res => {
         this.setData({
           orders: res.data
         });
-      }
+    }
     });
   },
 
   /**
    * 点击顶部button
    */
-  topBtn0() {
+  orderBtn() {
     this.setData({
       activeIndex: 0
     });
   },
 
-  topBtn1() {
+  hotelBtn() {
     this.setData({
       activeIndex: 1
     });
   },
   
-  topBtn2() {
+  managerBtn() {
     this.setData({
       activeIndex: 2
     });
   },
 
+  orderSearchInput(e){
+    this.setData({
+      orderInputValue:e.detail.value
+    })
+  },
+  hotelSearchInput(e) {
+    this.setData({
+      hotelInputValue: e.detail.value
+    })
+  },
+  managerSearchInput(e) {
+    this.setData({
+      managerInputValue: e.detail.value
+    })
+  },
+
   orderSearch(){
-    console.log("order");
+    db.collection('Order')
+      .limit(10)
+      .orderBy('orderTime', 'desc')
+      .get({
+        success: res => {
+          var results = res.data;
+          var orders = [];
+          for (var i = 0; i < results.length; i++) {
+            if (
+              //关键词
+              (this.data.orderInputValue == '' ||
+                results[i].hotelName.indexOf(this.data.orderInputValue) != -1 ||
+                results[i].state.indexOf(this.data.orderInputValue) != -1 )
+            ) {
+              orders.push(results[i]);
+            }
+          }
+          this.setData({
+            orders:orders
+          });
+        }
+      });
+      console.log(this.data.orders[0].orderTime);
   },
 
   hotelSearch() {

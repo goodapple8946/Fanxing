@@ -97,11 +97,13 @@
   text-align: center;
 }
 .facilityIcon {
-  width: 100rpx;
-  height: 100rpx;
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 5rpx;
 }
 .facilityText {
   font-size: 0.75rem;
+  margin-bottom: 5rpx;
 }
 .map {
   margin-top: 25rpx;

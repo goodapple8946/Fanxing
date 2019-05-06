@@ -8,9 +8,9 @@ Page({
     user: null,
     hotels: null,
     topImages: [
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_1.jpg',
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/top_2.jpg',
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/index.png'
+      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/indexBanner/top1.jpg',
+      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/indexBanner/top2.jpg',
+      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/indexBanner/top3.jpg'
       ],
     //筛选相关
     cityID: 0,

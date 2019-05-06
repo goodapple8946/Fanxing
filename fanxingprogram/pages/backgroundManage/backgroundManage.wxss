@@ -54,14 +54,10 @@
 }
 .orders{
   margin-top: 10rpx;
-  margin-left: 20rpx;
-
 }
 .hotels{
-  position: absolute;
-
+  margin-top: 10rpx;
 }
 .managers{
-  position: absolute;
-
+  margin-top: 10rpx;
 }
