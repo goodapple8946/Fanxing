@@ -13,7 +13,7 @@
   <view class='divLine' />
   <!-- 管家 -->
   <view class='manager'>
-    <image class='managerAvatar' src='{{manager.avatarUrl}}' bindtap='managerDetail' ></image>
+    <image class='managerAvatar' src='{{manager.avatarUrl}}' bindtap='managerDetail' />
     <view class='managerDetail'>
       <view class='managerName'>{{manager.name}}</view>
       <view class='managerIntroduction'>{{manager.introduction}}</view>

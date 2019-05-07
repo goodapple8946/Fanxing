@@ -117,7 +117,7 @@
   margin-bottom: 25rpx;
   color: white;
   background-color: #588200;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .divLine {
   margin-left: 25rpx;

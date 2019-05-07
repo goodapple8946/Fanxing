@@ -1,0 +1,9 @@
+<view>
+
+    {{checkinPeopleIndexes}}
+  <checkbox-group bindchange='select' wx:for='{{user.checkinPeople}}' wx:key='{{index}}' class='banner'>
+    <checkinPeopleSelectionBanner checkinPeople='{{user.checkinPeople[index]}}' />
+    <checkbox class='select' checked='{{checked[index]}}' />
+  </checkbox-group>
+  <nothing wx:if='{{user.checkinPeople.length == 0}}' content='请先添加入住人' />
+</view>

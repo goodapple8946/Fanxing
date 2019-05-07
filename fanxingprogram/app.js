@@ -68,6 +68,7 @@ App({
             this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
             this.queryUserSearch && this.queryUserSearch(res.data[0]);
             this.queryUserManagerDetail && this.queryUserManagerDetail(res.data[0]);
+            this.queryUserSelectCheckinPeople && this.queryUserSelectCheckinPeople(res.data[0]);
           }
         });
       }

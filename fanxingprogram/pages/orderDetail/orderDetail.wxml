@@ -5,29 +5,45 @@
     <text class='description'>{{hotel.bedroomNum + '室' + hotel.livingroomNum + '厅/宜住' + hotel.peopleNum + '人/' + hotel.type + ' · ' + hotel.location}}\n</text>
   </view>
 </view>
+<!-- 分割线 -->
 <view class='divLine' />
-<!-- 入住时间 -->
-
+<!-- 入住日期 -->
+<view class='line'>
+  <text class='lineTitle'>入住日期</text>
+  <picker value='{{checkinDate}}' class='selectDate' mode='date' start='{{today}}' end='2099-12-31' bindchange='selectCheckinDate'>{{checkinDate}}</picker>
+</view>
+<!-- 分割线 -->
+<view class='divLine' />
+<!-- 离开日期 -->
+<view class='line'>
+  <text class='lineTitle'>离开日期</text>
+  <picker value='{{checkoutDate}}' class='selectDate' mode='date' start='{{today}}' end='2099-12-31' bindchange='selectCheckoutDate'>{{checkoutDate}}</picker>
+</view>
+<!-- 分割线 -->
 <view class='divLine' />
 <!-- 入住人数 -->
 <view class='line'>
   <text class='lineTitle'>入住人数</text>
-  <input class='numInput' type='number' maxlength='2' placeholder='请输入人数'></input>
+  <input class='numInput' bindinput='inputCheckinNum' type='number' maxlength='2' placeholder='请输入人数'></input>
 </view>
-
+<!-- 分割线 -->
 <view class='divLine' />
 <!-- 入住人 -->
 <view class='line'>
   <text class='lineTitle'>入住人</text>
   <view class='selectCheckinPeople' bindtap='selectCheckinPeople'>选择入住人</view>
 </view>
-
+<view class='checkinPeople' wx:if='{{checkinPeopleIndexes.length > 0}}'>
+  <view class='checkinPerson' wx:for='{{checkinPeopleIndexes}}' wx:key='{{index}}'>{{user.checkinPeople[checkinPeopleIndexes[index]].name}}</view>
+</view>
+<!-- 分割线 -->
 <view class='divLine' />
 <!-- 预订电话 -->
 <view class='line'>
   <text class='lineTitle'>预订电话</text>
-  <input class='numInput' type='number' maxlength='11' placeholder='请输入号码'></input>
+  <input class='numInput' bindinput='inputCheckinPhone' type='number' maxlength='11' placeholder='请输入号码'></input>
 </view>
-
+<!-- 分割线 -->
 <view class='divLine' />
+<!-- 立即支付 -->
 <button class='payNow'>立即支付</button>

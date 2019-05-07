@@ -111,19 +111,3 @@ Page({
     });
   }
 })
-
-//日期转字符串
-function dateToString(x) {
-  var y = x.getFullYear();
-  var m = x.getMonth() + 1;
-  var d = x.getDate();
-  m = m < 10 ? '0' + m : m;
-  d = d < 10 ? ('0' + d) : d;
-  return y + '-' + m + '-' + d;
-};
-
-//字符串转日期
-function stringToDate(x) {
-  var y = x.split('-');
-  return new Date(y[0], y[1], y[2]);
-}

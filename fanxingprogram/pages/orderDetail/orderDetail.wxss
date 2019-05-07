@@ -28,7 +28,7 @@
   margin-bottom: 25rpx;
   color: white;
   background-color: #588200;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .line {
   margin-left: 25rpx;
@@ -38,17 +38,39 @@
 .lineTitle {
   width: 150rpx;
 }
+.selectDate {
+  margin-left: 300rpx;
+  text-align: right;
+  width: 250rpx;
+  color: grey;
+}
 .numInput {
   margin-left: 350rpx;
   text-align: right;
   width: 200rpx;
-  color: black;
+  color: grey;
 }
 .selectCheckinPeople {
   margin-left: 350rpx;
   text-align: right;
   width: 200rpx;
   color: grey;
+}
+.checkinPeople {
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 650rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid lightgray;
+}
+.checkinPerson {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  font-size: 0.8rem;
 }
 .divLine {
   margin-left: 25rpx;

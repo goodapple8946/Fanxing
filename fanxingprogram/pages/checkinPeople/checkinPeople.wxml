@@ -1,9 +1,10 @@
 <view class='container'>
-  <!-- 入住人一览 -->
   <view>
+    <!-- 添加入住人 -->
     <button class='newBtn' bindtap='newCheckinPeople'>
-      <text class='addText'>+ 添加联系人</text>
+      <text class='addText'>+ 添加入住人</text>
     </button>
+    <!-- 入住人一览 -->
     <checkinPeopleBanner wx:for='{{user.checkinPeople}}' checkinPeople='{{user.checkinPeople[index]}}' wx:key='{{index}}' wx:key='{{index}}' />
   </view>
 </view>

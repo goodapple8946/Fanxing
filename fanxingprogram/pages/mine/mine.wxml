@@ -28,7 +28,6 @@
     <text class='mineText'>意见反馈</text>
   </button>
   <button wx:if="{{secret}}" class='secretBtn' bindtap='secret'>
-      <image src='/icons/secret.png' class='secretIcon' />
       <text class='secretText'>后台管理</text>
   </button>
 </view>

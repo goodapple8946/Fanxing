@@ -1,0 +1,4 @@
+<view class='border'>
+  <view class='name'>{{checkinPeople.name}}</view>
+  <view class='idCardNo'>身份证：{{checkinPeople.idCardNo}}</view>
+</view>

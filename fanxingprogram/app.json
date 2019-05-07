@@ -15,7 +15,8 @@
     "pages/hotelDetail/hotelDetail",
     "pages/managerDetail/managerDetail",
     "pages/editorCheckinPeople/editorCheckinpeople",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/selectCheckinPeople/selectCheckinPeople"
   ],
   "window": {
     "backgroundTextStyle": "light",

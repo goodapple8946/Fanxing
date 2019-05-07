@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "checkinPeopleSelectionBanner": "/component/checkinPeopleSelectionBanner/checkinPeopleSelectionBanner",
+    "nothing": "/component/nothing/nothing"
+  }
+}
