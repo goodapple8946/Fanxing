@@ -51,5 +51,6 @@ Page({
     for (var i in e.detail.value) {
       this.data.checkinPeopleIndexes.push(Number(e.detail.value[i]));
     }
+    this.data.checkinPeopleIndexes.sort();
   }
 })
