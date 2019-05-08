@@ -90,9 +90,9 @@ Page({
               app.globalData.search.type == results[i].bedroomNum) &&
             //关键词
             (this.data.searchText == '' ||
-              results[i].name.indexOf(this.data.searchText) != -1 ||
-              results[i].type.indexOf(this.data.searchText) != -1 ||
-              results[i].location.indexOf(this.data.searchText) != -1)
+              results[i].name && results[i].name.indexOf(this.data.searchText) != -1 ||
+              results[i].type && results[i].type.indexOf(this.data.searchText) != -1 ||
+              results[i].location && results[i].location.indexOf(this.data.searchText) != -1)
           ) {
             hotels.push(results[i]);
           }
