@@ -47,12 +47,9 @@ Page({
   },
   //选择入住人
   select(e) {
-    var index = e.target.offsetTop / 80;
-    var i = this.data.checkinPeopleIndexes.indexOf(index);
-    if (i != -1) {
-      this.data.checkinPeopleIndexes.splice(i, 1);
-    } else {
-      this.data.checkinPeopleIndexes.push(index);
+    this.data.checkinPeopleIndexes = [];
+    for (var i in e.detail.value) {
+      this.data.checkinPeopleIndexes.push(Number(e.detail.value[i]));
     }
     this.data.checkinPeopleIndexes.sort();
   }

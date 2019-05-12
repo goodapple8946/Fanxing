@@ -1,0 +1,9 @@
+/* fanxingprogram/pages/orderPay/orderPay.wxss */
+.payNow {
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  color: white;
+  background-color: #588200;
+  font-size: 1rem;
+}

@@ -1,7 +1,7 @@
 <view class='container'>
   <!-- 图片 -->
   <view class='pictureBorder'>
-    <imageSwiper images = '{{hotel.picture}}' />
+    <imageSwiper images='{{hotel.picture}}' />
     <priceLabel class='price' price='{{hotel.price}}' />
     <favoriteLabel class='favorite' favorite='{{hotel.favorite}}' bindtap='addFavorite' />
   </view>

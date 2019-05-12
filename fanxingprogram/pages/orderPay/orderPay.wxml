@@ -1,0 +1,5 @@
+<!--fanxingprogram/pages/orderPay/orderPay.wxml-->
+<text>fanxingprogram/pages/orderPay/orderPay.wxml</text>
+<!-- 立即支付 -->
+<button class='payNow' bindtap='pay'>立即支付</button>
+<text>{{ip}}</text>
