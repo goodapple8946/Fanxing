@@ -1,6 +1,7 @@
 // fanxingprogram/pages/orderPay/orderPay.js
 const app = getApp();
 var MD5 = require('../../util/MD5.js');
+var Parser = require('../../util/dom-parser')
 
 Page({
 
@@ -74,30 +75,26 @@ Page({
     },
 
     pay: function(){
-        var ran = Math.random()*999999999;
-        var ip = wx.getStorageSync('ip');
         var fee = 1;
+        var detail = '商品详情';
+        var tradeno = Math.random() * 999999999;
+        tradeno = Math.floor(tradeno);
+
+        var ran = Math.random()*999999999;
+        var ran1 = Math.random() * 999999999;
+        var ip = wx.getStorageSync('ip');
         var sign;
         var appid = 'wx6956cb292be5d887';
         var attach = '繁星小程序支付';
         var body = '繁星民宿租金支付';
         var mchid = '1533779071';
-        var detail = '商品详情';
         var notify_url = 'http://wxpay.wxutil.com/pub_v2/pay/notify.v2.php';
-        var tradeno = '123';
-
         var stringA;
-
-        stringA = "appid=" + appid + "&attach=" + attach + "&body=" + body + "&detail=" + detail + "&mch_id=" + mchid + "&nonce_str=" + ran.toString() + "&notify_url=" + notify_url + "&openid=" + app.globalData.user['_openid'] + "&out_trade_no=" + tradeno + "&spbill_create_ip=" + ip + "&total_fee=" + fee + "&trade_type=JSAPI";
-
+        stringA = "appid=" + appid + "&attach=" + attach + "&body=" + body + "&detail=" + detail + "&mch_id=" + mchid + "&nonce_str=" + ran.toString() + "&notify_url=" + notify_url + "&openid=" + app.globalData.user['_openid'] + "&out_trade_no=" + tradeno + "&sign_type=MD5&spbill_create_ip=" + ip + "&total_fee=" + fee + "&trade_type=JSAPI";
 
         var stringB;
-        stringB = stringA + "&key=2410c443d1eb69c6742c175a4c7927ab"
+        stringB = stringA + "&key=fanxingstellarisweixinzhifu00000"
         sign = MD5.md5(stringB).toUpperCase();
-
-        // this.setData({
-        //     ip: sign
-        // });
 
         //["西红柿炒蛋","0.34","炒蛋",""]
 
@@ -120,7 +117,7 @@ Page({
         dataString += app.globalData.user['_openid'];
         dataString += '</openid><out_trade_no>';
         dataString += tradeno;
-        dataString += '</out_trade_no><spbill_create_ip>';
+        dataString += '</out_trade_no><sign_type>MD5</sign_type><spbill_create_ip>';
         dataString += ip;
         dataString += '</spbill_create_ip><total_fee>';
         dataString += fee;
@@ -143,9 +140,60 @@ Page({
                 this.setData({
                     ip: res.result
                 });
+                console.log(res.result);
+
+                var XMLParser = new Parser.DOMParser()
+                var doc = XMLParser.parseFromString(res.result)
+                var a = doc.getElementsByTagName('prepay_id')['0'];
+                try{
+                    console.log(a.firstChild.nodeValue);
+                    var prepaid_id = a.firstChild.nodeValue;
+                    var timestamp = Date.parse(new Date());
+                    timestamp = timestamp / 1000;
+                    console.log("当前时间戳为：" + timestamp);
+                    var packages = 'prepay_id=' + prepaid_id;
+                    
+                    stringA = "appId=" + appid + "&nonceStr=" + ran1.toString() + "&package=" + packages + "&signType=MD5&timeStamp=" + timestamp;
+                    var stringB;
+                    stringB = stringA + "&key=fanxingstellarisweixinzhifu00000"
+                    sign = MD5.md5(stringB).toUpperCase();
+                    dataString = '';
+                    dataString += '<xml><appid>';
+                    dataString += appid;
+                    dataString += '</appid><nonce_str>';
+                    dataString += ran1.toString();
+                    dataString += '</nonce_str><package>';
+                    dataString += packages;
+                    dataString += '</package><sign_type>MD5</sign_type><timeStamp>';
+                    dataString += timestamp;
+                    dataString += '</timeStamp><sign>';
+                    dataString += sign;
+                    dataString += '</sign></xml>'
+                    console.log(dataString);
+
+                    wx.requestPayment(
+                        {
+                            'timeStamp': timestamp.toString(),
+                            'nonceStr': ran1.toString(),
+                            'package': packages,
+                            'signType': 'MD5',
+                            'paySign': sign,
+                            'success': function (res) {
+                                console.log(res)
+                            },
+                            'fail': function (res) {
+                                console.log(res)
+                            },
+                            'complete': function (res) {
+                                console.log(res)
+                            }
+                        }
+                    )
+                }
+                catch(err){
+                    console.log(err);
+                }
             }
         });
-        // "<xml>\r\n   <appid>wx2421b1c4370ec43b</appid>\r\n   <attach>支付测试</attach>\r\n   <body>JSAPI支付测试</body>\r\n   <mch_id>10000100</mch_id>\r\n   <detail><![CDATA[{ \"goods_detail\":[ ] }]]></detail>\r\n   <nonce_str>1add1a30ac87aa2db72f57a2375d8fec</nonce_str>\r\n   <notify_url>http://wxpay.wxutil.com/pub_v2/pay/notify.v2.php</notify_url>\r\n   <openid>oUpF8uMuAJO_M2pxb1Q9zNjWeS6o</openid>\r\n   <out_trade_no>1415659990</out_trade_no>\r\n   <spbill_create_ip>14.23.150.211</spbill_create_ip>\r\n   <total_fee>1</total_fee>\r\n   <trade_type>JSAPI</trade_type>\r\n   <sign>0CB01533B8C1EF103065174F50BCA001</sign>\r\n</xml>"
-        
     }
 })
