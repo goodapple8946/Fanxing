@@ -37,7 +37,7 @@
 </view>
 <!-- 小标题：推荐房源 -->
 <view class='moreHotel'>
-  <subtitle icon='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/recommend.png' content='推荐房源' />
+  <subtitle icon='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/recommend.png' content='推荐房源' />
   <view bindtap='moreHotel' class='moreHotelBtn'>更多房源 ></view>
 </view>
 <!-- 推荐房源一览 -->
