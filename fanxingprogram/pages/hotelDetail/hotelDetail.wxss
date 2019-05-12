@@ -1,3 +1,6 @@
+.container{
+  margin-bottom: 120rpx;
+}
 .pictureBorder {
   position: relative;
 }
@@ -112,9 +115,9 @@
   height: 500rpx;
 }
 .orderNow {
-  margin-left: 25rpx;
-  margin-right: 25rpx;
-  margin-bottom: 25rpx;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
   color: white;
   background-color: #588200;
   font-size: 1rem;

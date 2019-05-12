@@ -8,9 +8,9 @@ Page({
     user: null,
     hotels: null,
     topImages: [
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/indexBanner/top1.jpg',
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/indexBanner/top2.jpg',
-      'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/indexBanner/top3.jpg'
+      'cloud://fanxing-zufxl.6661-fanxing-zufxl/indexBanner/top1.jpg',
+      'cloud://fanxing-zufxl.6661-fanxing-zufxl/indexBanner/top2.jpg',
+      'cloud://fanxing-zufxl.6661-fanxing-zufxl/indexBanner/top3.jpg'
       ],
     //筛选相关
     cityID: 0,
@@ -118,6 +118,14 @@ Page({
     });
     app.doSearch && app.doSearch();
   },
+
+  //支付测试
+  pay(){
+      wx.navigateTo({
+          url: '/pages/orderPay/orderPay',
+      })
+  },
+
   //更多房源（无筛选条件搜索）
   moreHotel() {
     this.setData({

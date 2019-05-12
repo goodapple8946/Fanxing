@@ -122,7 +122,5 @@
   </view>
   <!-- 额外费用 -->
   
-  <!-- 分割线 -->
-  <view class='divLine' />
-  <button class='orderNow' bindtap='orderNow'>立即预订</button>
 </view>
+<button class='orderNow' bindtap='orderNow'>立即预订</button>
