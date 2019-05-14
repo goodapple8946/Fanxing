@@ -5,7 +5,7 @@
   <view class = "startTime">开始时间：{{order.startTime}}</view>
   <view class = "endTime">结束时间：{{order.endTime}}</view>
   <view class='orderTime'>下单时间：{{order.orderTime}}</view>
-  <view class='paymentNumber'>支付金额：¥ {{order.paymentNumber}}</view>
+  <view class='paymentNumber'>支付金额：¥ {{order.paymentNumber/100}}</view>
 </view>
 <view class = "orderState">{{order.state}}</view>
 </view>

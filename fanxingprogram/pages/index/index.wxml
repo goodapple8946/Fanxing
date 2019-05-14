@@ -32,8 +32,8 @@
       </view>
       <!-- 搜索按钮 -->
       <button bindtap='search' class='btnSearch'>搜索</button>
-
-      <button bindtap='pay' class='btnSearch'>支付测试</button>
+      <!-- 支付测试 
+      <button bindtap='pay' class='btnSearch'>支付测试</button> -->
     </view>
   </view>
 </view>
