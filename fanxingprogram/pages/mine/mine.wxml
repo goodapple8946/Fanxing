@@ -4,27 +4,27 @@
 </view>
 <view class='center'>
   <button class='mineBtn' bindtap='favorite'>
-    <image class='mineIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/favorite_green.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/favorite_green.png'></image>
     <text class='mineText'>收藏</text>
   </button>
   <button class='mineBtn' bindtap='checkinPeople'>
-    <image class='mineIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/checkinperson.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/checkinperson.png'></image>
     <text class='mineText'>入住人</text>
   </button>
   <button class='mineBtn' bindtap='manager'>
-    <image class='mineIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/manager.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/manager.png'></image>
     <text class='mineText'>成为管家</text>
   </button>
   <button class='mineBtn' bindtap='about'>
-    <image class='mineIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/about.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/about.png'></image>
     <text class='mineText'>关于</text>
   </button>
   <button class='mineBtn' bindtap='service'>
-    <image class='mineIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/service.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/service.png'></image>
     <text class='mineText'>客服</text>
   </button>
   <button class='mineBtn' bindtap='feedback'>
-    <image class='mineIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/feedback.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/feedback.png'></image>
     <text class='mineText'>意见反馈</text>
   </button>
   <button wx:if="{{secret}}" class='secretBtn' bindtap='secret'>

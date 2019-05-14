@@ -26,17 +26,17 @@
   <view class='detailBorder'>
     <!-- 户型 -->
     <view class='detail'>
-      <image class='detailIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/hotel.png' />
+      <image class='detailIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/hotel.png' />
       <view class='detailText'>{{hotel.bedroomNum}}室{{hotel.livingroomNum}}厅{{hotel.kitchenNum}}厨{{hotel.toiletNum}}卫</view>
     </view>
     <!-- 入住人数 -->
     <view class='detail'>
-      <image class='detailIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/peopleNum.png' />
+      <image class='detailIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/peopleNum.png' />
       <view class='detailText'>宜住{{hotel.peopleNum}}人</view>
     </view>
     <!-- 床数 -->
     <view class='detail'>
-      <image class='detailIcon' src='cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/bed.png' />
+      <image class='detailIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/bed.png' />
       <view class='detailText'>共{{hotel.bedNum}}床</view>
     </view>
   </view>
@@ -59,7 +59,7 @@
   <!-- 配套设施 -->
   <view class='facilityBorder'>
     <view wx:for='{{hotel.facilities}}' wx:key='{{index}}' class='facility'>
-      <image src="{{'cloud://fanxing-db-e9c08f.6661-fanxing-db-e9c08f/fanxing_icons/'+facilityCnToEn[hotel.facilities[index]]+'.png'}}" class='facilityIcon' />
+      <image src="{{'cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/'+facilityCnToEn[hotel.facilities[index]]+'.png'}}" class='facilityIcon' />
       <view class='facilityText'>{{hotel.facilities[index]}}</view>
     </view>
   </view>
