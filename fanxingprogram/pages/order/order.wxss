@@ -4,7 +4,7 @@
   display: flex;
 }
 .btn {
-  width: 125rpx;
+  width: 150rpx;
   height: 100rpx;
   display: flex;
   justify-content:center;
@@ -12,7 +12,7 @@
   font-size: 0.9rem;
 }
 .btn_selected {
-  width: 125rpx;
+  width: 150rpx;
   height: 100rpx;
   display: flex;
   justify-content:center;

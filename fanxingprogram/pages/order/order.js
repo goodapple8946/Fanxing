@@ -41,10 +41,10 @@ Page({
     });
   },
   topBtn1() {
-    //预订
+    //待入住
     db.collection('Order').where({
       _openid: this.data._openid,
-      state: '预订'
+      state: '待入住'
     }).get({
       success: res => {
         this.setData({
@@ -55,10 +55,10 @@ Page({
     });
   },
   topBtn2() {
-    //待入住
+    //已入住
     db.collection('Order').where({
       _openid: this.data._openid,
-      state: '待入住'
+      state: '已入住'
     }).get({
       success: res => {
         this.setData({
@@ -69,10 +69,10 @@ Page({
     });
   },
   topBtn3() {
-    //已入住
+    //已离店
     db.collection('Order').where({
       _openid: this.data._openid,
-      state: '已入住'
+      state: '已离店'
     }).get({
       success: res => {
         this.setData({
@@ -83,20 +83,6 @@ Page({
     });
   },
   topBtn4() {
-    //已离店
-    db.collection('Order').where({
-      _openid: this.data._openid,
-      state: '已离店'
-    }).get({
-      success: res => {
-        this.setData({
-          orders: res.data,
-          topIndex: 4
-        });
-      }
-    });
-  },
-  topBtn5() {
     //已取消
     db.collection('Order').where({
       _openid: this.data._openid,
@@ -105,7 +91,7 @@ Page({
       success: res => {
         this.setData({
           orders: res.data,
-          topIndex: 5
+          topIndex: 4
         });
       }
     });

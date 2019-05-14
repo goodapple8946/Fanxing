@@ -4,32 +4,10 @@ var MD5 = require('../../util/MD5.js');
 var Parser = require('../../util/dom-parser')
 
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
         info: null,
         ip : null
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow: function () {
         wx.cloud.callFunction({
             name: 'getIP',
@@ -39,48 +17,13 @@ Page({
         });
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
-
     pay: function(){
         var fee = 1;
         var detail = '商品详情';
         var tradeno = Math.random() * 999999999;
         tradeno = Math.floor(tradeno);
 
-        var ran = Math.random()*999999999;
+        var ran = Math.random() * 999999999;
         var ran1 = Math.random() * 999999999;
         var ip = wx.getStorageSync('ip');
         var sign;
@@ -95,8 +38,6 @@ Page({
         var stringB;
         stringB = stringA + "&key=fanxingstellarisweixinzhifu00000"
         sign = MD5.md5(stringB).toUpperCase();
-
-        //["西红柿炒蛋","0.34","炒蛋",""]
 
         var dataString = '';
         dataString += '<xml><appid>';

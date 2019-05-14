@@ -1,0 +1,13 @@
+.border {
+  width: 750rpx;
+  height: 1403rpx;
+}
+.confirm {
+  position: absolute;
+  top: 200rpx;
+  left: 125rpx;
+  width: 500rpx;
+  background-color: #588200;
+  color: white;
+  border-radius: 50px 50px;
+}

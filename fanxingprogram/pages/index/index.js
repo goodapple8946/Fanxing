@@ -118,14 +118,12 @@ Page({
     });
     app.doSearch && app.doSearch();
   },
-
   //支付测试
   pay(){
       wx.navigateTo({
           url: '/pages/orderPay/orderPay',
       })
   },
-
   //更多房源（无筛选条件搜索）
   moreHotel() {
     this.setData({
