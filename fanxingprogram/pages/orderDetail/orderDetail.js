@@ -240,6 +240,10 @@ Page({
                 });
                 wx.switchTab({
                   url: '/pages/order/order',
+                  success: res => {
+                    var page = getCurrentPages().pop();
+                    page && page.onLoad();
+                  }
                 });
               },
               fail: res => {
@@ -249,7 +253,6 @@ Page({
                 });
                 db.collection('Order').add({
                   data: {
-                    //_openid: this.data.user._openid,
                     orderTime: dateToString(new Date()),
                     startTime: this.data.checkinDate,
                     endTime: this.data.checkoutDate,
