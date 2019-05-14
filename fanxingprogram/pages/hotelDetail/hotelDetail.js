@@ -22,8 +22,8 @@ Page({
       '牙具': 'toothbrush',
       '洗衣机': 'washingmachine',
       'wifi': 'wifi',
-      '浴巾':'bathtowel',
-      '煤气灶':'gascooker',
+      '浴巾': 'bathtowel',
+      '煤气灶': 'gascooker',
       '热水器': 'heater',
       '洗手液': 'liquidsoap',
       '安保': 'security',
@@ -107,7 +107,7 @@ Page({
     app.favoriteIconIndex();
   },
   //管家详情
-    managerDetail() {
+  managerDetail() {
     app.globalData.managerDetail.manager = this.data.manager;
     wx.navigateTo({
       url: '/pages/managerDetail/managerDetail'
