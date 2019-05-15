@@ -3,7 +3,7 @@
   <view class='feedbackOutside'>
     <view class='feedbackInside'>
       <form bindsubmit="submit">
-        <textarea placeholder="请输入您的宝贵意见/建议（500字以内）" name="textarea" maxlength='240' class='textarea' show-confirm-bar='false' />
+        <textarea placeholder="请输入您的宝贵意见或建议" name="textarea" maxlength='240' class='textarea' show-confirm-bar='false' />
         <button form-type="submit" class='btn'>提交</button>
       </form>
     </view>

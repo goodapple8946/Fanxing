@@ -28,7 +28,7 @@ Page({
   topBtn0() {
     //全部
     db.collection('Order').where({
-      _openid: this.data._openid
+      _openid: this.data.user._openid
     }).get({
       success: res => {
         this.setData({
@@ -43,7 +43,7 @@ Page({
   topBtn1() {
     //待入住
     db.collection('Order').where({
-      _openid: this.data._openid,
+      _openid: this.data.user._openid,
       state: '待入住'
     }).get({
       success: res => {
@@ -57,7 +57,7 @@ Page({
   topBtn2() {
     //已入住
     db.collection('Order').where({
-      _openid: this.data._openid,
+      _openid: this.data.user._openid,
       state: '已入住'
     }).get({
       success: res => {
@@ -71,7 +71,7 @@ Page({
   topBtn3() {
     //已离店
     db.collection('Order').where({
-      _openid: this.data._openid,
+      _openid: this.data.user._openid,
       state: '已离店'
     }).get({
       success: res => {
@@ -85,7 +85,7 @@ Page({
   topBtn4() {
     //已取消
     db.collection('Order').where({
-      _openid: this.data._openid,
+      _openid: this.data.user._openid,
       state: '已取消'
     }).get({
       success: res => {

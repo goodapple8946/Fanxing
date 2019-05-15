@@ -25,49 +25,49 @@ App({
     cities: null
   },
   onLaunch() {
+    this.queryCity();
+  },
+  //获取用户数据
+  queryUser() {
     //获取用户openid
     wx.cloud.callFunction({
       name: 'login',
       complete: res => {
         this.globalData.openid = res.result.openid;
-      }
-    });
-    this.queryCity();
-  },
-  //获取用户数据
-  queryUser() {
-    //获取UserInfo
-    wx.getUserInfo({
-      success: res => {
-        var userInfo = res.userInfo;
-        db.collection('User').where({
-          _openid: this.globalData.openid
-        }).get({
+        //获取UserInfo
+        wx.getUserInfo({
           success: res => {
-            var user = res.data[0];
-            //如果数据库已有用户数据，则取用，否则插入新用户
-            if (user) {
-              //更新头像
-              if (user.avatarUrl != userInfo.avatarUrl) {
-                user.avatarUrl = userInfo.avatarUrl
+            var userInfo = res.userInfo;
+            db.collection('User').where({
+              _openid: this.globalData.openid
+            }).get({
+              success: res => {
+                var user = res.data[0];
+                //如果数据库已有用户数据，则取用，否则插入新用户
+                if (user) {
+                  //更新头像
+                  if (user.avatarUrl != userInfo.avatarUrl) {
+                    user.avatarUrl = userInfo.avatarUrl
+                  }
+                  //更新昵称
+                  if (user.name != userInfo.nickName) {
+                    user.name = userInfo.nickName
+                  }
+                  this.globalData.user = res.data[0];
+                }
+                else
+                  this.insertUser(userInfo);
+                //防止onLaunch在onLoad之后返回
+                this.queryUserIndex && this.queryUserIndex(res.data[0]);
+                this.queryUserOrder && this.queryUserOrder(res.data[0]);
+                this.queryUserMine && this.queryUserMine(res.data[0]);
+                this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
+                this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
+                this.queryUserSearch && this.queryUserSearch(res.data[0]);
+                this.queryUserManagerDetail && this.queryUserManagerDetail(res.data[0]);
+                this.queryUserSelectCheckinPeople && this.queryUserSelectCheckinPeople(res.data[0]);
               }
-              //更新昵称
-              if (user.name != userInfo.nickName) {
-                user.name = userInfo.nickName
-              }
-              this.globalData.user = res.data[0];
-            }
-            else
-              this.insertUser(userInfo);
-            //防止onLaunch在onLoad之后返回
-            this.queryUserIndex && this.queryUserIndex(res.data[0]);
-            this.queryUserOrder && this.queryUserOrder(res.data[0]);
-            this.queryUserMine && this.queryUserMine(res.data[0]);
-            this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
-            this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
-            this.queryUserSearch && this.queryUserSearch(res.data[0]);
-            this.queryUserManagerDetail && this.queryUserManagerDetail(res.data[0]);
-            this.queryUserSelectCheckinPeople && this.queryUserSelectCheckinPeople(res.data[0]);
+            });
           }
         });
       }
