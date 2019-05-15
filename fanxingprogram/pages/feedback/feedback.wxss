@@ -15,6 +15,7 @@
   justify-content: center;
 }
 .feedbackInside {
+  margin-left: 25rpx;
   width: 18rem;
 }
 .btn {
