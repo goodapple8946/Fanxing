@@ -176,5 +176,5 @@ function dateToString(x) {
 //字符串转日期
 function stringToDate(x) {
   var y = x.split('-');
-  return new Date(y[0], y[1], y[2]);
+  return new Date(y[0], y[1] - 1, y[2]);
 }

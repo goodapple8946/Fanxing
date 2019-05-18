@@ -19,7 +19,8 @@ Page({
     sortIndex: 0,
     sorts: ['综合排序', '价格由高到低', '价格由低到高', '好评优先'],
     searchText: '',
-    today: dateToString(new Date())
+    today: dateToString(new Date()),
+    useDates: null
   },
   onLoad() {
     //初始化
@@ -94,7 +95,19 @@ Page({
               results[i].type && results[i].type.indexOf(this.data.searchText) != -1 ||
               results[i].location && results[i].location.indexOf(this.data.searchText) != -1)
           ) {
-            hotels.push(results[i]);
+            var dateAllowed = true;
+            if (app.globalData.search.checkinDate && app.globalData.search.checkoutDate) {
+              //日期不冲突
+              for (var date = new Date(app.globalData.search.checkinDate); date.getTime() <= app.globalData.search.checkoutDate.getTime(); date = new Date(date.getTime() + 86400000)) {
+                if (results[i].dateUsed.indexOf(dateToString(date)) != -1) {
+                  dateAllowed = false;
+                  break;
+                }
+              }
+            }
+            if (dateAllowed) {
+              hotels.push(results[i]);
+            }
           }
         }
         this.setData({
@@ -226,7 +239,7 @@ function dateToString(x) {
 //字符串转日期
 function stringToDate(x) {
   var y = x.split('-');
-  return new Date(y[0], y[1], y[2]);
+  return new Date(y[0], y[1] - 1, y[2]);
 }
 
 //排序-综合排序
