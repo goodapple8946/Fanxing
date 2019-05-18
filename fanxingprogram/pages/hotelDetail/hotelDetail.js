@@ -33,8 +33,7 @@ Page({
       '马桶': 'toilet',
       '纸巾': 'toiletpaper',
       '洗洁剂': 'washing',
-      '窗户': 'window',
-      '': '',
+      '窗户': 'window'
     }
   },
   onLoad() {

@@ -1,0 +1,20 @@
+.bottomBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  background-color: #588200;
+  font-size: 1rem;
+}
+.newBtn{
+  background-color: white;
+  width: 100%;
+}
+.newBtn::after{
+  border: none;
+}
+.addText {
+  color: #588200;
+  margin-left: 25rpx;
+  font-size: 1rem;
+}

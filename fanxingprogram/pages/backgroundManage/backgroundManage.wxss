@@ -28,6 +28,7 @@
   height: 1px;
   background: lightgray;
 }
+
 .searchBorder {
   display: inline-block;
   margin-left: 50rpx;

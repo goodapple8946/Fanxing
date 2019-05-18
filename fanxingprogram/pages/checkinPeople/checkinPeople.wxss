@@ -2,16 +2,5 @@
   margin-top: 25rpx;
   margin-bottom: 25rpx;
 }
-.newBtn{
-  background-color: white;
-  width: 100%;
-}
-.newBtn::after{
-  border: none;
-}
-.addText {
-  color: #588200;
-  margin-left: 25rpx;
-  font-size: 1rem;
-}
+
 

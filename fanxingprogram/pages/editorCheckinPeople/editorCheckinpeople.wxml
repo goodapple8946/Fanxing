@@ -10,6 +10,5 @@
     <text class='leftText'>身份证号</text>
     <input class='rightText' type='idCard' placeholder='请输入身份证' maxlength='18' bindinput='inputIdCardNo' value='{{idCardNo}}' />
   </view>
- 
-  <button bindtap='submitInfo' class='submit'>确定</button>
 </view>
+<button bindtap='submitInfo' class='bottomBtn'>确定</button>

@@ -25,7 +25,8 @@
     <input class='searchInput' placeholder='房源名称、管家昵称' bindinput='hotelSearchInput' />
     <button class='searchBtn' bindtap='hotelSearch' maxlength='15'>搜索</button>
   </view>
-  <text>orde1r</text>
+  
+  <button class='bottomBtn' bindtap='orderNow'>添加房源</button>
 </view>
 
 <!--管家管理-->

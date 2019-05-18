@@ -52,5 +52,14 @@ Page({
       this.data.checkinPeopleIndexes.push(Number(e.detail.value[i]));
     }
     this.data.checkinPeopleIndexes.sort();
+    wx.navigateBack({
+      delta:1
+    })
+  },
+  newCheckinPeople() {
+    //跳转至editorCheckinPeople
+    wx.navigateTo({
+      url: '/pages/editorCheckinPeople/editorCheckinpeople',
+    })
   }
 })

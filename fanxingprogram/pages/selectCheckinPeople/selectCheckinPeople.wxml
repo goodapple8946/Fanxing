@@ -1,4 +1,7 @@
 <view>
+  <button class='newBtn' bindtap='newCheckinPeople'>
+    <text class='addText'>+ 添加入住人</text>
+  </button>
   <checkbox-group bindchange='select'>
     <view wx:for='{{user.checkinPeople}}' wx:key='{{index}}' class='banner'>
       <checkinPeopleSelectionBanner checkinPeople='{{user.checkinPeople[index]}}' />

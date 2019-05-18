@@ -14,7 +14,28 @@ Page({
     activeIndex:0,
     orders:null,
     hotels:null,
-    manages:null
+    managerApplication:null,
+    addHotel:{
+        name:'',
+        bedNum:0,
+        bedroomNum:0,
+        checkinTime:'14:00',
+        checkoutTime:'12:00',
+        city:'',
+        description:'',
+        facilities:[],
+        location:'',
+        peopleNum:0,
+        kitchenNum:0,
+        livingroomNum:0,
+        price:0,
+        recieveTime:'14:00~23:00',
+        recommend:false,
+        rules:'',
+        toiletNum:0,
+        type:'公寓',
+        picture:[]
+    }
   },
 
   /**
@@ -32,6 +53,8 @@ Page({
         });
     }
     });
+    //获取房源信息
+    db.collection();
   },
 
   /**
@@ -41,6 +64,17 @@ Page({
     this.setData({
       activeIndex: 0
     });
+    //更新订单信息
+    db.collection('Order')
+      .limit(10)
+      .orderBy('orderTime', 'desc')
+      .get({
+        success: res => {
+          this.setData({
+            orders: res.data
+          });
+        }
+      });
   },
 
   hotelBtn() {
@@ -53,6 +87,16 @@ Page({
     this.setData({
       activeIndex: 2
     });
+    //获取管家申请信息
+    db.collection('managerApplication')
+      .limit(10)
+      .get({
+        success: res => {
+          this.setData({
+            managerApplication: res.data
+          })
+        }
+      })
   },
 
   orderSearchInput(e){
