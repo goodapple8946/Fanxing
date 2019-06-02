@@ -27,6 +27,6 @@
 .submit{
   margin-top:40rpx;
   color: white;
-  background-color: #588200;
+  background-color: #FFCB2A;
 }
 

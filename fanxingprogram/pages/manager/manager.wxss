@@ -21,7 +21,7 @@
   margin-left: 25rpx;
 }
 .btn {
-  background-color: #588200;
+  background-color: #FFCB2A;
   color: white;
   font-size: 1rem;
   width: 600rpx;

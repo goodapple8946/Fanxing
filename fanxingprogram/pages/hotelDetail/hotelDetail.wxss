@@ -51,7 +51,7 @@
 .managerBtn {
   display: inline-block;
   font-size: 0.75rem;
-  color: #588200;
+  color: #FFCB2A;
   background-color: white;
   vertical-align: middle;
 }
@@ -119,7 +119,7 @@
   width: 100%;
   bottom: 0;
   color: white;
-  background-color: #588200;
+  background-color: #FFCB2A;
   font-size: 1rem;
 }
 .divLine {

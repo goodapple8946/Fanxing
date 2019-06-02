@@ -19,7 +19,7 @@
   width: 18rem;
 }
 .btn {
-  background-color: #588200;
+  background-color: #FFCB2A;
   color: white;
   font-size: 0.96rem;
 }

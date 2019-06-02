@@ -18,7 +18,7 @@
   justify-content:center;
   align-items:Center;
   font-size: 0.95rem;
-  color: #588200;
+  color: #FFCB2A;
 }
 .divLine {
   margin-left: 0rpx;
@@ -50,7 +50,7 @@
   margin-left: 25rpx;
   font-size: 0.75rem;
   width: 120rpx;
-  background-color: #588200;
+  background-color: #FFCB2A;
   color: white;
 }
 .orders{

@@ -20,13 +20,13 @@
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#588200",
+        "navigationBarBackgroundColor": "#FFCB2A",
         "navigationBarTitleText": "繁星民宿",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
         "color": "#b3b3b3",
-        "selectedColor": "#588200",
+        "selectedColor": "#FFCB2A",
         "list": [
             {
                 "pagePath": "pages/index/index",

@@ -4,7 +4,7 @@
 </view>
 <view class='center'>
   <button class='mineBtn' bindtap='favorite'>
-    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/favorite_green.png'></image>
+    <image class='mineIcon' src='cloud://fanxing-zufxl.6661-fanxing-zufxl/fanxing_icons/favorite_black.png'></image>
     <text class='mineText'>收藏</text>
   </button>
   <button class='mineBtn' bindtap='checkinPeople'>

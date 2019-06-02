@@ -26,7 +26,7 @@
     <button class='searchBtn' bindtap='hotelSearch' maxlength='15'>搜索</button>
   </view>
   
-  <button class='bottomBtn' bindtap='orderNow'>添加房源</button>
+  <button class='bottomBtn' bindtap='addHotel'>添加房源</button>
 </view>
 
 <!--管家管理-->
@@ -36,7 +36,5 @@
     <input class='searchInput' placeholder='管家昵称' bindinput='managerSearchInput' />
     <button class='searchBtn' bindtap='managerSearch' maxlength='15'>搜索</button>
   </view>
-<text>order2</text>
 </view>
-
 </view>

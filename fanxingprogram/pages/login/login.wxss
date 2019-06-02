@@ -7,7 +7,7 @@
   top: 200rpx;
   left: 125rpx;
   width: 500rpx;
-  background-color: #588200;
+  background-color: #FFCB2A;
   color: white;
   border-radius: 50px 50px;
 }

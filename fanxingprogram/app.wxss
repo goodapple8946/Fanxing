@@ -3,7 +3,7 @@
   width: 100%;
   bottom: 0;
   color: white;
-  background-color: #588200;
+  background-color: #FFCB2A;
   font-size: 1rem;
 }
 .newBtn{
@@ -14,7 +14,7 @@
   border: none;
 }
 .addText {
-  color: #588200;
+  color: #FFCB2A;
   margin-left: 25rpx;
   font-size: 1rem;
 }

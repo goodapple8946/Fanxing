@@ -44,7 +44,7 @@
   margin-left: 25rpx;
   font-size: 0.7rem;
   width: 120rpx;
-  background-color: #588200;
+  background-color: #FFCB2A;
   color: white;
 }
 .divLine {

@@ -18,7 +18,7 @@
   justify-content:center;
   align-items:Center;
   font-size: 0.9rem;
-  color: #588200;
+  color: #FFCB2A;
 }
 .divLine {
   margin-left: 10rpx;
