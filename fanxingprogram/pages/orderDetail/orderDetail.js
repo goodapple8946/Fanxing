@@ -115,7 +115,21 @@ Page({
         icon: 'none'
       })
     } else {
-      this.pay();
+      var dateAllowed = true;
+      //日期不冲突
+      for (var date = new Date(stringToDate(this.data.checkinDate)); date.getTime() <= stringToDate(this.data.checkoutDate).getTime(); date = new Date(date.getTime() + 86400000)) {
+        if (this.data.hotel.dateUsed.indexOf(dateToString(date)) != -1) {
+          wx.showToast({
+            title: dateToString(date) + ' 已被订购，请选择其他日期',
+            icon: 'none'
+          })
+          dateAllowed = false;
+          break;
+        }
+      }
+      if (dateAllowed) {
+        this.pay();
+      }
     }
   },
   //支付
@@ -222,20 +236,43 @@ Page({
               success: res => {
                 wx.showToast({
                   title: '支付成功'
-                })
-                db.collection('Order').add({
+                });
+                //更新已入住时间
+                var dateUses = this.data.hotel.dateUsed;
+                for (var date = new Date(stringToDate(this.data.checkinDate)); date.getTime() <= stringToDate(this.data.checkoutDate).getTime(); date = new Date(date.getTime() + 86400000)) {
+                  dateUses.push(dateToString(date));
+                }
+                dateUses.sort();
+                wx.cloud.callFunction({
+                  name: 'update',
                   data: {
-                    orderTime: dateToString(new Date()),
-                    startTime: this.data.checkinDate,
-                    endTime: this.data.checkoutDate,
-                    hotelId: this.data.hotel._id,
-                    hotelName: this.data.hotel.name,
-                    orderNumber: tradeno,
-                    paymentNumber: fee,
-                    state: '待入住'
+                    doc: this.data.hotel._id,
+                    dateUsed: dateUses
                   },
                   success: res => {
-                    console.log('insert Order');
+                    console.log('update Hotel');
+                    //更新订单
+                    var people = [];
+                    for (var i = 0; i < this.data.checkinPeopleIndexes.length; i++) {
+                      people.push(this.data.user.checkinPeople[this.data.checkinPeopleIndexes[i]]);
+                    }
+                    db.collection('Order').add({
+                      data: {
+                        orderTime: dateToString(new Date()),
+                        startTime: this.data.checkinDate,
+                        endTime: this.data.checkoutDate,
+                        hotelId: this.data.hotel._id,
+                        hotelName: this.data.hotel.name,
+                        phoneNumber:this.data.checkinPhone,
+                        checkinPeople: people,
+                        orderNumber: tradeno,
+                        paymentNumber: fee,
+                        state: '待入住'
+                      },
+                      success: res => {
+                        console.log('insert Order');
+                      }
+                    });
                   }
                 });
                 wx.switchTab({
@@ -251,6 +288,7 @@ Page({
                   title: '支付取消',
                   icon: 'none'
                 });
+                //更新订单
                 db.collection('Order').add({
                   data: {
                     orderTime: dateToString(new Date()),
@@ -294,5 +332,5 @@ function dateToString(x) {
 //字符串转日期
 function stringToDate(x) {
   var y = x.split('-');
-  return new Date(y[0], y[1], y[2]);
+  return new Date(y[0], y[1] - 1, y[2]);
 }
