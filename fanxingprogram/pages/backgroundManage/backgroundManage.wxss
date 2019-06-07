@@ -97,3 +97,9 @@
   color: black;
   font-weight: bold;
 }
+.startTime {
+  margin-left: 25rpx;
+  margin-top: 10rpx;
+  font-size: 0.8rem;
+  color: gray;
+}

@@ -36,12 +36,12 @@
     <button class='searchBtn' bindtap='managerSearch' maxlength='15'>搜索</button>
   </view>
 
-<view wx:for='managerApplications' application='managerApplications[index]' wx:key='{{index}}'>
+<view wx:for='{{managerApplications}}' wx:key='{{index}}'>
 <view class='border' bindtap='hotelDetail'>
   <view class = "contents" >
-    <view class = "orderNumber">申请日期：{{application.date}}</view>
-    <view class = "hotelName">联系电话：{{application.phoneNo}}</view>
-    <view class = "startTime">审核状态：{{application.state}}</view>
+    <view class = "orderNumber">申请日期：{{managerApplications[index].date}}</view>
+    <view class = "hotelName">联系电话：{{managerApplications[index].phoneNo}}</view>
+    <view class = "startTime">审核状态：{{managerApplications[index].state}}</view>
   </view>
   <button class = "orderState" bindtap='passApplication'>通过</button>
   <button class = "orderState" bindtap='refuseApplication'>拒绝</button>

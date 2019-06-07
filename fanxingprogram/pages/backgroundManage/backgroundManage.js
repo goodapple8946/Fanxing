@@ -66,8 +66,9 @@ Page({
     });
     //获取管家申请信息
     db.collection('ManagerApplication')
+      .limit(10)
       .where({
-        state:'pass'
+        state:'processing'
       })
       .get({
         success: res => {
@@ -123,6 +124,31 @@ Page({
 
   hotelSearch() {
     console.log("hotel");
+  },
+
+  //TODO 通过申请
+  passApplication(){
+    wx.showModal({
+      title: '提示',
+      content: '通过该管家申请？',
+      success: res => {
+        if (res.confirm) {
+          
+        }
+      }
+    })
+  },
+  //TODO 拒绝申请
+  refuseApplication() {
+    wx.showModal({
+      title: '提示',
+      content: '拒绝该管家申请？',
+      success: res => {
+        if (res.confirm) {
+
+        }
+      }
+    })
   },
 
   managerSearch(){
