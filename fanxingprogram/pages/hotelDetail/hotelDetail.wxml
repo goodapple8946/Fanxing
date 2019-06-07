@@ -71,17 +71,19 @@
   </view>
   <!-- 地图 -->
   <map class='map' longitude='{{hotel.geopoint.longitude}}' latitude='{{hotel.geopoint.latitude}}' markers='{{markers}}' />
+
   <!-- 分割线 -->
-  <view class='divLine' />
+  <!-- <view class='divLine' /> -->
   <!-- 小标题：房客评价 -->
-  <view class='subtitle'>
+  <!-- <view class='subtitle'>
     <text>房客评价</text>
-  </view>
+  </view> -->
   <!-- 房客评价 -->
-  <view class='description'>
+  <!-- <view class='description'>
     <text wx:if='{{hotel.ratedNum > 0}}'>评分：{{hotel.rated}}/5，评价次数：{{hotel.ratedNum}}</text>
     <text wx:else>暂无</text>
-  </view>
+  </view> -->
+
   <!-- 分割线 -->
   <view class='divLine' />
   <!-- 小标题：可租日期 -->
@@ -121,6 +123,5 @@
     <text>额外费用</text>
   </view>
   <!-- 额外费用 -->
-  
 </view>
 <button class='orderNow' bindtap='orderNow'>立即预订</button>

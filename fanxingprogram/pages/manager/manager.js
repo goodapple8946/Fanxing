@@ -21,7 +21,8 @@ Page({
       db.collection('ManagerApplication').add({
         data: {
           phoneNo: inputPhoneNo,
-          date: dateToString(new Date())
+          date: dateToString(new Date()),
+          state:'processing'
         },
         success: res => {
           wx.showToast({

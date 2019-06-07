@@ -1,0 +1,30 @@
+<view class='container'>
+<input class='inputLabel' bindinput='bindHotelNameInput' placeholder="房源名称" maxlength="20" type="text"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotelpriceInput' placeholder="价格" maxlength="20" type='number' />
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotelcityInput' placeholder="所在城市" maxlength="20" type="text"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHoteldescriptionInput' placeholder="房间描述" maxlength="20" type="text"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotellocationInput' placeholder="位置描述" maxlength="20" type="text"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotelrulesInput' placeholder="房屋守则" maxlength="20" type="text"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotelbedNumInput' placeholder="床的数量" maxlength="20" type="number"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotelbedroomNumInput' placeholder="卧室数量" maxlength="20" type="number"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotellivingroomNumInput' placeholder="客厅数量" maxlength="20" type="number"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHotelkitchenNumInput' placeholder="厨房数量" maxlength="20" type="number"/>
+<view class='divLine' />
+<input class='inputLabel' bindinput='bindHoteltoiletNumInput' placeholder="卫生间数量" maxlength="20" type="number"/>
+<view class='divLine' />
+
+<input class='inputLabel' bindinput='bindHotelpeopleNumInput' placeholder="可接纳人数" maxlength="20" type="number"/>
+
+<!-- <input class='inputLabel' bindinput='bindHotelpictureInput' placeholder="房源图片" maxlength="20" type="number"/> -->
+
+</view>
+<button class='bottomBtn' bindtap='addHotelByManager'>添加房源</button>

@@ -14,28 +14,7 @@ Page({
     activeIndex:0,
     orders:null,
     hotels:null,
-    managerApplication:null,
-    addHotel:{
-        name:'',
-        bedNum:0,
-        bedroomNum:0,
-        checkinTime:'14:00',
-        checkoutTime:'12:00',
-        city:'',
-        description:'',
-        facilities:[],
-        location:'',
-        peopleNum:0,
-        kitchenNum:0,
-        livingroomNum:0,
-        price:0,
-        recieveTime:'14:00~23:00',
-        recommend:false,
-        rules:'',
-        toiletNum:0,
-        type:'公寓',
-        picture:[]
-    }
+    managerApplications:null
   },
 
   /**
@@ -53,8 +32,6 @@ Page({
         });
     }
     });
-    //获取房源信息
-    db.collection();
   },
 
   /**
@@ -88,15 +65,18 @@ Page({
       activeIndex: 2
     });
     //获取管家申请信息
-    db.collection('managerApplication')
-      .limit(10)
+    db.collection('ManagerApplication')
+      .where({
+        state:'pass'
+      })
       .get({
         success: res => {
           this.setData({
-            managerApplication: res.data
+            managerApplications: res.data
           })
         }
-      })
+      });
+    console.log(this.data.managerApplications);
   },
 
   orderSearchInput(e){
@@ -146,33 +126,18 @@ Page({
   },
 
   managerSearch(){
-    console.log("manager");
+    console.log("managerSearch");
+    db.collection('ManagerApplication')
+    .limit(10)
+    .where({
+      phoneNo:this.data.managerInputValue
+    })
+    .get({
+      success: res => {
+        this.setData({
+          managerApplications: res.data
+        })
+      }
+    })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  }
 })

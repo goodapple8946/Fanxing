@@ -1,0 +1,25 @@
+.bottomBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  background-color: #FFCB2A;
+  font-size: 1rem;
+}
+.container{
+  margin-bottom: 50px;
+}
+.inputLabel{
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+}
+.divLine {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 700rpx;
+  height: 1px;
+  background:rgba(235, 233, 233, 0.781);
+}

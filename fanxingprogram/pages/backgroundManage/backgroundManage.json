@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "orderBanner": "/component/orderBanner/orderBanner"
+    "orderBanner": "/component/orderBanner/orderBanner",
+    "addHotelBanner":"/component/addHotelBanner/addHotelBanner"
   }
 }

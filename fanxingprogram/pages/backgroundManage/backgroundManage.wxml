@@ -20,21 +20,32 @@
 
 <!--房源管理-->
 <view class="hotels" wx:if="{{activeIndex == 1}}">
-  <view class='searchBorder'>
+  <!-- <view class='searchBorder'>
     <image class='searchIcon' src='/icons/search.png'/>
     <input class='searchInput' placeholder='房源名称、管家昵称' bindinput='hotelSearchInput' />
     <button class='searchBtn' bindtap='hotelSearch' maxlength='15'>搜索</button>
+  </view> -->
+  <addHotelBanner></addHotelBanner>
   </view>
-  
-  <button class='bottomBtn' bindtap='addHotel'>添加房源</button>
-</view>
 
 <!--管家管理-->
 <view class="managers" wx:if="{{activeIndex == 2}}">
   <view class='searchBorder'>
     <image class='searchIcon' src='/icons/search.png'/>
-    <input class='searchInput' placeholder='管家昵称' bindinput='managerSearchInput' />
+    <input class='searchInput' placeholder='管家手机号' bindinput='managerSearchInput' />
     <button class='searchBtn' bindtap='managerSearch' maxlength='15'>搜索</button>
   </view>
+
+<view wx:for='managerApplications' application='managerApplications[index]' wx:key='{{index}}'>
+<view class='border' bindtap='hotelDetail'>
+  <view class = "contents" >
+    <view class = "orderNumber">申请日期：{{application.date}}</view>
+    <view class = "hotelName">联系电话：{{application.phoneNo}}</view>
+    <view class = "startTime">审核状态：{{application.state}}</view>
+  </view>
+  <button class = "orderState" bindtap='passApplication'>通过</button>
+  <button class = "orderState" bindtap='refuseApplication'>拒绝</button>
+</view>
+</view>
 </view>
 </view>
