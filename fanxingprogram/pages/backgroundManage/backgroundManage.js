@@ -2,24 +2,16 @@ const db = wx.cloud.database();
 const app = getApp();
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     tabs: ["订单管理", "房源管理", "管家管理"],
-    orderInputValue:'',
+    orderInputValue: '',
     hotelInputValue: '',
     managerInputValue: '',
-    activeIndex:0,
-    orders:null,
-    hotels:null,
-    managerApplications:null
+    activeIndex: 0,
+    orders: null,
+    hotels: null,
+    managerApplications: null,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     //获取订单信息，降序排列
     db.collection('Order')
@@ -30,13 +22,9 @@ Page({
         this.setData({
           orders: res.data
         });
-    }
+      }
     });
   },
-
-  /**
-   * 点击顶部button
-   */
   orderBtn() {
     this.setData({
       activeIndex: 0
@@ -53,33 +41,17 @@ Page({
         }
       });
   },
-
   hotelBtn() {
     this.setData({
       activeIndex: 1
     });
   },
-  
   managerBtn() {
     this.setData({
       activeIndex: 2
     });
-    //获取管家申请信息
-    db.collection('ManagerApplication')
-      .limit(10)
-      .where({
-        state:'processing'
-      })
-      .get({
-        success: res => {
-          this.setData({
-            managerApplications: res.data
-          })
-        }
-      });
-    console.log(this.data.managerApplications);
+    this.refreshManagerApplication();
   },
-
   orderSearchInput(e){
     this.setData({
       orderInputValue:e.detail.value
@@ -96,7 +68,7 @@ Page({
     })
   },
 
-  orderSearch(){
+  orderSearch() {
     db.collection('Order')
       .limit(10)
       .orderBy('orderTime', 'desc')
@@ -119,39 +91,11 @@ Page({
           });
         }
       });
-      console.log(this.data.orders[0].orderTime);
   },
-
   hotelSearch() {
     console.log("hotel");
   },
-
-  //TODO 通过申请
-  passApplication(){
-    wx.showModal({
-      title: '提示',
-      content: '通过该管家申请？',
-      success: res => {
-        if (res.confirm) {
-          
-        }
-      }
-    })
-  },
-  //TODO 拒绝申请
-  refuseApplication() {
-    wx.showModal({
-      title: '提示',
-      content: '拒绝该管家申请？',
-      success: res => {
-        if (res.confirm) {
-
-        }
-      }
-    })
-  },
-
-  managerSearch(){
+  managerSearch() {
     console.log("managerSearch");
     db.collection('ManagerApplication')
     .limit(10)
@@ -166,4 +110,20 @@ Page({
       }
     })
   },
+  //刷新管家申请
+  refreshManagerApplication() {
+    //获取管家申请信息
+    db.collection('ManagerApplication')
+      .limit(10)
+      .where({
+        state: 'processing'
+      })
+      .get({
+        success: res => {
+          this.setData({
+            managerApplications: res.data
+          })
+        }
+      });
+  }
 })

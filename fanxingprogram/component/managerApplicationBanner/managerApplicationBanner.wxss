@@ -1,0 +1,40 @@
+.border {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  width: 650rpx;
+  box-shadow: 0rpx 0rpx 3rpx 2rpx gray;
+  background: white;
+  border-radius: 15rpx;
+}
+.contents{
+  width:450rpx;
+}
+.orderState{
+  width:150rpx;
+  color: black;
+  font-weight: bold;
+}
+.orderNumber{
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  font-size: 0.8rem;
+  color: gray;
+}
+.hotelName {
+  margin-left: 25rpx;
+  margin-top: 15rpx;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+}
+.startTime {
+  margin-left: 25rpx;
+  margin-top: 10rpx;
+  font-size: 0.8rem;
+  color: gray;
+}

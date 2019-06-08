@@ -1,51 +1,42 @@
 <view class = "container">
-<!--navbar-->
-<view class='navbar'>
-  <view class="{{activeIndex == 0 ? 'btn_selected' : 'btn'}}" bindtap='orderBtn'>订单管理</view>
-  <view class="{{activeIndex == 1 ? 'btn_selected' : 'btn'}}" bindtap='hotelBtn'>房源管理</view>
-  <view class="{{activeIndex == 2 ? 'btn_selected' : 'btn'}}" bindtap='managerBtn'>管家管理</view>
-</view>
-
-<view class='divLine' />
-
-<!--订单管理-->
-<view class="orders" wx:if="{{activeIndex == 0}}">
-  <view class='searchBorder'>
-    <image class='searchIcon' src='/icons/search.png'/>
-    <input class='searchInput' placeholder='房源名称、订单状态' bindinput='orderSearchInput' />
-    <button class='searchBtn' bindtap='orderSearch' maxlength='15'>搜索</button>
-  </view>
-  <orderBanner wx:for='{{orders}}' order='{{orders[index]}}' wx:key='{{index}}' />
-</view>
-
-<!--房源管理-->
-<view class="hotels" wx:if="{{activeIndex == 1}}">
-  <!-- <view class='searchBorder'>
-    <image class='searchIcon' src='/icons/search.png'/>
-    <input class='searchInput' placeholder='房源名称、管家昵称' bindinput='hotelSearchInput' />
-    <button class='searchBtn' bindtap='hotelSearch' maxlength='15'>搜索</button>
-  </view> -->
-  <addHotelBanner></addHotelBanner>
+  <!--navbar-->
+  <view class='navbar'>
+    <view class="{{activeIndex == 0 ? 'btn_selected' : 'btn'}}" bindtap='orderBtn'>订单管理</view>
+    <view class="{{activeIndex == 1 ? 'btn_selected' : 'btn'}}" bindtap='hotelBtn'>房源管理</view>
+    <view class="{{activeIndex == 2 ? 'btn_selected' : 'btn'}}" bindtap='managerBtn'>管家管理</view>
   </view>
 
-<!--管家管理-->
-<view class="managers" wx:if="{{activeIndex == 2}}">
-  <view class='searchBorder'>
-    <image class='searchIcon' src='/icons/search.png'/>
-    <input class='searchInput' placeholder='管家手机号' bindinput='managerSearchInput' />
-    <button class='searchBtn' bindtap='managerSearch' maxlength='15'>搜索</button>
+  <view class='divLine' />
+
+  <!--订单管理-->
+  <view class="orders" wx:if="{{activeIndex == 0}}">
+    <view class='searchBorder'>
+      <image class='searchIcon' src='/icons/search.png'/>
+      <input class='searchInput' placeholder='房源名称、订单状态' bindinput='orderSearchInput' />
+      <button class='searchBtn' bindtap='orderSearch' maxlength='15'>搜索</button>
+    </view>
+    <orderBanner wx:for='{{orders}}' order='{{orders[index]}}' wx:key='{{index}}' />
   </view>
 
-<view wx:for='{{managerApplications}}' wx:key='{{index}}'>
-<view class='border' bindtap='hotelDetail'>
-  <view class = "contents" >
-    <view class = "orderNumber">申请日期：{{managerApplications[index].date}}</view>
-    <view class = "hotelName">联系电话：{{managerApplications[index].phoneNo}}</view>
-    <view class = "startTime">审核状态：{{managerApplications[index].state}}</view>
+  <!--房源管理-->
+  <view class="hotels" wx:if="{{activeIndex == 1}}">
+    <!-- <view class='searchBorder'>
+      <image class='searchIcon' src='/icons/search.png'/>
+      <input class='searchInput' placeholder='房源名称、管家昵称' bindinput='hotelSearchInput' />
+      <button class='searchBtn' bindtap='hotelSearch' maxlength='15'>搜索</button>
+    </view> -->
+    <addHotelBanner />
   </view>
-  <button class = "orderState" bindtap='passApplication'>通过</button>
-  <button class = "orderState" bindtap='refuseApplication'>拒绝</button>
-</view>
-</view>
-</view>
+
+  <!--管家管理-->
+  <view class="managers" wx:if="{{activeIndex == 2}}">
+    <view class='searchBorder'>
+      <image class='searchIcon' src='/icons/search.png'/>
+      <input class='searchInput' placeholder='管家手机号' bindinput='managerSearchInput' />
+      <button class='searchBtn' bindtap='managerSearch' maxlength='15'>搜索</button>
+    </view>
+    <view wx:for='{{managerApplications}}' wx:key='{{index}}'>
+      <managerApplicationBanner managerApplication='{{managerApplications[index]}}' />
+    </view>
+  </view>
 </view>

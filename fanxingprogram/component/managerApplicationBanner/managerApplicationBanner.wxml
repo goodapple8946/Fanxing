@@ -1,0 +1,9 @@
+<view class='border'>
+  <view class = "contents" >
+    <view class = "orderNumber">申请日期：{{managerApplication.date}}</view>
+    <view class = "hotelName">联系电话：{{managerApplication.phoneNo}}</view>
+    <view class = "startTime">审核状态：{{managerApplication.state}}</view>
+  </view>
+  <button class = "orderState" bindtap='pass'>通过</button>
+  <button class = "orderState" bindtap='refuse'>拒绝</button>
+</view>
