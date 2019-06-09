@@ -3,7 +3,24 @@ const app = getApp();
 
 Page({
   data: {
+    user: null,
     phoneNo: ''
+  },
+  onLoad() {
+    //用户数据
+    if (app.globalData.user) {
+      this.setData({
+        user: app.globalData.user
+      });
+    }
+    else {
+      //防止onLaunch在onLoad之后返回
+      app.queryUserManager = x => {
+        this.setData({
+          user: x
+        });
+      }
+    }
   },
   inputPhoneNo(e) {
     this.setData({
@@ -20,6 +37,7 @@ Page({
     } else {
       db.collection('ManagerApplication').add({
         data: {
+          userId: this.data.user._id,
           phoneNo: inputPhoneNo,
           date: dateToString(new Date()),
           state:'processing'

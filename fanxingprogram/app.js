@@ -61,11 +61,13 @@ App({
                 this.queryUserIndex && this.queryUserIndex(res.data[0]);
                 this.queryUserOrder && this.queryUserOrder(res.data[0]);
                 this.queryUserMine && this.queryUserMine(res.data[0]);
+                this.queryUserManager && this.queryUserManager(res.data[0]);
                 this.queryUserFavorite && this.queryUserFavorite(res.data[0]);
                 this.queryUserCheckinPeople && this.queryUserCheckinPeople(res.data[0]);
                 this.queryUserSearch && this.queryUserSearch(res.data[0]);
                 this.queryUserManagerDetail && this.queryUserManagerDetail(res.data[0]);
                 this.queryUserSelectCheckinPeople && this.queryUserSelectCheckinPeople(res.data[0]);
+                this.queryUserBackgroundManage && this.queryUserBackgroundManage(res.data[0]);
               }
             });
           }

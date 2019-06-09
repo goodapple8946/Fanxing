@@ -16,6 +16,7 @@
 }
 .feedbackInside {
   margin-left: 25rpx;
+  margin-right: 25rpx;
   width: 18rem;
 }
 .btn {

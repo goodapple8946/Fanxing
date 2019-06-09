@@ -4,6 +4,7 @@ const app = getApp();
 Page({
   data: {
     tabs: ["订单管理", "房源管理", "管家管理"],
+    user: null,
     orderInputValue: '',
     hotelInputValue: '',
     managerInputValue: '',
@@ -13,6 +14,20 @@ Page({
     managerApplications: null,
   },
   onLoad: function (options) {
+    //用户数据
+    if (app.globalData.user) {
+      this.setData({
+        user: app.globalData.user
+      });
+    }
+    else {
+      //防止onLaunch在onLoad之后返回
+      app.queryUserBackgroundManage = x => {
+        this.setData({
+          user: x
+        });
+      }
+    }
     //获取订单信息，降序排列
     db.collection('Order')
     .limit(10)

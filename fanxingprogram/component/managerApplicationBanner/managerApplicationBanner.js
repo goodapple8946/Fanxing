@@ -3,6 +3,10 @@ Component({
     managerApplication: {
       type: Object,
       value: null
+    },
+    user: {
+      type: Object,
+      value: null
     }
   },
   methods: {
@@ -21,11 +25,21 @@ Component({
               },
               success: res => {
                 console.log('update ManagerApplication');
-                wx.showToast({
-                  title: '已通过',
+                wx.cloud.callFunction({
+                  name: 'updateUserRole',
+                  data: {
+                    doc: this.properties.managerApplication.userId,
+                    role: 'manager'
+                  },
+                  success: res => {
+                    console.log('update User');
+                    wx.showToast({
+                      title: '已通过',
+                    });
+                    var page = getCurrentPages().pop();
+                    page && page.refreshManagerApplication();
+                  }
                 });
-                var page = getCurrentPages().pop();
-                page && page.refreshManagerApplication();
               }
             });
           }

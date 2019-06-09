@@ -36,7 +36,7 @@
       <button class='searchBtn' bindtap='managerSearch' maxlength='15'>搜索</button>
     </view>
     <view wx:for='{{managerApplications}}' wx:key='{{index}}'>
-      <managerApplicationBanner managerApplication='{{managerApplications[index]}}' />
+      <managerApplicationBanner managerApplication='{{managerApplications[index]}}' user='{{user}}' />
     </view>
   </view>
 </view>

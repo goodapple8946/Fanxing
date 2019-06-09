@@ -79,7 +79,7 @@ Page({
   },
   //显示后台按钮
   showSecret() {
-    if (this.data.user.role == 'administrator')
+    if (this.data.user.role == 'administrator' || this.data.user.role == 'manager')
       this.setData({
         secret: true
       });
