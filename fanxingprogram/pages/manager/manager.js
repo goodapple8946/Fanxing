@@ -51,6 +51,12 @@ Page({
           setTimeout(() => {
             wx.navigateBack();
           }, 1000);
+        },
+        fail: res => {
+          wx.showToast({
+            title: '管家申请数据添加失败',
+            icon: 'none'
+          })
         }
       });
     }

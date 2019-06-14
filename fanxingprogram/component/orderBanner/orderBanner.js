@@ -10,6 +10,7 @@ Component({
   },
   methods: {
     hotelDetail() {
+      //房源数据
       db.collection('Hotel').where({
         _id: this.properties.order.hotelId
       }).get({
@@ -18,6 +19,12 @@ Component({
           wx.navigateTo({
             url: '/pages/hotelDetail/hotelDetail',
           });
+        },
+        fail: res => {
+          wx.showToast({
+            title: '房源数据获取失败',
+            icon: 'none'
+          })
         }
       })
     }

@@ -64,6 +64,12 @@ Page({
         this.setData({
           manager: res.data[0]
         });
+      },
+      fail: res => {
+        wx.showToast({
+          title: '管家数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },

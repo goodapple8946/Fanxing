@@ -13,7 +13,13 @@ Page({
             name: 'getIP',
             complete: res => {
                 wx.setStorageSync('ip', JSON.parse(res.result)['ip'])
-            }
+          },
+          fail: res => {
+            wx.showToast({
+              title: '订单数据获取失败',
+              icon: 'none'
+            })
+          }
         });
     },
 

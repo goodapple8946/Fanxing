@@ -31,6 +31,12 @@ Component({
             //更新数据库用户数据
             app.updateUser();
           }
+        },
+        fail: res => {
+          wx.showToast({
+            title: '删除入住人失败',
+            icon: 'none'
+          })
         }
       })
     }

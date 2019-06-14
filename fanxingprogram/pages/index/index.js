@@ -65,6 +65,12 @@ Page({
           hotels: res.data
         });
         this.favoriteIcon();
+      },
+      fail: res => {
+        wx.showToast({
+          title: '房源数据获取失败',
+          icon: 'none'
+        })
       }
     });
     //收藏图标app调用
@@ -120,9 +126,9 @@ Page({
   },
   //支付测试
   pay(){
-      wx.navigateTo({
-          url: '/pages/orderPay/orderPay',
-      })
+    wx.navigateTo({
+        url: '/pages/orderPay/orderPay',
+    })
   },
   //更多房源（无筛选条件搜索）
   moreHotel() {

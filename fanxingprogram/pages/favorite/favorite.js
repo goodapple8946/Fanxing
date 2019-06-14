@@ -47,6 +47,12 @@ Page({
             this.setData({
               hotels
             })
+          },
+          fail: res => {
+            wx.showToast({
+              title: '房源数据获取失败',
+              icon: 'none'
+            })
           }
         })
       }

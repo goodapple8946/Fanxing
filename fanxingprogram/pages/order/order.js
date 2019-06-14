@@ -34,6 +34,12 @@ Page({
         this.setData({
           orders: res.data
         });
+      },
+      fail: res => {
+        wx.showToast({
+          title: '订单数据获取失败',
+          icon: 'none'
+        })
       }
     });
     this.setData({
@@ -51,6 +57,12 @@ Page({
           orders: res.data,
           topIndex: 1
         });
+      },
+      fail: res => {
+        wx.showToast({
+          title: '订单数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },
@@ -79,6 +91,12 @@ Page({
           orders: res.data,
           topIndex: 3
         });
+      },
+      fail: res => {
+        wx.showToast({
+          title: '订单数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },
@@ -93,6 +111,12 @@ Page({
           orders: res.data,
           topIndex: 4
         });
+      },
+      fail: res => {
+        wx.showToast({
+          title: '订单数据获取失败',
+          icon: 'none'
+        })
       }
     });
   }

@@ -16,6 +16,7 @@ Page({
         icon: 'none',
       })
     } else {
+      //反馈数据
       db.collection('Feedback').add({
         data: {
           time: dateTimeToString(new Date()),
@@ -30,6 +31,12 @@ Page({
           setTimeout(function () {
             wx.navigateBack();
           }, 1000);
+        },
+        fail: res => {
+          wx.showToast({
+            title: '反馈数据获取失败',
+            icon: 'none'
+          })
         }
       });
     }

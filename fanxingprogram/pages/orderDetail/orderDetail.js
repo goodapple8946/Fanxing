@@ -244,7 +244,7 @@ Page({
                 }
                 dateUses.sort();
                 wx.cloud.callFunction({
-                  name: 'update',
+                  name: 'updateHotelDateUsed',
                   data: {
                     doc: this.data.hotel._id,
                     dateUsed: dateUses
@@ -271,8 +271,20 @@ Page({
                       },
                       success: res => {
                         console.log('insert Order');
+                      },
+                      fail: res => {
+                        wx.showToast({
+                          title: '订单数据添加失败',
+                          icon: 'none'
+                        })
                       }
                     });
+                  },
+                  fail: res => {
+                    wx.showToast({
+                      title: '房源数据更新失败',
+                      icon: 'none'
+                    })
                   }
                 });
                 wx.switchTab({
@@ -304,7 +316,10 @@ Page({
                     console.log('insert Order');
                   },
                   fail: res => {
-                    console.log('error');
+                    wx.showToast({
+                      title: '订单数据添加失败',
+                      icon: 'none'
+                    })
                   }
                 });
               }

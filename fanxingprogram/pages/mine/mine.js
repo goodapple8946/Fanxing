@@ -56,6 +56,12 @@ Page({
             phoneNumber: this.data.phoneNumber
           });
         }
+      },
+      fail: res => {
+        wx.showToast({
+          title: '拨打失败',
+          icon: 'none'
+        })
       }
     });
   },

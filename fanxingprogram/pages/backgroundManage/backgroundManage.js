@@ -37,6 +37,12 @@ Page({
         this.setData({
           orders: res.data
         });
+      },
+      fail: res => {
+        wx.showToast({
+          title: '订单数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },
@@ -53,6 +59,12 @@ Page({
           this.setData({
             orders: res.data
           });
+        },
+        fail: res => {
+          wx.showToast({
+            title: '订单信息获取失败',
+            icon: 'none'
+          })
         }
       });
   },
@@ -82,7 +94,6 @@ Page({
       managerInputValue: e.detail.value
     })
   },
-
   orderSearch() {
     db.collection('Order')
       .limit(10)
@@ -104,6 +115,12 @@ Page({
           this.setData({
             orders:orders
           });
+        },
+        fail: res => {
+          wx.showToast({
+            title: '订单数据获取失败',
+            icon: 'none'
+          })
         }
       });
   },
@@ -122,6 +139,12 @@ Page({
         this.setData({
           managerApplications: res.data
         })
+      },
+      fail: res => {
+        wx.showToast({
+          title: '管家申请数据获取失败',
+          icon: 'none'
+        })
       }
     })
   },
@@ -137,6 +160,12 @@ Page({
         success: res => {
           this.setData({
             managerApplications: res.data
+          })
+        },
+        fail: res => {
+          wx.showToast({
+            title: '管家申请数据获取失败',
+            icon: 'none'
           })
         }
       });

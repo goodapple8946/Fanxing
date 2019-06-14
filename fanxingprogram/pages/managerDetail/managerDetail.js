@@ -35,6 +35,12 @@ Page({
           hotels: res.data
         });
         this.favoriteIcon();
+      },
+      fail: res => {
+        wx.showToast({
+          title: '管家房源数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },

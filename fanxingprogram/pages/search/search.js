@@ -115,6 +115,12 @@ Page({
         });
         this.showMoreHotels();
         this.favoriteIcon();
+      },
+      fail: res => {
+        wx.showToast({
+          title: '房源数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },

@@ -40,6 +40,12 @@ Component({
                     page && page.refreshManagerApplication();
                   }
                 });
+              },
+              fail: res => {
+                wx.showToast({
+                  title: '通过管家申请失败',
+                  icon: 'none'
+                })
               }
             });
           }
@@ -67,6 +73,12 @@ Component({
                 });
                 var page = getCurrentPages().pop();
                 page && page.refreshManagerApplication();
+              },
+              fail: res => {
+                wx.showToast({
+                  title: '拒绝管家申请失败',
+                  icon: 'none'
+                })
               }
             });
           }

@@ -2,16 +2,6 @@ const db = wx.cloud.database();
 const app = getApp();
 
 Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-
-  },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     addHotel: {
       name: '',
@@ -35,10 +25,6 @@ Component({
       picture: []
     }
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
     bindHotelNameInput(e){
       this.data.addHotel.name=e.detail.value;
@@ -96,10 +82,7 @@ Component({
       this.data.addHotel.rules = e.detail.value;
       console.log(this.data.addHotel);
     },
-
-    /**
-     * 管家添加Hotel
-     */
+    //管家添加Hotel
     addHotelByManager() {
       db.collection('Hotel').add({
         data:{

@@ -68,8 +68,20 @@ App({
                 this.queryUserManagerDetail && this.queryUserManagerDetail(res.data[0]);
                 this.queryUserSelectCheckinPeople && this.queryUserSelectCheckinPeople(res.data[0]);
                 this.queryUserBackgroundManage && this.queryUserBackgroundManage(res.data[0]);
+              },
+              fail: res => {
+                wx.showToast({
+                  title: '用户数据获取失败',
+                  icon: 'none'
+                })
               }
             });
+          },
+          fail: res => {
+            wx.showToast({
+              title: 'UserInfo获取失败',
+              icon: 'none'
+            })
           }
         });
       }
@@ -85,6 +97,12 @@ App({
         //防止onLaunch在onLoad之后返回
         this.queryCityIndex && this.queryCityIndex(this.globalData.cities);
         this.queryCitySearch && this.queryCitySearch(this.globalData.cities);
+      },
+      fail: res => {
+        wx.showToast({
+          title: '城市数据获取失败',
+          icon: 'none'
+        })
       }
     });
   },
@@ -115,6 +133,12 @@ App({
       success: res => {
         console.log('insert User');
         this.queryUser();
+      },
+      fail: res => {
+        wx.showToast({
+          title: '用户数据添加失败',
+          icon: 'none'
+        })
       }
     });
   }
