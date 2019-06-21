@@ -244,7 +244,7 @@ Page({
                 }
                 dateUses.sort();
                 wx.cloud.callFunction({
-                  name: 'updateHotelDateUsed',
+                  name: 'update',
                   data: {
                     doc: this.data.hotel._id,
                     dateUsed: dateUses
