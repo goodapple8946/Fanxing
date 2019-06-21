@@ -6,7 +6,7 @@ cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-    var url = 'https://ip.tianqiapi.com/';
+    var url = 'http://ip-api.com/json';
     let postResponse = await got(url, {
         method: 'post',
         headers: {}

@@ -45,7 +45,7 @@ Page({
     wx.cloud.callFunction({
       name: 'getIP',
       complete: res => {
-        wx.setStorageSync('ip', JSON.parse(res.result)['ip']);
+        wx.setStorageSync('ip', JSON.parse(res.result)['query']);
       }
     });
   },
