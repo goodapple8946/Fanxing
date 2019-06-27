@@ -102,8 +102,6 @@
   <view class='description'>
     <view>入住时间：{{hotel.checkinTime}}</view>
     <view>退房时间：{{hotel.checkoutTime}}</view>
-    <view>接待时间：{{hotel.receiveTime}}</view>
-    <view>入住押金：{{hotel.deposit}}</view>
     <view>房屋守则：
       <text wx:for='{{hotel.rules}}' wx:key='{{index}}'>{{hotel.rules[index]}}<text wx:if='{{hotel.rules.length - 1 != index}}'>、</text></text>
     </view>

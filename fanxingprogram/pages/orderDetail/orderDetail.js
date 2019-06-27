@@ -135,7 +135,7 @@ Page({
   //支付
   pay() {
     var duration = Math.ceil((stringToDate(this.data.checkoutDate) - stringToDate(this.data.checkinDate)) / (1000 * 60 * 60 * 24));
-    var fee = this.data.hotel.price * duration;
+    var fee = this.data.hotel.price * duration * 100;
     var detail = this.data.hotel.name + ' ' + duration + '天';
     var tradeno = Math.floor(Math.random() * 999999999);
     var ran = Math.random() * 999999999;
